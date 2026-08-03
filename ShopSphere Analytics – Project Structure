@@ -1,0 +1,74 @@
+C:\
+└── Portfolio\
+    └── ShopSphere-Analytics\
+        │
+        ├── README.md
+        ├── requirements.txt
+        ├── .gitignore
+        │
+        ├── config\
+        │   └── config.py
+        │
+        ├── database\
+        │   ├── 01_schema.sql
+        │   ├── 02_constraints.sql
+        │   ├── 03_indexes.sql
+        │   ├── 04_views.sql
+        │   ├── 05_stored_procedures.sql
+        │   └── 06_import_data.sql
+        │
+        ├── reference_data\
+        │   ├── brands.csv
+        │   ├── categories.csv
+        │   ├── subcategories.csv
+        │   ├── suppliers.csv
+        │   ├── warehouses.csv
+        │   ├── payment_methods.csv
+        │   ├── couriers.csv
+        │   ├── coupons.csv
+        │   ├── return_reasons.csv
+        │   ├── support_issues.csv
+        │   ├── festival_calendar.csv
+        │   ├── indian_states.csv
+        │   ├── indian_cities.csv
+        │   └── indian_names.csv
+        │
+        ├── src\
+        │   ├── generators\
+        │   │   ├── customer_generator.py
+        │   │   ├── product_generator.py
+        │   │   ├── inventory_generator.py
+        │   │   ├── order_generator.py
+        │   │   ├── payment_generator.py
+        │   │   ├── shipping_generator.py
+        │   │   ├── return_generator.py
+        │   │   ├── review_generator.py
+        │   │   ├── support_generator.py
+        │   │   └── traffic_generator.py
+        │   │
+        │   ├── utils\
+        │   │   ├── helpers.py
+        │   │   ├── pricing.py
+        │   │   ├── date_utils.py
+        │   │   └── loaders.py
+        │   │
+        │   └── main.py
+        │
+        ├── output\
+        │   ├── csv\
+        │   └── logs\
+        │
+        ├── notebooks\
+        │
+        ├── powerbi\
+        │
+        ├── sql_practice\
+        │   ├── beginner\
+        │   ├── intermediate\
+        │   ├── advanced\
+        │   └── business_cases\
+        │
+        └── docs\
+            ├── ERD.png
+            ├── Data_Dictionary.xlsx
+            └── Project_Plan.md
