@@ -1,6 +1,7 @@
 """
 =========================================================
 ShopSphere Analytics
+
 inventory_generator.py
 
 Generates:
@@ -10,367 +11,1424 @@ Author : Prasanta Kumar Deb
 =========================================================
 """
 
+# ==========================================================
+# Imports
+# ==========================================================
+
 import random
-from datetime import datetime, timedelta
+
+from datetime import datetime
 
 import pandas as pd
 
 from config.config import (
+
     CSV_OUTPUT,
+
+    REFERENCE_DATA,
+
     RANDOM_SEED
+
 )
 
-random.seed(RANDOM_SEED)
-
 # ==========================================================
-# Load Data
+# Random Seed
 # ==========================================================
 
-def load_data():
+random.seed(
 
-    products = pd.read_csv(
-        CSV_OUTPUT / "products.csv"
-    )
+    RANDOM_SEED
 
-    warehouses = pd.read_csv(
-        "reference_data/warehouses.csv"
-    )
-
-    return products, warehouses
+)
 
 # ==========================================================
-# Distribution
+# Generator Configuration
 # ==========================================================
+
+START_DATE = datetime(
+
+    2022,
+
+    1,
+
+    1
+
+)
+
+END_DATE = datetime.today()
+
+MIN_WAREHOUSES_PER_PRODUCT = 2
+
+MAX_WAREHOUSES_PER_PRODUCT = 8
+
+PROGRESS_INTERVAL = 10000
+
+# ==========================================================
+# Load Master Data
+# ==========================================================
+
+def load_master_data():
+
+    data = {
+
+        "Products": pd.read_csv(
+
+            CSV_OUTPUT / "products.csv"
+
+        ),
+
+        "Warehouses": pd.read_csv(
+
+            REFERENCE_DATA / "warehouses.csv"
+
+        ),
+
+        "Categories": pd.read_csv(
+
+            REFERENCE_DATA / "categories.csv"
+
+        )
+
+    }
+
+    return data
+
+
+# ==========================================================
+# Load Once
+# ==========================================================
+
+MASTER = load_master_data()
+
+PRODUCTS = MASTER["Products"]
+
+WAREHOUSES = MASTER["Warehouses"]
+
+CATEGORIES = MASTER["Categories"]
+
+# ==========================================================
+# Validation
+# ==========================================================
+
+def validate_master_data():
+
+    print("=" * 60)
+
+    print("Inventory Generator Configuration")
+
+    print("=" * 60)
+
+    if PRODUCTS.empty:
+
+        raise ValueError(
+
+            "products.csv is empty."
+
+        )
+
+    if WAREHOUSES.empty:
+
+        raise ValueError(
+
+            "warehouses.csv is empty."
+
+        )
+
+    if CATEGORIES.empty:
+
+        raise ValueError(
+
+            "categories.csv is empty."
+
+        )
+
+    print(f"Products               : {len(PRODUCTS):,}")
+
+    print(f"Warehouses            : {len(WAREHOUSES):,}")
+
+    print(f"Categories            : {len(CATEGORIES):,}")
+
+    print(f"Warehouse/Product Min : {MIN_WAREHOUSES_PER_PRODUCT}")
+
+    print(f"Warehouse/Product Max : {MAX_WAREHOUSES_PER_PRODUCT}")
+
+    print("=" * 60)
+# ==========================================================
+# Warehouses Per Product
+# ==========================================================
+
 WAREHOUSE_DISTRIBUTION = {
 
-    1:0.25,
+    2: 10,
 
-    2:0.35,
+    3: 15,
 
-    3:0.25,
+    4: 25,
 
-    4:0.10,
+    5: 25,
 
-    5:0.05
+    6: 15,
+
+    7: 7,
+
+    8: 3
 
 }
 
 # ==========================================================
-# Weighted Choice
+# Category Stock Rules
+# (Min Stock, Max Stock)
 # ==========================================================
-def weighted_choice(mapping):
 
-    return random.choices(
+CATEGORY_STOCK_RULES = {
 
-        list(mapping.keys()),
+    "Electronics": (20, 250),
 
-        weights=list(mapping.values()),
+    "Fashion": (100, 1200),
+
+    "Home & Kitchen": (50, 600),
+
+    "Beauty & Personal Care": (200, 2000),
+
+    "Grocery": (1000, 5000),
+
+    "Books": (50, 800),
+
+    "Sports & Fitness": (40, 500),
+
+    "Toys & Games": (50, 400),
+
+    "Automotive": (20, 300),
+
+    "Baby Products": (100, 1000),
+
+    "Health": (100, 1500),
+
+    "Jewellery": (5, 50),
+
+    "Pet Supplies": (50, 600),
+
+    "Office Supplies": (100, 1000),
+
+    "Garden & Outdoor": (30, 400)
+
+}
+
+# ==========================================================
+# Reserved Stock %
+# ==========================================================
+
+RESERVED_STOCK_PERCENTAGE = {
+
+    "minimum": 0.00,
+
+    "maximum": 0.20
+
+}
+
+# ==========================================================
+# Reorder Level %
+# ==========================================================
+
+REORDER_PERCENTAGE = {
+
+    "minimum": 0.10,
+
+    "maximum": 0.30
+
+}
+
+# ==========================================================
+# Safety Stock %
+# ==========================================================
+
+SAFETY_STOCK_PERCENTAGE = {
+
+    "minimum": 0.30,
+
+    "maximum": 0.80
+
+}
+
+# ==========================================================
+# Warehouse Allocation
+# ==========================================================
+
+WAREHOUSE_WEIGHTS = {
+
+    1: 15,
+
+    2: 12,
+
+    3: 10,
+
+    4: 8,
+
+    5: 8,
+
+    6: 7,
+
+    7: 6,
+
+    8: 5,
+
+    9: 5,
+
+    10: 4,
+
+    11: 4,
+
+    12: 4,
+
+    13: 3,
+
+    14: 3,
+
+    15: 3,
+
+    16: 2,
+
+    17: 2,
+
+    18: 2,
+
+    19: 2,
+
+    20: 2,
+
+    21: 1,
+
+    22: 1,
+
+    23: 1,
+
+    24: 1,
+
+    25: 1,
+
+    26: 1,
+
+    27: 1,
+
+    28: 1,
+
+    29: 1,
+
+    30: 1,
+
+    31: 1,
+
+    32: 1,
+
+    33: 1,
+
+    34: 1,
+
+    35: 1,
+
+    36: 1,
+
+    37: 1,
+
+    38: 1,
+
+    39: 1,
+
+    40: 1
+
+}
+# ==========================================================
+# Weighted Warehouse Pool
+# ==========================================================
+
+WAREHOUSE_POOL = []
+
+for warehouse_id, weight in WAREHOUSE_WEIGHTS.items():
+
+    WAREHOUSE_POOL.extend(
+
+        [warehouse_id] * weight
+
+    )
+
+# ==========================================================
+# Warehouse Capacity Utilization
+# ==========================================================
+
+TARGET_UTILIZATION = {
+
+    "minimum": 0.70,
+
+    "maximum": 0.95
+
+}
+
+# ==========================================================
+# Active Inventory Probability
+# ==========================================================
+
+ACTIVE_PRODUCT_PERCENTAGE = 98
+
+# ==========================================================
+# Warehouse Capacity Tracker
+# ==========================================================
+
+warehouse_capacity = {
+
+     row.WarehouseID: row.Capacity
+
+    for row in WAREHOUSES.itertuples(index=False)
+
+}
+
+warehouse_used = {
+
+    warehouse_id: 0
+
+    for warehouse_id in warehouse_capacity
+
+}
+
+# ==========================================================
+# Select Warehouses
+# ==========================================================
+
+def select_warehouses():
+
+    number_of_warehouses = random.choices(
+
+        population=list(
+            WAREHOUSE_DISTRIBUTION.keys()
+        ),
+
+        weights=list(
+            WAREHOUSE_DISTRIBUTION.values()
+        ),
 
         k=1
 
     )[0]
 
+    warehouses = set()
+
+    while len(warehouses) < number_of_warehouses:
+
+        warehouses.add(
+
+            random.choice(
+
+                WAREHOUSE_POOL
+
+            )
+
+        )
+
+    return list(warehouses)
+
+# ==========================================================
+# Stock Quantity
+# ==========================================================
+
+def generate_stock(
+
+    category_name
+
+):
+
+    minimum, maximum = CATEGORY_STOCK_RULES[
+
+        category_name
+
+    ]
+
+    return random.randint(
+
+        minimum,
+
+        maximum
+
+    )
+
+# ==========================================================
+# Reserved Quantity
+# ==========================================================
+
+def generate_reserved_quantity(
+
+    stock
+
+):
+
+    reserved = int(
+
+        stock *
+
+        random.uniform(
+
+            RESERVED_STOCK_PERCENTAGE["minimum"],
+
+            RESERVED_STOCK_PERCENTAGE["maximum"]
+
+        )
+
+    )
+
+    return reserved
+
+# ==========================================================
+# Reorder Level
+# ==========================================================
+
+def generate_reorder_level(
+
+    stock
+
+):
+
+    reorder = int(
+
+        stock *
+
+        random.uniform(
+
+            REORDER_PERCENTAGE["minimum"],
+
+            REORDER_PERCENTAGE["maximum"]
+
+        )
+
+    )
+
+    return max(
+
+        reorder,
+
+        1
+
+    )
+
+# ==========================================================
+# Safety Stock
+# ==========================================================
+
+def generate_safety_stock(
+
+    reorder_level
+
+):
+
+    safety = int(
+
+        reorder_level *
+
+        random.uniform(
+
+            SAFETY_STOCK_PERCENTAGE["minimum"],
+
+            SAFETY_STOCK_PERCENTAGE["maximum"]
+
+        )
+
+    )
+
+    return max(
+
+        safety,
+
+        1
+
+    )
+
 # ==========================================================
 # Restock Date
 # ==========================================================
-def random_restock_date():
 
-    start = datetime(2023,1,1)
+def generate_last_restocked():
 
-    end = datetime(2025,12,31)
+    days = (
 
-    days = (end-start).days
+        END_DATE -
 
-    return start + timedelta(
+        START_DATE
 
-        days=random.randint(0,days)
+    ).days
+
+    return (
+
+        START_DATE +
+
+        pd.Timedelta(
+
+            days=random.randint(
+
+                0,
+
+                days
+
+            )
+
+        )
+
+    ).date()
+
+# ==========================================================
+# Stock Updated Date
+# ==========================================================
+
+def generate_last_stock_updated(
+
+    last_restocked
+
+):
+
+    today = datetime.today().date()
+
+    days = (
+
+        today -
+
+        last_restocked
+
+    ).days
+
+    return (
+
+        last_restocked +
+
+        pd.Timedelta(
+
+            days=random.randint(
+
+                0,
+
+                max(
+
+                    days,
+
+                    0
+
+                )
+
+            )
+
+        )
 
     )
-    
+
+# ==========================================================
+# Capacity Allocation
+# ==========================================================
+
+def allocate_stock(
+
+    warehouse_id,
+
+    stock
+
+):
+
+    capacity = warehouse_capacity[
+
+        warehouse_id
+
+    ]
+
+    used = warehouse_used[
+
+        warehouse_id
+
+    ]
+
+    if used + stock > capacity:
+
+        return False
+
+    warehouse_used[
+
+        warehouse_id
+
+    ] += stock
+
+    return True
 # ==========================================================
 # Generate Inventory
 # ==========================================================
 
 def generate_inventory():
 
-    products, warehouses = load_data()
+    print("=" * 60)
+    print("Generating Inventory")
+    print("=" * 60)
 
-    inventory = []
+    # ------------------------------------------------------
+    # Validate Master Data
+    # ------------------------------------------------------
+
+    validate_master_data()
+
+    # ------------------------------------------------------
+    # Category Lookup
+    # ------------------------------------------------------
+
+    category_lookup = (
+
+        CATEGORIES
+
+        .set_index(
+
+            "CategoryID"
+
+        )
+
+        ["CategoryName"]
+
+        .to_dict()
+
+    )
+
+    # ------------------------------------------------------
+    # Output File
+    # ------------------------------------------------------
+
+    CSV_OUTPUT.mkdir(
+
+        parents=True,
+
+        exist_ok=True
+
+    )
+
+    output_file = (
+
+        CSV_OUTPUT /
+
+        "inventory.csv"
+
+    )
+
+    # Remove existing file
+
+    if output_file.exists():
+
+        output_file.unlink()
+
+    # ------------------------------------------------------
+    # Configuration
+    # ------------------------------------------------------
+
+    CHUNK_SIZE = 100000
 
     inventory_id = 1
 
-    print("=" * 60)
-    print("Generating Inventory...")
-    print("=" * 60)
+    total_records = 0
 
-    for _, product in products.iterrows():
+    chunk_number = 1
 
-        product_id = int(product["ProductID"])
+    rows = []
 
-        warehouse_count = weighted_choice(
-            WAREHOUSE_DISTRIBUTION
+    write_header = True
+
+    # ------------------------------------------------------
+    # Products Iterator
+    # ------------------------------------------------------
+
+    products = PRODUCTS.itertuples(
+
+        index=False
+
+    )
+
+    print()
+
+    print("Inventory generation started...")
+
+    print(f"Chunk Size : {CHUNK_SIZE:,}")
+
+    print()
+    # ------------------------------------------------------
+    # Generate Inventory
+    # ------------------------------------------------------
+
+    for product in products:
+
+        # ----------------------------------------------
+        # Category
+        # ----------------------------------------------
+
+        category_name = category_lookup.get(
+
+            product.CategoryID
+
         )
 
-        # ---------------------------------------------
-        # Select unique warehouses
-        # ---------------------------------------------
+        if category_name is None:
 
-        selected = warehouses.sample(
-            n=min(warehouse_count, len(warehouses)),
-            replace=False
-        )
+            continue
 
-        priority = 1
+        # ----------------------------------------------
+        # Warehouses
+        # ----------------------------------------------
 
-        for _, warehouse in selected.iterrows():
+        selected_warehouses = select_warehouses()
 
-            warehouse_id = int(
-                warehouse["WarehouseID"]
+        # ----------------------------------------------
+        # Generate Inventory
+        # ----------------------------------------------
+
+        for warehouse_id in selected_warehouses:
+
+            # --------------------------------------
+            # Stock
+            # --------------------------------------
+
+            stock = generate_stock(
+
+                category_name
+
             )
 
-            stock = random.randint(
-                10,
-                500
+            # --------------------------------------
+            # Capacity Check
+            # --------------------------------------
+
+            if not allocate_stock(
+
+                warehouse_id,
+
+                stock
+
+            ):
+
+                continue
+
+            # --------------------------------------
+            # Reserved
+            # --------------------------------------
+
+            reserved = generate_reserved_quantity(
+
+                stock
+
             )
 
-            reserved = random.randint(
-                0,
-                int(stock * 0.30)
+            # --------------------------------------
+            # Reorder
+            # --------------------------------------
+
+            reorder = generate_reorder_level(
+
+                stock
+
             )
 
-            available = stock - reserved
+            # --------------------------------------
+            # Safety Stock
+            # --------------------------------------
 
-            reorder_level = random.randint(
-                10,
-                100
+            safety = generate_safety_stock(
+
+                reorder
+
             )
 
-            reorder_quantity = random.randint(
-                50,
-                500
+            # --------------------------------------
+            # Dates
+            # --------------------------------------
+
+            last_restocked = generate_last_restocked()
+
+            last_updated = generate_last_stock_updated(
+
+                last_restocked
+
             )
 
-            last_restock = random_restock_date()
+            # --------------------------------------
+            # Store Row
+            # --------------------------------------
 
-            inventory.append({
+            rows.append(
 
-                "InventoryID": inventory_id,
+                {
 
-                "ProductID": product_id,
+                    "InventoryID": int(
 
-                "WarehouseID": warehouse_id,
-                "SafetyStock": int(reorder_level * 0.5),
+                        inventory_id
 
+                    ),
 
-                "StockQuantity": stock,
+                    "ProductID": int(
 
-                "ReservedQuantity": reserved,
+                        product.ProductID
 
-                
+                    ),
 
-                "ReorderLevel": reorder_level,
+                    "WarehouseID": int(
 
+                        warehouse_id
 
-                "LastRestocked": last_restock,
+                    ),
 
-                "LastStockUpdated": last_restock,
+                    "StockQuantity": int(
 
-                
+                        stock
 
-            })
+                    ),
+
+                    "ReservedQuantity": int(
+
+                        reserved
+
+                    ),
+
+                    "ReorderLevel": int(
+
+                        reorder
+
+                    ),
+
+                    "SafetyStock": int(
+
+                        safety
+
+                    ),
+
+                    "LastRestocked": last_restocked,
+
+                    "LastStockUpdated": last_updated
+
+                }
+
+            )
 
             inventory_id += 1
-            priority += 1
 
-        if product_id % 1000 == 0:
+            total_records += 1
+            # --------------------------------------
+            # Chunk Write
+            # --------------------------------------
 
-            print(
+            if len(rows) >= CHUNK_SIZE:
 
-                f"{product_id:,} products processed..."
+                chunk = pd.DataFrame(
 
-            )
+                    rows
+
+                )
+
+                chunk.to_csv(
+
+                    output_file,
+
+                    mode="w" if write_header else "a",
+
+                    header=write_header,
+
+                    index=False
+
+                )
+
+                print(
+
+                    f"Chunk {chunk_number:,} Saved | "
+
+                    f"Records : {total_records:,}"
+
+                )
+
+                chunk_number += 1
+
+                write_header = False
+
+                rows.clear()
+    # ------------------------------------------------------
+    # Write Remaining Records
+    # ------------------------------------------------------
+
+    if rows:
+
+        chunk = pd.DataFrame(
+
+            rows
+
+        )
+
+        chunk.to_csv(
+
+            output_file,
+
+            mode="w" if write_header else "a",
+
+            header=write_header,
+
+            index=False
+
+        )
+
+        print(
+
+            f"Chunk {chunk_number:,} Saved | "
+
+            f"Records : {total_records:,}"
+
+        )
+
+        rows.clear()
+
+    # ------------------------------------------------------
+    # Warehouse Utilization Summary
+    # ------------------------------------------------------
+
+    print()
 
     print("=" * 60)
 
-    return pd.DataFrame(inventory)
+    print("WAREHOUSE UTILIZATION")
+
+    print("=" * 60)
+
+    utilization_rows = []
+
+    for warehouse in WAREHOUSES.itertuples(index=False):
+
+        capacity = warehouse_capacity[
+
+            warehouse.WarehouseID
+
+        ]
+
+        used = warehouse_used[
+
+            warehouse.WarehouseID
+
+        ]
+
+        utilization = (
+
+            used / capacity * 100
+
+            if capacity > 0
+
+            else 0
+
+        )
+
+        utilization_rows.append({
+
+            "WarehouseID": warehouse.WarehouseID,
+
+            "WarehouseName": warehouse.WarehouseName,
+
+            "Capacity": capacity,
+
+            "Used": used,
+
+            "Utilization%": round(
+
+                utilization,
+
+                2
+
+            )
+
+        })
+
+    utilization_df = pd.DataFrame(
+
+        utilization_rows
+
+    )
+
+    print(
+
+        utilization_df
+
+    )
+
+    # ------------------------------------------------------
+    # Generation Summary
+    # ------------------------------------------------------
+
+    print()
+
+    print("=" * 60)
+
+    print("INVENTORY GENERATION COMPLETED")
+
+    print("=" * 60)
+
+    print(
+
+        f"Products Processed : {len(PRODUCTS):,}"
+
+    )
+
+    print(
+
+        f"Warehouses         : {len(WAREHOUSES):,}"
+
+    )
+
+    print(
+
+        f"Inventory Records  : {total_records:,}"
+
+    )
+
+    print(
+
+        f"Output File        : {output_file}"
+
+    )
+
+    print("=" * 60)
+
+    return output_file
 # ==========================================================
 # Validate Inventory
 # ==========================================================
 
-def validate_inventory(df):
+def validate_inventory():
 
-    print("\n" + "=" * 60)
+    print("=" * 60)
     print("Validating Inventory")
     print("=" * 60)
 
+    inventory_file = (
+
+        CSV_OUTPUT /
+
+        "inventory.csv"
+
+    )
+
+    if not inventory_file.exists():
+
+        raise FileNotFoundError(
+
+            "inventory.csv not found."
+
+        )
+
+    inventory = pd.read_csv(
+
+        inventory_file,
+
+        parse_dates=[
+
+            "LastRestocked",
+
+            "LastStockUpdated"
+
+        ]
+
+    )
+
+    # ------------------------------------------------------
+    # Empty Dataset
     # ------------------------------------------------------
 
-    assert df["InventoryID"].is_unique, \
-        "Duplicate InventoryID found."
+    if inventory.empty:
+
+        raise ValueError(
+
+            "Inventory dataset is empty."
+
+        )
+
+    print("✓ Dataset Validation Passed")
 
     # ------------------------------------------------------
+    # Duplicate InventoryID
+    # ------------------------------------------------------
 
-    duplicate = df.duplicated(
-        subset=["ProductID", "WarehouseID"]
+    if inventory["InventoryID"].duplicated().any():
+
+        raise ValueError(
+
+            "Duplicate InventoryID found."
+
+        )
+
+    print("✓ InventoryID Validation Passed")
+
+    # ------------------------------------------------------
+    # Duplicate Product + Warehouse
+    # ------------------------------------------------------
+
+    duplicate_pairs = inventory.duplicated(
+
+        subset=[
+
+            "ProductID",
+
+            "WarehouseID"
+
+        ]
+
     ).sum()
 
-    if duplicate > 0:
+    if duplicate_pairs > 0:
 
         raise ValueError(
-            "Duplicate Product-Warehouse combination found."
+
+            f"{duplicate_pairs:,} duplicate Product/Warehouse combinations found."
+
         )
 
+    print("✓ Product/Warehouse Validation Passed")
+
+    # ------------------------------------------------------
+    # Stock Validation
     # ------------------------------------------------------
 
-    if df.isnull().sum().sum() > 0:
+    if (
+
+        inventory["StockQuantity"] < 0
+
+    ).any():
 
         raise ValueError(
-            "Null values detected."
+
+            "Negative StockQuantity found."
+
         )
 
-    # ------------------------------------------------------
-
-
+    print("✓ Stock Validation Passed")
 
     # ------------------------------------------------------
+    # Reserved Quantity
+    # ------------------------------------------------------
 
-    invalid = df[
-        df["ReservedQuantity"]
-        >
-        df["StockQuantity"]
+    invalid_reserved = inventory[
+
+        inventory["ReservedQuantity"] >
+
+        inventory["StockQuantity"]
+
     ]
 
-    if len(invalid) > 0:
+    if len(invalid_reserved) > 0:
 
         raise ValueError(
-            "Reserved Quantity exceeds Stock Quantity."
+
+            "ReservedQuantity exceeds StockQuantity."
+
         )
 
-    print("✔ InventoryID Unique")
-    print("✔ Product-Warehouse Unique")
-    print("✔ No Null Values")
-    print("✔ Stock Validation Passed")
-    print("=" * 60)
-    
-# ==========================================================
-# Export Inventory
-# ==========================================================
+    print("✓ Reserved Quantity Validation Passed")
 
-def export_inventory(df):
+    # ------------------------------------------------------
+    # Reorder Level
+    # ------------------------------------------------------
 
-    output = CSV_OUTPUT / "inventory.csv"
+    invalid_reorder = inventory[
 
-    output.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+        inventory["ReorderLevel"] >
 
-    df.to_csv(
-        output,
-        index=False,
-        encoding="utf-8"
-    )
+        inventory["StockQuantity"]
 
-    print("\n" + "=" * 60)
-    print("Inventory Exported Successfully")
-    print("=" * 60)
-    print(f"Rows   : {len(df):,}")
-    print(f"Output : {output}")
-    print("=" * 60)
-    
-# ==========================================================
-# Summary
-# ==========================================================
+    ]
 
-def print_summary(df):
+    if len(invalid_reorder) > 0:
 
-    print("\n" + "=" * 60)
-    print("Inventory Summary")
-    print("=" * 60)
+        raise ValueError(
 
-    print(f"Inventory Records : {len(df):,}")
+            "ReorderLevel exceeds StockQuantity."
 
-    print()
-
-    print("Average Stock")
-
-    print(
-        round(
-            df["StockQuantity"].mean(),
-            2
         )
-    )
 
-    print()
+    print("✓ Reorder Level Validation Passed")
 
-    print("Average Reserved")
+    # ------------------------------------------------------
+    # Safety Stock
+    # ------------------------------------------------------
 
-    print(
-        round(
-            df["ReservedQuantity"].mean(),
-            2
+    invalid_safety = inventory[
+
+        inventory["SafetyStock"] >
+
+        inventory["ReorderLevel"]
+
+    ]
+
+    if len(invalid_safety) > 0:
+
+        raise ValueError(
+
+            "SafetyStock exceeds ReorderLevel."
+
         )
+
+    print("✓ Safety Stock Validation Passed")
+
+    # ------------------------------------------------------
+    # Date Validation
+    # ------------------------------------------------------
+
+    today = pd.Timestamp.today().normalize()
+
+    if (
+
+        inventory["LastRestocked"] >
+
+        today
+
+    ).any():
+
+        raise ValueError(
+
+            "Future LastRestocked found."
+
+        )
+
+    if (
+
+        inventory["LastStockUpdated"] >
+
+        today
+
+    ).any():
+
+        raise ValueError(
+
+            "Future LastStockUpdated found."
+
+        )
+
+    if (
+
+        inventory["LastStockUpdated"] <
+
+        inventory["LastRestocked"]
+
+    ).any():
+
+        raise ValueError(
+
+            "LastStockUpdated earlier than LastRestocked."
+
+        )
+
+    print("✓ Date Validation Passed")
+
+    # ------------------------------------------------------
+    # Warehouse Capacity Validation
+    # ------------------------------------------------------
+
+    warehouse_summary = (
+
+        inventory
+
+        .groupby(
+
+            "WarehouseID"
+
+        )["StockQuantity"]
+
+        .sum()
+
     )
 
-    print()
+    for warehouse in WAREHOUSES.itertuples(index=False):
 
-    print("Average Available")
+        total_stock = warehouse_summary.get(
 
-    print("Average Stock")
-    print(round(df["StockQuantity"].mean(), 2))
+            warehouse.WarehouseID,
 
-    print()
+            0
 
-    print("Average Reserved")
-    print(round(df["ReservedQuantity"].mean(), 2))
+        )
 
-    print()
+        if total_stock > warehouse.Capacity:
 
-    print("Average Safety Stock")
-    print(round(df["SafetyStock"].mean(), 2))
+            raise ValueError(
 
-    print()
+                f"Warehouse {warehouse.WarehouseID} exceeds capacity."
 
-    print("Warehouses Per Product")
+            )
 
-    warehouse_counts = (
-        df.groupby("ProductID")
-          .size()
-          .value_counts()
-          .sort_index()
-    )
+    print("✓ Warehouse Capacity Validation Passed")
 
-    print(warehouse_counts)
+    # ------------------------------------------------------
+    # Summary
+    # ------------------------------------------------------
 
     print("=" * 60)
-    
+
+    print("ALL INVENTORY VALIDATIONS PASSED")
+
+    print("=" * 60)
+
+    print(f"Inventory Records : {len(inventory):,}")
+
+    print(f"Products          : {inventory['ProductID'].nunique():,}")
+
+    print(f"Warehouses        : {inventory['WarehouseID'].nunique():,}")
+
+    print(f"Total Stock       : {inventory['StockQuantity'].sum():,}")
+
+    print(f"Average Stock     : {inventory['StockQuantity'].mean():.2f}")
+
+    print("=" * 60)
+
+    return True
 # ==========================================================
 # Main
 # ==========================================================
 
 def main():
 
-    print("\n")
-    print("=" * 70)
-    print("ShopSphere Analytics")
-    print("Inventory Generator")
-    print("=" * 70)
+    print()
 
-    inventory = generate_inventory()
+    print("=" * 60)
+    print("SHOPSPHERE INVENTORY GENERATOR")
+    print("=" * 60)
 
-    validate_inventory(inventory)
+    start_time = datetime.now()
 
-    export_inventory(inventory)
+    # ------------------------------------------------------
+    # Generate Inventory
+    # ------------------------------------------------------
 
-    print_summary(inventory)
+    output_file = generate_inventory()
 
-    print("\nCompleted Successfully.")
+    # ------------------------------------------------------
+    # Validate Inventory
+    # ------------------------------------------------------
+
+    validate_inventory()
+
+    # ------------------------------------------------------
+    # Execution Time
+    # ------------------------------------------------------
+
+    end_time = datetime.now()
+
+    duration = end_time - start_time
+
+    print()
+
+    print("=" * 60)
+    print("GENERATION COMPLETED SUCCESSFULLY")
+    print("=" * 60)
+
+    print(f"Output File   : {output_file}")
+
+    print(f"Started At    : {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
+
+    print(f"Completed At  : {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
+
+    print(f"Duration      : {duration}")
+
+    print("=" * 60)
 
 
 # ==========================================================
-# Entry Point
+# Run
 # ==========================================================
 
 if __name__ == "__main__":
 
     main()
+    
