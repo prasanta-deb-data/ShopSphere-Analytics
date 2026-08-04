@@ -159,24 +159,23 @@ def generate_inventory():
                 "ProductID": product_id,
 
                 "WarehouseID": warehouse_id,
+                "SafetyStock": int(reorder_level * 0.5),
 
-                "WarehousePriority": priority,
 
                 "StockQuantity": stock,
 
                 "ReservedQuantity": reserved,
 
-                "AvailableQuantity": available,
+                
 
                 "ReorderLevel": reorder_level,
 
-                "ReorderQuantity": reorder_quantity,
 
-                "LastRestockedDate": last_restock,
+                "LastRestocked": last_restock,
 
-                "LastUpdated": last_restock,
+                "LastStockUpdated": last_restock,
 
-                "IsActive": 1
+                
 
             })
 
@@ -231,21 +230,7 @@ def validate_inventory(df):
 
     # ------------------------------------------------------
 
-    invalid = df[
-        df["AvailableQuantity"]
-        !=
-        (
-            df["StockQuantity"]
-            -
-            df["ReservedQuantity"]
-        )
-    ]
 
-    if len(invalid) > 0:
-
-        raise ValueError(
-            "Available Quantity calculation is incorrect."
-        )
 
     # ------------------------------------------------------
 
@@ -331,12 +316,18 @@ def print_summary(df):
 
     print("Average Available")
 
-    print(
-        round(
-            df["AvailableQuantity"].mean(),
-            2
-        )
-    )
+    print("Average Stock")
+    print(round(df["StockQuantity"].mean(), 2))
+
+    print()
+
+    print("Average Reserved")
+    print(round(df["ReservedQuantity"].mean(), 2))
+
+    print()
+
+    print("Average Safety Stock")
+    print(round(df["SafetyStock"].mean(), 2))
 
     print()
 

@@ -180,3 +180,15 @@ CSV_ENCODING = "utf-8"
 CSV_OUTPUT.mkdir(parents=True, exist_ok=True)
 
 LOG_FOLDER.mkdir(parents=True, exist_ok=True)
+
+# ==========================================================
+# SQL Server Configuration
+# ==========================================================
+
+SQL_SERVER = r"localhost\SQLEXPRESS"
+
+DATABASE_NAME = "ShopSphereAnalytics"
+
+ODBC_DRIVER = "ODBC Driver 17 for SQL Server"
+
+TRUSTED_CONNECTION = "yes"

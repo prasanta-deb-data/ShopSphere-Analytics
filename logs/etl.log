@@ -1,0 +1,55 @@
+2026-08-04 20:27:08 | INFO     | Logger Started
+2026-08-04 20:27:08 | INFO     | SUCCESS : Database Connected
+2026-08-04 20:27:08 | WARNING  | Duplicate Email Found
+2026-08-04 20:27:08 | ERROR    | Customer Import Failed
+2026-08-04 20:46:19 | INFO     | Reading Schema : States
+2026-08-04 20:46:19 | INFO     | SUCCESS : States schema loaded
+2026-08-04 20:49:23 | INFO     | Reading schema : States
+2026-08-04 20:49:23 | INFO     | SUCCESS : States schema loaded
+2026-08-04 21:11:25 | INFO     | ======================================================================
+2026-08-04 21:11:25 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 21:11:25 | INFO     | ======================================================================
+2026-08-04 21:11:25 | INFO     | ============================================================
+2026-08-04 21:11:25 | INFO     | Loading States
+2026-08-04 21:11:25 | INFO     | ============================================================
+2026-08-04 21:11:25 | INFO     | Validating States
+2026-08-04 21:11:25 | ERROR    | states.csv not found.
+2026-08-04 21:11:25 | ERROR    | C:\Portfolio\ShopSphere-Analytics\output\csv\states.csv
+2026-08-04 21:11:25 | INFO     | Database Connection Closed
+2026-08-04 21:19:38 | INFO     | ======================================================================
+2026-08-04 21:19:38 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 21:19:38 | INFO     | ======================================================================
+2026-08-04 21:19:38 | INFO     | ============================================================
+2026-08-04 21:19:38 | INFO     | Loading States
+2026-08-04 21:19:38 | INFO     | ============================================================
+2026-08-04 21:19:38 | INFO     | Validating States
+2026-08-04 21:19:38 | INFO     | SUCCESS : states.csv found.
+2026-08-04 21:19:38 | INFO     | Reading schema : States
+2026-08-04 21:19:39 | INFO     | SUCCESS : States schema loaded
+2026-08-04 21:19:39 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 21:19:39 | INFO     | Reading schema : States
+2026-08-04 21:19:39 | INFO     | SUCCESS : States schema loaded
+2026-08-04 21:19:39 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 21:19:39 | INFO     | Reading schema : States
+2026-08-04 21:19:39 | INFO     | SUCCESS : States schema loaded
+2026-08-04 21:19:39 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 21:19:39 | INFO     | Reading schema : States
+2026-08-04 21:19:39 | INFO     | SUCCESS : States schema loaded
+2026-08-04 21:19:39 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 21:19:39 | INFO     | SUCCESS : States validation completed
+2026-08-04 21:19:39 | INFO     | Reading schema : States
+2026-08-04 21:19:39 | INFO     | SUCCESS : States schema loaded
+2026-08-04 21:19:39 | INFO     | Clearing States
+2026-08-04 21:19:39 | INFO     | SUCCESS : States cleared
+2026-08-04 21:19:39 | INFO     | Inserting States
+2026-08-04 21:19:39 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-04 21:19:39 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-04 21:19:39 | INFO     | ============================================================
+2026-08-04 21:19:39 | INFO     | Loading Cities
+2026-08-04 21:19:39 | INFO     | ============================================================
+2026-08-04 21:19:39 | INFO     | Validating Cities
+2026-08-04 21:19:39 | INFO     | SUCCESS : cities.csv found.
+2026-08-04 21:19:39 | INFO     | Reading schema : Cities
+2026-08-04 21:19:39 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 21:19:39 | ERROR    | Missing Columns : ['Pincode']
+2026-08-04 21:19:39 | INFO     | Database Connection Closed

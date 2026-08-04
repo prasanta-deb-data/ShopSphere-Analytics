@@ -440,6 +440,8 @@ def generate_products():
             ),
 
             "ProductName": product_name,
+            "ProductDescription":
+               f"High quality {subcategory_name} from {brand_name}",
 
             "CategoryID": category_id,
 
@@ -455,25 +457,22 @@ def generate_products():
 
             "MRP": mrp,
 
-            "GSTPercent": GST[
+           
 
-                category_name
-
-            ],
-
-            "WeightKg": weight,
+            "Weight": weight,
 
             "Color": random.choice(
 
                 COLORS
 
             ),
+            "Size": random.choice(SIZES),
 
-            "WarrantyMonths": warranty,
+          
 
-            "AverageRating": rating,
+            
 
-            "ReviewCount": review_count,
+            
 
             "LaunchDate": launch_date,
 
@@ -541,29 +540,13 @@ def validate_products(df):
 
     # ------------------------------------------------------
 
-    invalid = df[
-
-        (df["AverageRating"] < 0)
-
-        |
-
-        (df["AverageRating"] > 5)
-
-    ]
-
-    if len(invalid) > 0:
-
-        raise ValueError(
-
-            "Invalid Rating Found."
-
-        )
+   
 
     print("✔ ProductID Unique")
     print("✔ SKU Unique")
     print("✔ No Null Values")
     print("✔ Pricing Validation Passed")
-    print("✔ Rating Validation Passed")
+ 
 
     print("=" * 60)
     
@@ -648,19 +631,7 @@ def print_summary(df):
 
     print("Average Rating")
 
-    print(
-
-        round(
-
-            df["AverageRating"]
-
-            .mean(),
-
-            2
-
-        )
-
-    )
+   
 
     print("=" * 60)
     

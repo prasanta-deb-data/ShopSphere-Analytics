@@ -159,13 +159,13 @@ def generate_coupons():
 
             "CouponCode": generate_coupon_code(),
 
-            "Description": "Marketing Promotion",
+            "CouponDescription": "Marketing Promotion",
 
             "DiscountType": discount_type,
 
             "DiscountValue": discount_value,
 
-            "MinimumOrderAmount": random.choice(
+            "MinimumOrderValue": random.choice(
                 [499, 999, 1499, 1999, 2499, 4999]
             ),
 

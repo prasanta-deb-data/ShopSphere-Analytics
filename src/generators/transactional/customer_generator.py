@@ -393,7 +393,7 @@ def generate_customers():
 
             "Phone": phone,
 
-            "RegistrationDate": registration_date,
+            "RegistrationDate": registration_date.date(),
 
             "RegistrationSource": registration_source,
 

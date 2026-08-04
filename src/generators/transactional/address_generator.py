@@ -255,18 +255,16 @@ def generate_addresses():
                 "CityID":
 
                     int(city["CityID"]),
+                    
+                "Country": "India",
 
-                "PostalCode":
-
-                   random.randint(100001, 999999),
+                
 
                 "IsDefault":
 
                     1 if i == default_index else 0,
 
-                "IsActive":
-
-                    1,
+               
 
                 "CreatedAt":
 
