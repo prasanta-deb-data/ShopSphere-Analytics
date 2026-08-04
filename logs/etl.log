@@ -53,3 +53,1823 @@
 2026-08-04 21:19:39 | INFO     | SUCCESS : Cities schema loaded
 2026-08-04 21:19:39 | ERROR    | Missing Columns : ['Pincode']
 2026-08-04 21:19:39 | INFO     | Database Connection Closed
+2026-08-04 22:54:01 | INFO     | ======================================================================
+2026-08-04 22:54:01 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 22:54:01 | INFO     | ======================================================================
+2026-08-04 22:54:01 | INFO     | ============================================================
+2026-08-04 22:54:01 | INFO     | Loading States
+2026-08-04 22:54:01 | INFO     | ============================================================
+2026-08-04 22:54:01 | INFO     | Validating States
+2026-08-04 22:54:01 | INFO     | SUCCESS : states.csv found.
+2026-08-04 22:54:01 | INFO     | Reading schema : States
+2026-08-04 22:54:01 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:54:01 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 22:54:01 | INFO     | Reading schema : States
+2026-08-04 22:54:01 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:54:01 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 22:54:01 | INFO     | Reading schema : States
+2026-08-04 22:54:01 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:54:01 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 22:54:01 | INFO     | Reading schema : States
+2026-08-04 22:54:01 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:54:01 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 22:54:01 | INFO     | SUCCESS : States validation completed
+2026-08-04 22:54:01 | INFO     | Reading schema : States
+2026-08-04 22:54:01 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:54:01 | INFO     | Clearing States
+2026-08-04 22:54:01 | INFO     | SUCCESS : States cleared
+2026-08-04 22:54:01 | INFO     | Inserting States
+2026-08-04 22:54:01 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-04 22:54:01 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-04 22:54:01 | INFO     | ============================================================
+2026-08-04 22:54:01 | INFO     | Loading Cities
+2026-08-04 22:54:01 | INFO     | ============================================================
+2026-08-04 22:54:01 | INFO     | Validating Cities
+2026-08-04 22:54:01 | INFO     | SUCCESS : cities.csv found.
+2026-08-04 22:54:01 | INFO     | Reading schema : Cities
+2026-08-04 22:54:01 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 22:54:01 | ERROR    | Missing Columns : ['Pincode']
+2026-08-04 22:54:01 | INFO     | Database Connection Closed
+2026-08-04 22:55:31 | INFO     | ======================================================================
+2026-08-04 22:55:31 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 22:55:31 | INFO     | ======================================================================
+2026-08-04 22:55:31 | INFO     | ============================================================
+2026-08-04 22:55:31 | INFO     | Loading States
+2026-08-04 22:55:31 | INFO     | ============================================================
+2026-08-04 22:55:31 | INFO     | Validating States
+2026-08-04 22:55:31 | INFO     | SUCCESS : states.csv found.
+2026-08-04 22:55:31 | INFO     | Reading schema : States
+2026-08-04 22:55:32 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:55:32 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 22:55:32 | INFO     | Reading schema : States
+2026-08-04 22:55:32 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:55:32 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 22:55:32 | INFO     | Reading schema : States
+2026-08-04 22:55:32 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:55:32 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 22:55:32 | INFO     | Reading schema : States
+2026-08-04 22:55:32 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:55:32 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 22:55:32 | INFO     | SUCCESS : States validation completed
+2026-08-04 22:55:32 | INFO     | Reading schema : States
+2026-08-04 22:55:32 | INFO     | SUCCESS : States schema loaded
+2026-08-04 22:55:32 | INFO     | Clearing States
+2026-08-04 22:55:32 | INFO     | SUCCESS : States cleared
+2026-08-04 22:55:32 | INFO     | Inserting States
+2026-08-04 22:55:32 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-04 22:55:32 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-04 22:55:32 | INFO     | ============================================================
+2026-08-04 22:55:32 | INFO     | Loading Cities
+2026-08-04 22:55:32 | INFO     | ============================================================
+2026-08-04 22:55:32 | INFO     | Validating Cities
+2026-08-04 22:55:32 | INFO     | SUCCESS : cities.csv found.
+2026-08-04 22:55:32 | INFO     | Reading schema : Cities
+2026-08-04 22:55:32 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 22:55:32 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 22:55:32 | INFO     | Reading schema : Cities
+2026-08-04 22:55:32 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 22:55:32 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 22:55:32 | INFO     | Reading schema : Cities
+2026-08-04 22:55:32 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 22:55:32 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 22:55:32 | INFO     | Reading schema : Cities
+2026-08-04 22:55:32 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 22:55:32 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 22:55:32 | INFO     | SUCCESS : Cities validation completed
+2026-08-04 22:55:32 | INFO     | Reading schema : Cities
+2026-08-04 22:55:32 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 22:55:32 | INFO     | Clearing Cities
+2026-08-04 22:55:32 | INFO     | SUCCESS : Cities cleared
+2026-08-04 22:55:32 | INFO     | Inserting Cities
+2026-08-04 22:55:32 | ERROR    | ('23000', "[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544) (SQLExecute); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert explicit value for identity column in table 'Cities' when IDENTITY_INSERT is set to OFF. (544)")
+2026-08-04 22:55:32 | INFO     | Database Connection Closed
+2026-08-04 23:04:27 | INFO     | ======================================================================
+2026-08-04 23:04:27 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 23:04:27 | INFO     | ======================================================================
+2026-08-04 23:04:27 | INFO     | ============================================================
+2026-08-04 23:04:27 | INFO     | Loading States
+2026-08-04 23:04:27 | INFO     | ============================================================
+2026-08-04 23:04:27 | INFO     | Validating States
+2026-08-04 23:04:27 | INFO     | SUCCESS : states.csv found.
+2026-08-04 23:04:27 | INFO     | Reading schema : States
+2026-08-04 23:04:27 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:04:27 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:04:27 | INFO     | Reading schema : States
+2026-08-04 23:04:27 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:04:27 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:04:27 | INFO     | Reading schema : States
+2026-08-04 23:04:27 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:04:27 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:04:27 | INFO     | Reading schema : States
+2026-08-04 23:04:27 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:04:27 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:04:27 | INFO     | SUCCESS : States validation completed
+2026-08-04 23:04:27 | INFO     | Reading schema : States
+2026-08-04 23:04:27 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:04:27 | INFO     | Clearing States
+2026-08-04 23:04:27 | INFO     | SUCCESS : States cleared
+2026-08-04 23:04:27 | INFO     | Inserting States
+2026-08-04 23:04:27 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-04 23:04:27 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-04 23:04:27 | INFO     | ============================================================
+2026-08-04 23:04:27 | INFO     | Loading Cities
+2026-08-04 23:04:27 | INFO     | ============================================================
+2026-08-04 23:04:27 | INFO     | Validating Cities
+2026-08-04 23:04:27 | INFO     | SUCCESS : cities.csv found.
+2026-08-04 23:04:27 | INFO     | Reading schema : Cities
+2026-08-04 23:04:27 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:04:27 | ERROR    | Unexpected Columns : ['CityID']
+2026-08-04 23:04:27 | INFO     | Database Connection Closed
+2026-08-04 23:13:48 | INFO     | ======================================================================
+2026-08-04 23:13:48 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 23:13:48 | INFO     | ======================================================================
+2026-08-04 23:13:48 | INFO     | ============================================================
+2026-08-04 23:13:48 | INFO     | Loading States
+2026-08-04 23:13:48 | INFO     | ============================================================
+2026-08-04 23:13:48 | INFO     | Validating States
+2026-08-04 23:13:48 | INFO     | SUCCESS : states.csv found.
+2026-08-04 23:13:48 | INFO     | Reading schema : States
+2026-08-04 23:13:48 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:13:48 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:13:48 | INFO     | Reading schema : States
+2026-08-04 23:13:48 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:13:48 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:13:48 | INFO     | Reading schema : States
+2026-08-04 23:13:48 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:13:48 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:13:48 | INFO     | Reading schema : States
+2026-08-04 23:13:48 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:13:48 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:13:48 | INFO     | SUCCESS : States validation completed
+2026-08-04 23:13:48 | INFO     | Reading schema : States
+2026-08-04 23:13:48 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:13:48 | INFO     | Clearing States
+2026-08-04 23:13:48 | INFO     | SUCCESS : States cleared
+2026-08-04 23:13:48 | ERROR    | insert_data() missing 1 required positional argument: 'schema'
+2026-08-04 23:13:48 | INFO     | Database Connection Closed
+2026-08-04 23:16:38 | INFO     | ======================================================================
+2026-08-04 23:16:38 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 23:16:38 | INFO     | ======================================================================
+2026-08-04 23:16:38 | INFO     | ============================================================
+2026-08-04 23:16:38 | INFO     | Loading States
+2026-08-04 23:16:38 | INFO     | ============================================================
+2026-08-04 23:16:38 | INFO     | Validating States
+2026-08-04 23:16:38 | INFO     | SUCCESS : states.csv found.
+2026-08-04 23:16:38 | INFO     | Reading schema : States
+2026-08-04 23:16:38 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:16:38 | INFO     | Reading schema : States
+2026-08-04 23:16:38 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:16:38 | INFO     | Reading schema : States
+2026-08-04 23:16:38 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:16:38 | INFO     | Reading schema : States
+2026-08-04 23:16:38 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:16:38 | INFO     | SUCCESS : States validation completed
+2026-08-04 23:16:38 | INFO     | Reading schema : States
+2026-08-04 23:16:38 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:16:38 | INFO     | Clearing States
+2026-08-04 23:16:38 | INFO     | SUCCESS : States cleared
+2026-08-04 23:16:38 | INFO     | Inserting States
+2026-08-04 23:16:38 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-04 23:16:38 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-04 23:16:38 | INFO     | ============================================================
+2026-08-04 23:16:38 | INFO     | Loading Cities
+2026-08-04 23:16:38 | INFO     | ============================================================
+2026-08-04 23:16:38 | INFO     | Validating Cities
+2026-08-04 23:16:38 | INFO     | SUCCESS : cities.csv found.
+2026-08-04 23:16:38 | INFO     | Reading schema : Cities
+2026-08-04 23:16:38 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:16:38 | INFO     | Reading schema : Cities
+2026-08-04 23:16:38 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:16:38 | INFO     | Reading schema : Cities
+2026-08-04 23:16:38 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:16:38 | INFO     | Reading schema : Cities
+2026-08-04 23:16:38 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:16:38 | INFO     | SUCCESS : Cities validation completed
+2026-08-04 23:16:38 | INFO     | Reading schema : Cities
+2026-08-04 23:16:38 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:16:38 | INFO     | Clearing Cities
+2026-08-04 23:16:38 | INFO     | SUCCESS : Cities cleared
+2026-08-04 23:16:38 | INFO     | Inserting Cities
+2026-08-04 23:16:38 | INFO     | SUCCESS : 47 rows inserted into Cities
+2026-08-04 23:16:38 | INFO     | SUCCESS : Cities Loaded Successfully
+2026-08-04 23:16:38 | INFO     | ============================================================
+2026-08-04 23:16:38 | INFO     | Loading Categories
+2026-08-04 23:16:38 | INFO     | ============================================================
+2026-08-04 23:16:38 | INFO     | Validating Categories
+2026-08-04 23:16:38 | INFO     | SUCCESS : categories.csv found.
+2026-08-04 23:16:38 | INFO     | Reading schema : Categories
+2026-08-04 23:16:38 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:16:38 | INFO     | Reading schema : Categories
+2026-08-04 23:16:38 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:16:38 | INFO     | Reading schema : Categories
+2026-08-04 23:16:38 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:16:38 | INFO     | Reading schema : Categories
+2026-08-04 23:16:38 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:16:38 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:16:38 | INFO     | SUCCESS : Categories validation completed
+2026-08-04 23:16:38 | INFO     | Reading schema : Categories
+2026-08-04 23:16:38 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:16:38 | INFO     | Clearing Categories
+2026-08-04 23:16:38 | INFO     | SUCCESS : Categories cleared
+2026-08-04 23:16:38 | INFO     | Inserting Categories
+2026-08-04 23:16:38 | INFO     | SUCCESS : 15 rows inserted into Categories
+2026-08-04 23:16:38 | INFO     | SUCCESS : Categories Loaded Successfully
+2026-08-04 23:16:38 | INFO     | ============================================================
+2026-08-04 23:16:38 | INFO     | Loading SubCategories
+2026-08-04 23:16:38 | INFO     | ============================================================
+2026-08-04 23:16:38 | INFO     | Validating SubCategories
+2026-08-04 23:16:38 | INFO     | SUCCESS : subcategories.csv found.
+2026-08-04 23:16:38 | INFO     | Reading schema : SubCategories
+2026-08-04 23:16:39 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:16:39 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:16:39 | INFO     | Reading schema : SubCategories
+2026-08-04 23:16:39 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:16:39 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:16:39 | INFO     | Reading schema : SubCategories
+2026-08-04 23:16:39 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:16:39 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:16:39 | INFO     | Reading schema : SubCategories
+2026-08-04 23:16:39 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:16:39 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:16:39 | INFO     | SUCCESS : SubCategories validation completed
+2026-08-04 23:16:39 | INFO     | Reading schema : SubCategories
+2026-08-04 23:16:39 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:16:39 | INFO     | Clearing SubCategories
+2026-08-04 23:16:39 | INFO     | SUCCESS : SubCategories cleared
+2026-08-04 23:16:39 | INFO     | Inserting SubCategories
+2026-08-04 23:16:39 | INFO     | SUCCESS : 85 rows inserted into SubCategories
+2026-08-04 23:16:39 | INFO     | SUCCESS : SubCategories Loaded Successfully
+2026-08-04 23:16:39 | INFO     | ============================================================
+2026-08-04 23:16:39 | INFO     | Loading Brands
+2026-08-04 23:16:39 | INFO     | ============================================================
+2026-08-04 23:16:39 | INFO     | Validating Brands
+2026-08-04 23:16:39 | INFO     | SUCCESS : brands.csv found.
+2026-08-04 23:16:39 | INFO     | Reading schema : Brands
+2026-08-04 23:16:39 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:16:39 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:16:39 | INFO     | Reading schema : Brands
+2026-08-04 23:16:39 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:16:39 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:16:39 | INFO     | Reading schema : Brands
+2026-08-04 23:16:39 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:16:39 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:16:39 | INFO     | Reading schema : Brands
+2026-08-04 23:16:39 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:16:39 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:16:39 | INFO     | SUCCESS : Brands validation completed
+2026-08-04 23:16:39 | INFO     | Reading schema : Brands
+2026-08-04 23:16:39 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:16:39 | INFO     | Clearing Brands
+2026-08-04 23:16:39 | INFO     | SUCCESS : Brands cleared
+2026-08-04 23:16:39 | INFO     | Inserting Brands
+2026-08-04 23:16:39 | ERROR    | ('22003', '[22003] [Microsoft][ODBC Driver 17 for SQL Server]Numeric value out of range (0) (SQLExecute)')
+2026-08-04 23:16:39 | INFO     | Database Connection Closed
+2026-08-04 23:21:19 | INFO     | ======================================================================
+2026-08-04 23:21:19 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 23:21:19 | INFO     | ======================================================================
+2026-08-04 23:21:19 | INFO     | ============================================================
+2026-08-04 23:21:19 | INFO     | Loading States
+2026-08-04 23:21:19 | INFO     | ============================================================
+2026-08-04 23:21:19 | INFO     | Validating States
+2026-08-04 23:21:19 | INFO     | SUCCESS : states.csv found.
+2026-08-04 23:21:19 | INFO     | Reading schema : States
+2026-08-04 23:21:19 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:21:19 | INFO     | Reading schema : States
+2026-08-04 23:21:19 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:21:19 | INFO     | Reading schema : States
+2026-08-04 23:21:19 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:21:19 | INFO     | Reading schema : States
+2026-08-04 23:21:19 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:21:19 | INFO     | SUCCESS : States validation completed
+2026-08-04 23:21:19 | INFO     | Reading schema : States
+2026-08-04 23:21:19 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:21:19 | INFO     | Clearing States
+2026-08-04 23:21:19 | INFO     | SUCCESS : States cleared
+2026-08-04 23:21:19 | INFO     | Inserting States
+2026-08-04 23:21:19 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-04 23:21:19 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-04 23:21:19 | INFO     | SUCCESS : States committed.
+2026-08-04 23:21:19 | INFO     | ============================================================
+2026-08-04 23:21:19 | INFO     | Loading Cities
+2026-08-04 23:21:19 | INFO     | ============================================================
+2026-08-04 23:21:19 | INFO     | Validating Cities
+2026-08-04 23:21:19 | INFO     | SUCCESS : cities.csv found.
+2026-08-04 23:21:19 | INFO     | Reading schema : Cities
+2026-08-04 23:21:19 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:21:19 | INFO     | Reading schema : Cities
+2026-08-04 23:21:19 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:21:19 | INFO     | Reading schema : Cities
+2026-08-04 23:21:19 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:21:19 | INFO     | Reading schema : Cities
+2026-08-04 23:21:19 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:21:19 | INFO     | SUCCESS : Cities validation completed
+2026-08-04 23:21:19 | INFO     | Reading schema : Cities
+2026-08-04 23:21:19 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:21:19 | INFO     | Clearing Cities
+2026-08-04 23:21:19 | INFO     | SUCCESS : Cities cleared
+2026-08-04 23:21:19 | INFO     | Inserting Cities
+2026-08-04 23:21:19 | INFO     | SUCCESS : 47 rows inserted into Cities
+2026-08-04 23:21:19 | INFO     | SUCCESS : Cities Loaded Successfully
+2026-08-04 23:21:19 | INFO     | SUCCESS : Cities committed.
+2026-08-04 23:21:19 | INFO     | ============================================================
+2026-08-04 23:21:19 | INFO     | Loading Categories
+2026-08-04 23:21:19 | INFO     | ============================================================
+2026-08-04 23:21:19 | INFO     | Validating Categories
+2026-08-04 23:21:19 | INFO     | SUCCESS : categories.csv found.
+2026-08-04 23:21:19 | INFO     | Reading schema : Categories
+2026-08-04 23:21:19 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:21:19 | INFO     | Reading schema : Categories
+2026-08-04 23:21:19 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:21:19 | INFO     | Reading schema : Categories
+2026-08-04 23:21:19 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:21:19 | INFO     | Reading schema : Categories
+2026-08-04 23:21:19 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:21:19 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:21:19 | INFO     | SUCCESS : Categories validation completed
+2026-08-04 23:21:19 | INFO     | Reading schema : Categories
+2026-08-04 23:21:19 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:21:19 | INFO     | Clearing Categories
+2026-08-04 23:21:19 | INFO     | SUCCESS : Categories cleared
+2026-08-04 23:21:19 | INFO     | Inserting Categories
+2026-08-04 23:21:19 | INFO     | SUCCESS : 15 rows inserted into Categories
+2026-08-04 23:21:19 | INFO     | SUCCESS : Categories Loaded Successfully
+2026-08-04 23:21:19 | INFO     | SUCCESS : Categories committed.
+2026-08-04 23:21:19 | INFO     | ============================================================
+2026-08-04 23:21:19 | INFO     | Loading SubCategories
+2026-08-04 23:21:19 | INFO     | ============================================================
+2026-08-04 23:21:19 | INFO     | Validating SubCategories
+2026-08-04 23:21:19 | INFO     | SUCCESS : subcategories.csv found.
+2026-08-04 23:21:19 | INFO     | Reading schema : SubCategories
+2026-08-04 23:21:20 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:21:20 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:21:20 | INFO     | Reading schema : SubCategories
+2026-08-04 23:21:20 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:21:20 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:21:20 | INFO     | Reading schema : SubCategories
+2026-08-04 23:21:20 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:21:20 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:21:20 | INFO     | Reading schema : SubCategories
+2026-08-04 23:21:20 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:21:20 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:21:20 | INFO     | SUCCESS : SubCategories validation completed
+2026-08-04 23:21:20 | INFO     | Reading schema : SubCategories
+2026-08-04 23:21:20 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:21:20 | INFO     | Clearing SubCategories
+2026-08-04 23:21:20 | INFO     | SUCCESS : SubCategories cleared
+2026-08-04 23:21:20 | INFO     | Inserting SubCategories
+2026-08-04 23:21:20 | INFO     | SUCCESS : 85 rows inserted into SubCategories
+2026-08-04 23:21:20 | INFO     | SUCCESS : SubCategories Loaded Successfully
+2026-08-04 23:21:20 | INFO     | SUCCESS : SubCategories committed.
+2026-08-04 23:21:20 | INFO     | ============================================================
+2026-08-04 23:21:20 | INFO     | Loading Brands
+2026-08-04 23:21:20 | INFO     | ============================================================
+2026-08-04 23:21:20 | INFO     | Validating Brands
+2026-08-04 23:21:20 | INFO     | SUCCESS : brands.csv found.
+2026-08-04 23:21:20 | INFO     | Reading schema : Brands
+2026-08-04 23:21:20 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:21:20 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:21:20 | INFO     | Reading schema : Brands
+2026-08-04 23:21:20 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:21:20 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:21:20 | INFO     | Reading schema : Brands
+2026-08-04 23:21:20 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:21:20 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:21:20 | INFO     | Reading schema : Brands
+2026-08-04 23:21:20 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:21:20 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:21:20 | INFO     | SUCCESS : Brands validation completed
+2026-08-04 23:21:20 | INFO     | Reading schema : Brands
+2026-08-04 23:21:20 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:21:20 | INFO     | Clearing Brands
+2026-08-04 23:21:20 | INFO     | SUCCESS : Brands cleared
+2026-08-04 23:21:20 | INFO     | Inserting Brands
+2026-08-04 23:21:20 | ERROR    | Brands failed.
+2026-08-04 23:21:20 | ERROR    | ('22003', '[22003] [Microsoft][ODBC Driver 17 for SQL Server]Numeric value out of range (0) (SQLExecute)')
+2026-08-04 23:21:20 | INFO     | Database Connection Closed
+2026-08-04 23:36:05 | INFO     | ======================================================================
+2026-08-04 23:36:05 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 23:36:05 | INFO     | ======================================================================
+2026-08-04 23:36:05 | INFO     | ============================================================
+2026-08-04 23:36:05 | INFO     | Loading States
+2026-08-04 23:36:05 | INFO     | ============================================================
+2026-08-04 23:36:05 | INFO     | Validating States
+2026-08-04 23:36:05 | INFO     | SUCCESS : states.csv found.
+2026-08-04 23:36:05 | INFO     | Reading schema : States
+2026-08-04 23:36:05 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:36:05 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:36:05 | INFO     | Reading schema : States
+2026-08-04 23:36:05 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:36:05 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:36:05 | INFO     | Reading schema : States
+2026-08-04 23:36:05 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:36:05 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:36:05 | INFO     | Reading schema : States
+2026-08-04 23:36:05 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:36:05 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:36:05 | INFO     | SUCCESS : States validation completed
+2026-08-04 23:36:05 | INFO     | Reading schema : States
+2026-08-04 23:36:05 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:36:05 | INFO     | Clearing States
+2026-08-04 23:36:05 | ERROR    | States failed.
+2026-08-04 23:36:05 | ERROR    | ('23000', '[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The DELETE statement conflicted with the REFERENCE constraint "FK_Cities_States". The conflict occurred in database "ShopSphereAnalytics", table "dbo.Cities", column \'StateID\'. (547) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)')
+2026-08-04 23:36:05 | INFO     | Database Connection Closed
+2026-08-04 23:44:29 | INFO     | ======================================================================
+2026-08-04 23:44:29 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 23:44:29 | INFO     | ======================================================================
+2026-08-04 23:44:29 | INFO     | ============================================================
+2026-08-04 23:44:29 | INFO     | Clearing Reference Tables
+2026-08-04 23:44:29 | INFO     | ============================================================
+2026-08-04 23:44:29 | INFO     | Clearing Calendar
+2026-08-04 23:44:29 | INFO     | SUCCESS : Calendar cleared
+2026-08-04 23:44:29 | INFO     | Clearing FestivalCalendar
+2026-08-04 23:44:29 | INFO     | SUCCESS : FestivalCalendar cleared
+2026-08-04 23:44:29 | INFO     | Clearing SupportIssues
+2026-08-04 23:44:29 | INFO     | SUCCESS : SupportIssues cleared
+2026-08-04 23:44:29 | INFO     | Clearing ReturnReasons
+2026-08-04 23:44:29 | INFO     | SUCCESS : ReturnReasons cleared
+2026-08-04 23:44:29 | INFO     | Clearing Couriers
+2026-08-04 23:44:29 | INFO     | SUCCESS : Couriers cleared
+2026-08-04 23:44:29 | INFO     | Clearing PaymentMethods
+2026-08-04 23:44:29 | INFO     | SUCCESS : PaymentMethods cleared
+2026-08-04 23:44:29 | INFO     | Clearing Warehouses
+2026-08-04 23:44:29 | INFO     | SUCCESS : Warehouses cleared
+2026-08-04 23:44:29 | INFO     | Clearing Suppliers
+2026-08-04 23:44:29 | INFO     | SUCCESS : Suppliers cleared
+2026-08-04 23:44:29 | INFO     | Clearing Brands
+2026-08-04 23:44:29 | INFO     | SUCCESS : Brands cleared
+2026-08-04 23:44:29 | INFO     | Clearing SubCategories
+2026-08-04 23:44:29 | INFO     | SUCCESS : SubCategories cleared
+2026-08-04 23:44:29 | INFO     | Clearing Categories
+2026-08-04 23:44:29 | INFO     | SUCCESS : Categories cleared
+2026-08-04 23:44:29 | INFO     | Clearing Cities
+2026-08-04 23:44:29 | INFO     | SUCCESS : Cities cleared
+2026-08-04 23:44:29 | INFO     | Clearing States
+2026-08-04 23:44:29 | INFO     | SUCCESS : States cleared
+2026-08-04 23:44:29 | INFO     | SUCCESS : All Reference Tables Cleared
+2026-08-04 23:44:29 | INFO     | ============================================================
+2026-08-04 23:44:29 | INFO     | Loading States
+2026-08-04 23:44:29 | INFO     | ============================================================
+2026-08-04 23:44:29 | INFO     | Validating States
+2026-08-04 23:44:29 | INFO     | SUCCESS : states.csv found.
+2026-08-04 23:44:29 | INFO     | Reading schema : States
+2026-08-04 23:44:30 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:44:30 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:44:30 | INFO     | Reading schema : States
+2026-08-04 23:44:30 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:44:30 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:44:30 | INFO     | Reading schema : States
+2026-08-04 23:44:30 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:44:30 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:44:30 | INFO     | Reading schema : States
+2026-08-04 23:44:30 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:44:30 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:44:30 | INFO     | SUCCESS : States validation completed
+2026-08-04 23:44:30 | INFO     | Reading schema : States
+2026-08-04 23:44:30 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:44:30 | INFO     | Inserting States
+2026-08-04 23:44:30 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-04 23:44:30 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-04 23:44:30 | INFO     | SUCCESS : States committed.
+2026-08-04 23:44:30 | INFO     | ============================================================
+2026-08-04 23:44:30 | INFO     | Loading Cities
+2026-08-04 23:44:30 | INFO     | ============================================================
+2026-08-04 23:44:30 | INFO     | Validating Cities
+2026-08-04 23:44:30 | INFO     | SUCCESS : cities.csv found.
+2026-08-04 23:44:30 | INFO     | Reading schema : Cities
+2026-08-04 23:44:31 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:44:31 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:44:31 | INFO     | Reading schema : Cities
+2026-08-04 23:44:31 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:44:31 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:44:31 | INFO     | Reading schema : Cities
+2026-08-04 23:44:31 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:44:31 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:44:31 | INFO     | Reading schema : Cities
+2026-08-04 23:44:31 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:44:31 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:44:31 | INFO     | SUCCESS : Cities validation completed
+2026-08-04 23:44:31 | INFO     | Reading schema : Cities
+2026-08-04 23:44:31 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:44:31 | INFO     | Inserting Cities
+2026-08-04 23:44:31 | INFO     | SUCCESS : 47 rows inserted into Cities
+2026-08-04 23:44:31 | INFO     | SUCCESS : Cities Loaded Successfully
+2026-08-04 23:44:31 | INFO     | SUCCESS : Cities committed.
+2026-08-04 23:44:31 | INFO     | ============================================================
+2026-08-04 23:44:31 | INFO     | Loading Categories
+2026-08-04 23:44:31 | INFO     | ============================================================
+2026-08-04 23:44:31 | INFO     | Validating Categories
+2026-08-04 23:44:31 | INFO     | SUCCESS : categories.csv found.
+2026-08-04 23:44:31 | INFO     | Reading schema : Categories
+2026-08-04 23:44:32 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:44:32 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:44:32 | INFO     | Reading schema : Categories
+2026-08-04 23:44:32 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:44:32 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:44:32 | INFO     | Reading schema : Categories
+2026-08-04 23:44:32 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:44:32 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:44:32 | INFO     | Reading schema : Categories
+2026-08-04 23:44:32 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:44:32 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:44:32 | INFO     | SUCCESS : Categories validation completed
+2026-08-04 23:44:32 | INFO     | Reading schema : Categories
+2026-08-04 23:44:32 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:44:32 | INFO     | Inserting Categories
+2026-08-04 23:44:32 | INFO     | SUCCESS : 15 rows inserted into Categories
+2026-08-04 23:44:32 | INFO     | SUCCESS : Categories Loaded Successfully
+2026-08-04 23:44:32 | INFO     | SUCCESS : Categories committed.
+2026-08-04 23:44:32 | INFO     | ============================================================
+2026-08-04 23:44:32 | INFO     | Loading SubCategories
+2026-08-04 23:44:32 | INFO     | ============================================================
+2026-08-04 23:44:32 | INFO     | Validating SubCategories
+2026-08-04 23:44:32 | INFO     | SUCCESS : subcategories.csv found.
+2026-08-04 23:44:32 | INFO     | Reading schema : SubCategories
+2026-08-04 23:44:33 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:44:33 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:44:33 | INFO     | Reading schema : SubCategories
+2026-08-04 23:44:33 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:44:33 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:44:33 | INFO     | Reading schema : SubCategories
+2026-08-04 23:44:33 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:44:33 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:44:33 | INFO     | Reading schema : SubCategories
+2026-08-04 23:44:33 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:44:33 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:44:33 | INFO     | SUCCESS : SubCategories validation completed
+2026-08-04 23:44:33 | INFO     | Reading schema : SubCategories
+2026-08-04 23:44:33 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:44:33 | INFO     | Inserting SubCategories
+2026-08-04 23:44:33 | INFO     | SUCCESS : 85 rows inserted into SubCategories
+2026-08-04 23:44:33 | INFO     | SUCCESS : SubCategories Loaded Successfully
+2026-08-04 23:44:33 | INFO     | SUCCESS : SubCategories committed.
+2026-08-04 23:44:33 | INFO     | ============================================================
+2026-08-04 23:44:33 | INFO     | Loading Brands
+2026-08-04 23:44:33 | INFO     | ============================================================
+2026-08-04 23:44:33 | INFO     | Validating Brands
+2026-08-04 23:44:33 | INFO     | SUCCESS : brands.csv found.
+2026-08-04 23:44:33 | INFO     | Reading schema : Brands
+2026-08-04 23:44:33 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:44:33 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:44:33 | INFO     | Reading schema : Brands
+2026-08-04 23:44:33 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:44:33 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:44:33 | INFO     | Reading schema : Brands
+2026-08-04 23:44:33 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:44:33 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:44:33 | INFO     | Reading schema : Brands
+2026-08-04 23:44:33 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:44:33 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:44:33 | INFO     | SUCCESS : Brands validation completed
+2026-08-04 23:44:33 | INFO     | Reading schema : Brands
+2026-08-04 23:44:33 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:44:33 | INFO     | Inserting Brands
+2026-08-04 23:44:33 | ERROR    | Brands failed.
+2026-08-04 23:44:33 | ERROR    | ('42000', '[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The incoming tabular data stream (TDS) remote procedure call (RPC) protocol stream is incorrect. Parameter 7 (""): The supplied value is not a valid instance of data type float. Check the source data for invalid values. An example of an invalid value is data of numeric type with scale greater than precision. (8023) (SQLExecDirectW)')
+2026-08-04 23:44:33 | INFO     | Database Connection Closed
+2026-08-04 23:47:39 | INFO     | ======================================================================
+2026-08-04 23:47:39 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-04 23:47:39 | INFO     | ======================================================================
+2026-08-04 23:47:39 | INFO     | ============================================================
+2026-08-04 23:47:39 | INFO     | Clearing Reference Tables
+2026-08-04 23:47:39 | INFO     | ============================================================
+2026-08-04 23:47:39 | INFO     | Clearing Calendar
+2026-08-04 23:47:39 | INFO     | SUCCESS : Calendar cleared
+2026-08-04 23:47:39 | INFO     | Clearing FestivalCalendar
+2026-08-04 23:47:39 | INFO     | SUCCESS : FestivalCalendar cleared
+2026-08-04 23:47:39 | INFO     | Clearing SupportIssues
+2026-08-04 23:47:39 | INFO     | SUCCESS : SupportIssues cleared
+2026-08-04 23:47:39 | INFO     | Clearing ReturnReasons
+2026-08-04 23:47:39 | INFO     | SUCCESS : ReturnReasons cleared
+2026-08-04 23:47:39 | INFO     | Clearing Couriers
+2026-08-04 23:47:39 | INFO     | SUCCESS : Couriers cleared
+2026-08-04 23:47:39 | INFO     | Clearing PaymentMethods
+2026-08-04 23:47:39 | INFO     | SUCCESS : PaymentMethods cleared
+2026-08-04 23:47:39 | INFO     | Clearing Warehouses
+2026-08-04 23:47:39 | INFO     | SUCCESS : Warehouses cleared
+2026-08-04 23:47:39 | INFO     | Clearing Suppliers
+2026-08-04 23:47:39 | INFO     | SUCCESS : Suppliers cleared
+2026-08-04 23:47:39 | INFO     | Clearing Brands
+2026-08-04 23:47:39 | INFO     | SUCCESS : Brands cleared
+2026-08-04 23:47:39 | INFO     | Clearing SubCategories
+2026-08-04 23:47:39 | INFO     | SUCCESS : SubCategories cleared
+2026-08-04 23:47:39 | INFO     | Clearing Categories
+2026-08-04 23:47:39 | INFO     | SUCCESS : Categories cleared
+2026-08-04 23:47:39 | INFO     | Clearing Cities
+2026-08-04 23:47:39 | INFO     | SUCCESS : Cities cleared
+2026-08-04 23:47:39 | INFO     | Clearing States
+2026-08-04 23:47:39 | INFO     | SUCCESS : States cleared
+2026-08-04 23:47:39 | INFO     | SUCCESS : All Reference Tables Cleared
+2026-08-04 23:47:39 | INFO     | ============================================================
+2026-08-04 23:47:39 | INFO     | Loading States
+2026-08-04 23:47:39 | INFO     | ============================================================
+2026-08-04 23:47:39 | INFO     | Validating States
+2026-08-04 23:47:39 | INFO     | SUCCESS : states.csv found.
+2026-08-04 23:47:39 | INFO     | Reading schema : States
+2026-08-04 23:47:39 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:47:39 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:47:39 | INFO     | Reading schema : States
+2026-08-04 23:47:39 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:47:39 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:47:39 | INFO     | Reading schema : States
+2026-08-04 23:47:40 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : States
+2026-08-04 23:47:40 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:47:40 | INFO     | SUCCESS : States validation completed
+2026-08-04 23:47:40 | INFO     | Reading schema : States
+2026-08-04 23:47:40 | INFO     | SUCCESS : States schema loaded
+2026-08-04 23:47:40 | INFO     | Inserting States
+2026-08-04 23:47:40 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-04 23:47:40 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-04 23:47:40 | INFO     | SUCCESS : States committed.
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Loading Cities
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Validating Cities
+2026-08-04 23:47:40 | INFO     | SUCCESS : cities.csv found.
+2026-08-04 23:47:40 | INFO     | Reading schema : Cities
+2026-08-04 23:47:40 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : Cities
+2026-08-04 23:47:40 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : Cities
+2026-08-04 23:47:40 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : Cities
+2026-08-04 23:47:40 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:47:40 | INFO     | SUCCESS : Cities validation completed
+2026-08-04 23:47:40 | INFO     | Reading schema : Cities
+2026-08-04 23:47:40 | INFO     | SUCCESS : Cities schema loaded
+2026-08-04 23:47:40 | INFO     | Inserting Cities
+2026-08-04 23:47:40 | INFO     | SUCCESS : 47 rows inserted into Cities
+2026-08-04 23:47:40 | INFO     | SUCCESS : Cities Loaded Successfully
+2026-08-04 23:47:40 | INFO     | SUCCESS : Cities committed.
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Loading Categories
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Validating Categories
+2026-08-04 23:47:40 | INFO     | SUCCESS : categories.csv found.
+2026-08-04 23:47:40 | INFO     | Reading schema : Categories
+2026-08-04 23:47:40 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : Categories
+2026-08-04 23:47:40 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : Categories
+2026-08-04 23:47:40 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : Categories
+2026-08-04 23:47:40 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:47:40 | INFO     | SUCCESS : Categories validation completed
+2026-08-04 23:47:40 | INFO     | Reading schema : Categories
+2026-08-04 23:47:40 | INFO     | SUCCESS : Categories schema loaded
+2026-08-04 23:47:40 | INFO     | Inserting Categories
+2026-08-04 23:47:40 | INFO     | SUCCESS : 15 rows inserted into Categories
+2026-08-04 23:47:40 | INFO     | SUCCESS : Categories Loaded Successfully
+2026-08-04 23:47:40 | INFO     | SUCCESS : Categories committed.
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Loading SubCategories
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Validating SubCategories
+2026-08-04 23:47:40 | INFO     | SUCCESS : subcategories.csv found.
+2026-08-04 23:47:40 | INFO     | Reading schema : SubCategories
+2026-08-04 23:47:40 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : SubCategories
+2026-08-04 23:47:40 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : SubCategories
+2026-08-04 23:47:40 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : SubCategories
+2026-08-04 23:47:40 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:47:40 | INFO     | SUCCESS : SubCategories validation completed
+2026-08-04 23:47:40 | INFO     | Reading schema : SubCategories
+2026-08-04 23:47:40 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-04 23:47:40 | INFO     | Inserting SubCategories
+2026-08-04 23:47:40 | INFO     | SUCCESS : 85 rows inserted into SubCategories
+2026-08-04 23:47:40 | INFO     | SUCCESS : SubCategories Loaded Successfully
+2026-08-04 23:47:40 | INFO     | SUCCESS : SubCategories committed.
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Loading Brands
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Validating Brands
+2026-08-04 23:47:40 | INFO     | SUCCESS : brands.csv found.
+2026-08-04 23:47:40 | INFO     | Reading schema : Brands
+2026-08-04 23:47:40 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : Brands
+2026-08-04 23:47:40 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : Brands
+2026-08-04 23:47:40 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:47:40 | INFO     | Reading schema : Brands
+2026-08-04 23:47:40 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:47:40 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:47:40 | INFO     | SUCCESS : Brands validation completed
+2026-08-04 23:47:40 | INFO     | Reading schema : Brands
+2026-08-04 23:47:40 | INFO     | SUCCESS : Brands schema loaded
+2026-08-04 23:47:40 | INFO     | Inserting Brands
+2026-08-04 23:47:40 | INFO     | SUCCESS : 268 rows inserted into Brands
+2026-08-04 23:47:40 | INFO     | SUCCESS : Brands Loaded Successfully
+2026-08-04 23:47:40 | INFO     | SUCCESS : Brands committed.
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Loading Suppliers
+2026-08-04 23:47:40 | INFO     | ============================================================
+2026-08-04 23:47:40 | INFO     | Validating Suppliers
+2026-08-04 23:47:40 | INFO     | SUCCESS : suppliers.csv found.
+2026-08-04 23:47:40 | INFO     | Reading schema : Suppliers
+2026-08-04 23:47:41 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:47:41 | INFO     | Reading schema : Suppliers
+2026-08-04 23:47:41 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:47:41 | INFO     | Reading schema : Suppliers
+2026-08-04 23:47:41 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:47:41 | INFO     | Reading schema : Suppliers
+2026-08-04 23:47:41 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:47:41 | INFO     | SUCCESS : Suppliers validation completed
+2026-08-04 23:47:41 | INFO     | Reading schema : Suppliers
+2026-08-04 23:47:41 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-04 23:47:41 | INFO     | Inserting Suppliers
+2026-08-04 23:47:41 | INFO     | SUCCESS : 250 rows inserted into Suppliers
+2026-08-04 23:47:41 | INFO     | SUCCESS : Suppliers Loaded Successfully
+2026-08-04 23:47:41 | INFO     | SUCCESS : Suppliers committed.
+2026-08-04 23:47:41 | INFO     | ============================================================
+2026-08-04 23:47:41 | INFO     | Loading Warehouses
+2026-08-04 23:47:41 | INFO     | ============================================================
+2026-08-04 23:47:41 | INFO     | Validating Warehouses
+2026-08-04 23:47:41 | INFO     | SUCCESS : warehouses.csv found.
+2026-08-04 23:47:41 | INFO     | Reading schema : Warehouses
+2026-08-04 23:47:41 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:47:41 | INFO     | Reading schema : Warehouses
+2026-08-04 23:47:41 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:47:41 | INFO     | Reading schema : Warehouses
+2026-08-04 23:47:41 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:47:41 | INFO     | Reading schema : Warehouses
+2026-08-04 23:47:41 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:47:41 | INFO     | SUCCESS : Warehouses validation completed
+2026-08-04 23:47:41 | INFO     | Reading schema : Warehouses
+2026-08-04 23:47:41 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-04 23:47:41 | INFO     | Inserting Warehouses
+2026-08-04 23:47:41 | INFO     | SUCCESS : 40 rows inserted into Warehouses
+2026-08-04 23:47:41 | INFO     | SUCCESS : Warehouses Loaded Successfully
+2026-08-04 23:47:41 | INFO     | SUCCESS : Warehouses committed.
+2026-08-04 23:47:41 | INFO     | ============================================================
+2026-08-04 23:47:41 | INFO     | Loading PaymentMethods
+2026-08-04 23:47:41 | INFO     | ============================================================
+2026-08-04 23:47:41 | INFO     | Validating PaymentMethods
+2026-08-04 23:47:41 | INFO     | SUCCESS : payment_methods.csv found.
+2026-08-04 23:47:41 | INFO     | Reading schema : PaymentMethods
+2026-08-04 23:47:41 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Column Validation Passed
+2026-08-04 23:47:41 | INFO     | Reading schema : PaymentMethods
+2026-08-04 23:47:41 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-04 23:47:41 | INFO     | Reading schema : PaymentMethods
+2026-08-04 23:47:41 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Null Validation Passed
+2026-08-04 23:47:41 | INFO     | Reading schema : PaymentMethods
+2026-08-04 23:47:41 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-04 23:47:41 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-04 23:47:41 | INFO     | SUCCESS : PaymentMethods validation completed
+2026-08-04 23:47:41 | INFO     | Reading schema : PaymentMethods
+2026-08-04 23:47:41 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-04 23:47:41 | INFO     | Inserting PaymentMethods
+2026-08-04 23:47:41 | INFO     | SUCCESS : 8 rows inserted into PaymentMethods
+2026-08-04 23:47:41 | INFO     | SUCCESS : PaymentMethods Loaded Successfully
+2026-08-04 23:47:41 | INFO     | SUCCESS : PaymentMethods committed.
+2026-08-04 23:47:41 | INFO     | ============================================================
+2026-08-04 23:47:41 | INFO     | Loading Couriers
+2026-08-04 23:47:41 | INFO     | ============================================================
+2026-08-04 23:47:41 | INFO     | Validating Couriers
+2026-08-04 23:47:41 | INFO     | SUCCESS : couriers.csv found.
+2026-08-04 23:47:41 | INFO     | Reading schema : Couriers
+2026-08-04 23:47:41 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-04 23:47:41 | ERROR    | Missing Columns : ['ContactNumber', 'Website']
+2026-08-04 23:47:41 | ERROR    | Couriers failed.
+2026-08-04 23:47:41 | ERROR    | Missing Columns : ['ContactNumber', 'Website']
+2026-08-04 23:47:41 | INFO     | Database Connection Closed
+2026-08-05 00:37:33 | INFO     | ======================================================================
+2026-08-05 00:37:33 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-05 00:37:33 | INFO     | ======================================================================
+2026-08-05 00:37:33 | INFO     | ============================================================
+2026-08-05 00:37:33 | INFO     | Clearing Reference Tables
+2026-08-05 00:37:33 | INFO     | ============================================================
+2026-08-05 00:37:33 | INFO     | Clearing Calendar
+2026-08-05 00:37:33 | INFO     | SUCCESS : Calendar cleared
+2026-08-05 00:37:33 | INFO     | Clearing FestivalCalendar
+2026-08-05 00:37:33 | INFO     | SUCCESS : FestivalCalendar cleared
+2026-08-05 00:37:33 | INFO     | Clearing SupportIssues
+2026-08-05 00:37:33 | INFO     | SUCCESS : SupportIssues cleared
+2026-08-05 00:37:33 | INFO     | Clearing ReturnReasons
+2026-08-05 00:37:33 | INFO     | SUCCESS : ReturnReasons cleared
+2026-08-05 00:37:33 | INFO     | Clearing Couriers
+2026-08-05 00:37:33 | INFO     | SUCCESS : Couriers cleared
+2026-08-05 00:37:33 | INFO     | Clearing PaymentMethods
+2026-08-05 00:37:33 | INFO     | SUCCESS : PaymentMethods cleared
+2026-08-05 00:37:33 | INFO     | Clearing Warehouses
+2026-08-05 00:37:33 | INFO     | SUCCESS : Warehouses cleared
+2026-08-05 00:37:33 | INFO     | Clearing Suppliers
+2026-08-05 00:37:33 | INFO     | SUCCESS : Suppliers cleared
+2026-08-05 00:37:33 | INFO     | Clearing Brands
+2026-08-05 00:37:33 | INFO     | SUCCESS : Brands cleared
+2026-08-05 00:37:33 | INFO     | Clearing SubCategories
+2026-08-05 00:37:33 | INFO     | SUCCESS : SubCategories cleared
+2026-08-05 00:37:33 | INFO     | Clearing Categories
+2026-08-05 00:37:33 | INFO     | SUCCESS : Categories cleared
+2026-08-05 00:37:33 | INFO     | Clearing Cities
+2026-08-05 00:37:33 | INFO     | SUCCESS : Cities cleared
+2026-08-05 00:37:33 | INFO     | Clearing States
+2026-08-05 00:37:33 | INFO     | SUCCESS : States cleared
+2026-08-05 00:37:33 | INFO     | SUCCESS : All Reference Tables Cleared
+2026-08-05 00:37:33 | INFO     | ============================================================
+2026-08-05 00:37:33 | INFO     | Loading States
+2026-08-05 00:37:33 | INFO     | ============================================================
+2026-08-05 00:37:33 | INFO     | Validating States
+2026-08-05 00:37:33 | INFO     | SUCCESS : states.csv found.
+2026-08-05 00:37:33 | INFO     | Reading schema : States
+2026-08-05 00:37:34 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:34 | INFO     | Reading schema : States
+2026-08-05 00:37:34 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:34 | INFO     | Reading schema : States
+2026-08-05 00:37:34 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:34 | INFO     | Reading schema : States
+2026-08-05 00:37:34 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:34 | INFO     | SUCCESS : States validation completed
+2026-08-05 00:37:34 | INFO     | Reading schema : States
+2026-08-05 00:37:34 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:37:34 | INFO     | Inserting States
+2026-08-05 00:37:34 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-05 00:37:34 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-05 00:37:34 | INFO     | SUCCESS : States committed.
+2026-08-05 00:37:34 | INFO     | ============================================================
+2026-08-05 00:37:34 | INFO     | Loading Cities
+2026-08-05 00:37:34 | INFO     | ============================================================
+2026-08-05 00:37:34 | INFO     | Validating Cities
+2026-08-05 00:37:34 | INFO     | SUCCESS : cities.csv found.
+2026-08-05 00:37:34 | INFO     | Reading schema : Cities
+2026-08-05 00:37:34 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:34 | INFO     | Reading schema : Cities
+2026-08-05 00:37:34 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:34 | INFO     | Reading schema : Cities
+2026-08-05 00:37:34 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:34 | INFO     | Reading schema : Cities
+2026-08-05 00:37:34 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:34 | INFO     | SUCCESS : Cities validation completed
+2026-08-05 00:37:34 | INFO     | Reading schema : Cities
+2026-08-05 00:37:34 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:37:34 | INFO     | Inserting Cities
+2026-08-05 00:37:34 | INFO     | SUCCESS : 47 rows inserted into Cities
+2026-08-05 00:37:34 | INFO     | SUCCESS : Cities Loaded Successfully
+2026-08-05 00:37:34 | INFO     | SUCCESS : Cities committed.
+2026-08-05 00:37:34 | INFO     | ============================================================
+2026-08-05 00:37:34 | INFO     | Loading Categories
+2026-08-05 00:37:34 | INFO     | ============================================================
+2026-08-05 00:37:34 | INFO     | Validating Categories
+2026-08-05 00:37:34 | INFO     | SUCCESS : categories.csv found.
+2026-08-05 00:37:34 | INFO     | Reading schema : Categories
+2026-08-05 00:37:34 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:34 | INFO     | Reading schema : Categories
+2026-08-05 00:37:34 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:34 | INFO     | Reading schema : Categories
+2026-08-05 00:37:34 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:34 | INFO     | Reading schema : Categories
+2026-08-05 00:37:34 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:37:34 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:34 | INFO     | SUCCESS : Categories validation completed
+2026-08-05 00:37:34 | INFO     | Reading schema : Categories
+2026-08-05 00:37:34 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:37:34 | INFO     | Inserting Categories
+2026-08-05 00:37:34 | INFO     | SUCCESS : 15 rows inserted into Categories
+2026-08-05 00:37:34 | INFO     | SUCCESS : Categories Loaded Successfully
+2026-08-05 00:37:34 | INFO     | SUCCESS : Categories committed.
+2026-08-05 00:37:34 | INFO     | ============================================================
+2026-08-05 00:37:34 | INFO     | Loading SubCategories
+2026-08-05 00:37:34 | INFO     | ============================================================
+2026-08-05 00:37:34 | INFO     | Validating SubCategories
+2026-08-05 00:37:34 | INFO     | SUCCESS : subcategories.csv found.
+2026-08-05 00:37:34 | INFO     | Reading schema : SubCategories
+2026-08-05 00:37:35 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : SubCategories
+2026-08-05 00:37:35 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : SubCategories
+2026-08-05 00:37:35 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : SubCategories
+2026-08-05 00:37:35 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:35 | INFO     | SUCCESS : SubCategories validation completed
+2026-08-05 00:37:35 | INFO     | Reading schema : SubCategories
+2026-08-05 00:37:35 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:37:35 | INFO     | Inserting SubCategories
+2026-08-05 00:37:35 | INFO     | SUCCESS : 85 rows inserted into SubCategories
+2026-08-05 00:37:35 | INFO     | SUCCESS : SubCategories Loaded Successfully
+2026-08-05 00:37:35 | INFO     | SUCCESS : SubCategories committed.
+2026-08-05 00:37:35 | INFO     | ============================================================
+2026-08-05 00:37:35 | INFO     | Loading Brands
+2026-08-05 00:37:35 | INFO     | ============================================================
+2026-08-05 00:37:35 | INFO     | Validating Brands
+2026-08-05 00:37:35 | INFO     | SUCCESS : brands.csv found.
+2026-08-05 00:37:35 | INFO     | Reading schema : Brands
+2026-08-05 00:37:35 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : Brands
+2026-08-05 00:37:35 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : Brands
+2026-08-05 00:37:35 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : Brands
+2026-08-05 00:37:35 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:35 | INFO     | SUCCESS : Brands validation completed
+2026-08-05 00:37:35 | INFO     | Reading schema : Brands
+2026-08-05 00:37:35 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:37:35 | INFO     | Inserting Brands
+2026-08-05 00:37:35 | INFO     | SUCCESS : 268 rows inserted into Brands
+2026-08-05 00:37:35 | INFO     | SUCCESS : Brands Loaded Successfully
+2026-08-05 00:37:35 | INFO     | SUCCESS : Brands committed.
+2026-08-05 00:37:35 | INFO     | ============================================================
+2026-08-05 00:37:35 | INFO     | Loading Suppliers
+2026-08-05 00:37:35 | INFO     | ============================================================
+2026-08-05 00:37:35 | INFO     | Validating Suppliers
+2026-08-05 00:37:35 | INFO     | SUCCESS : suppliers.csv found.
+2026-08-05 00:37:35 | INFO     | Reading schema : Suppliers
+2026-08-05 00:37:35 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : Suppliers
+2026-08-05 00:37:35 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : Suppliers
+2026-08-05 00:37:35 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : Suppliers
+2026-08-05 00:37:35 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:35 | INFO     | SUCCESS : Suppliers validation completed
+2026-08-05 00:37:35 | INFO     | Reading schema : Suppliers
+2026-08-05 00:37:35 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:37:35 | INFO     | Inserting Suppliers
+2026-08-05 00:37:35 | INFO     | SUCCESS : 250 rows inserted into Suppliers
+2026-08-05 00:37:35 | INFO     | SUCCESS : Suppliers Loaded Successfully
+2026-08-05 00:37:35 | INFO     | SUCCESS : Suppliers committed.
+2026-08-05 00:37:35 | INFO     | ============================================================
+2026-08-05 00:37:35 | INFO     | Loading Warehouses
+2026-08-05 00:37:35 | INFO     | ============================================================
+2026-08-05 00:37:35 | INFO     | Validating Warehouses
+2026-08-05 00:37:35 | INFO     | SUCCESS : warehouses.csv found.
+2026-08-05 00:37:35 | INFO     | Reading schema : Warehouses
+2026-08-05 00:37:35 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : Warehouses
+2026-08-05 00:37:35 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : Warehouses
+2026-08-05 00:37:35 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:35 | INFO     | Reading schema : Warehouses
+2026-08-05 00:37:35 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:37:35 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:35 | INFO     | SUCCESS : Warehouses validation completed
+2026-08-05 00:37:35 | INFO     | Reading schema : Warehouses
+2026-08-05 00:37:35 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:37:35 | INFO     | Inserting Warehouses
+2026-08-05 00:37:36 | INFO     | SUCCESS : 40 rows inserted into Warehouses
+2026-08-05 00:37:36 | INFO     | SUCCESS : Warehouses Loaded Successfully
+2026-08-05 00:37:36 | INFO     | SUCCESS : Warehouses committed.
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Loading PaymentMethods
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Validating PaymentMethods
+2026-08-05 00:37:36 | INFO     | SUCCESS : payment_methods.csv found.
+2026-08-05 00:37:36 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:37:36 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:37:36 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:37:36 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:37:36 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:36 | INFO     | SUCCESS : PaymentMethods validation completed
+2026-08-05 00:37:36 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:37:36 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:37:36 | INFO     | Inserting PaymentMethods
+2026-08-05 00:37:36 | INFO     | SUCCESS : 8 rows inserted into PaymentMethods
+2026-08-05 00:37:36 | INFO     | SUCCESS : PaymentMethods Loaded Successfully
+2026-08-05 00:37:36 | INFO     | SUCCESS : PaymentMethods committed.
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Loading Couriers
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Validating Couriers
+2026-08-05 00:37:36 | INFO     | SUCCESS : couriers.csv found.
+2026-08-05 00:37:36 | INFO     | Reading schema : Couriers
+2026-08-05 00:37:36 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : Couriers
+2026-08-05 00:37:36 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : Couriers
+2026-08-05 00:37:36 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : Couriers
+2026-08-05 00:37:36 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:36 | INFO     | SUCCESS : Couriers validation completed
+2026-08-05 00:37:36 | INFO     | Reading schema : Couriers
+2026-08-05 00:37:36 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:37:36 | INFO     | Inserting Couriers
+2026-08-05 00:37:36 | INFO     | SUCCESS : 15 rows inserted into Couriers
+2026-08-05 00:37:36 | INFO     | SUCCESS : Couriers Loaded Successfully
+2026-08-05 00:37:36 | INFO     | SUCCESS : Couriers committed.
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Loading ReturnReasons
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Validating ReturnReasons
+2026-08-05 00:37:36 | INFO     | SUCCESS : return_reasons.csv found.
+2026-08-05 00:37:36 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:37:36 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:37:36 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:37:36 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:37:36 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:36 | INFO     | SUCCESS : ReturnReasons validation completed
+2026-08-05 00:37:36 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:37:36 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:37:36 | INFO     | Inserting ReturnReasons
+2026-08-05 00:37:36 | INFO     | SUCCESS : 12 rows inserted into ReturnReasons
+2026-08-05 00:37:36 | INFO     | SUCCESS : ReturnReasons Loaded Successfully
+2026-08-05 00:37:36 | INFO     | SUCCESS : ReturnReasons committed.
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Loading SupportIssues
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Validating SupportIssues
+2026-08-05 00:37:36 | INFO     | SUCCESS : support_issues.csv found.
+2026-08-05 00:37:36 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:37:36 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:37:36 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:37:36 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:37:36 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:37:36 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:37:36 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:37:36 | INFO     | SUCCESS : SupportIssues validation completed
+2026-08-05 00:37:36 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:37:36 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:37:36 | INFO     | Inserting SupportIssues
+2026-08-05 00:37:36 | INFO     | SUCCESS : 15 rows inserted into SupportIssues
+2026-08-05 00:37:36 | INFO     | SUCCESS : SupportIssues Loaded Successfully
+2026-08-05 00:37:36 | INFO     | SUCCESS : SupportIssues committed.
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Loading FestivalCalendar
+2026-08-05 00:37:36 | INFO     | ============================================================
+2026-08-05 00:37:36 | INFO     | Validating FestivalCalendar
+2026-08-05 00:37:36 | INFO     | SUCCESS : festival_calendar.csv found.
+2026-08-05 00:37:36 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:37:36 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:37:36 | ERROR    | Missing Columns : ['Description']
+2026-08-05 00:37:36 | ERROR    | FestivalCalendar failed.
+2026-08-05 00:37:36 | ERROR    | Missing Columns : ['Description']
+2026-08-05 00:37:36 | INFO     | Database Connection Closed
+2026-08-05 00:41:26 | INFO     | ======================================================================
+2026-08-05 00:41:26 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-05 00:41:26 | INFO     | ======================================================================
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Clearing Reference Tables
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Clearing Calendar
+2026-08-05 00:41:26 | INFO     | SUCCESS : Calendar cleared
+2026-08-05 00:41:26 | INFO     | Clearing FestivalCalendar
+2026-08-05 00:41:26 | INFO     | SUCCESS : FestivalCalendar cleared
+2026-08-05 00:41:26 | INFO     | Clearing SupportIssues
+2026-08-05 00:41:26 | INFO     | SUCCESS : SupportIssues cleared
+2026-08-05 00:41:26 | INFO     | Clearing ReturnReasons
+2026-08-05 00:41:26 | INFO     | SUCCESS : ReturnReasons cleared
+2026-08-05 00:41:26 | INFO     | Clearing Couriers
+2026-08-05 00:41:26 | INFO     | SUCCESS : Couriers cleared
+2026-08-05 00:41:26 | INFO     | Clearing PaymentMethods
+2026-08-05 00:41:26 | INFO     | SUCCESS : PaymentMethods cleared
+2026-08-05 00:41:26 | INFO     | Clearing Warehouses
+2026-08-05 00:41:26 | INFO     | SUCCESS : Warehouses cleared
+2026-08-05 00:41:26 | INFO     | Clearing Suppliers
+2026-08-05 00:41:26 | INFO     | SUCCESS : Suppliers cleared
+2026-08-05 00:41:26 | INFO     | Clearing Brands
+2026-08-05 00:41:26 | INFO     | SUCCESS : Brands cleared
+2026-08-05 00:41:26 | INFO     | Clearing SubCategories
+2026-08-05 00:41:26 | INFO     | SUCCESS : SubCategories cleared
+2026-08-05 00:41:26 | INFO     | Clearing Categories
+2026-08-05 00:41:26 | INFO     | SUCCESS : Categories cleared
+2026-08-05 00:41:26 | INFO     | Clearing Cities
+2026-08-05 00:41:26 | INFO     | SUCCESS : Cities cleared
+2026-08-05 00:41:26 | INFO     | Clearing States
+2026-08-05 00:41:26 | INFO     | SUCCESS : States cleared
+2026-08-05 00:41:26 | INFO     | SUCCESS : All Reference Tables Cleared
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Loading States
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Validating States
+2026-08-05 00:41:26 | INFO     | SUCCESS : states.csv found.
+2026-08-05 00:41:26 | INFO     | Reading schema : States
+2026-08-05 00:41:26 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : States
+2026-08-05 00:41:26 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : States
+2026-08-05 00:41:26 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : States
+2026-08-05 00:41:26 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:26 | INFO     | SUCCESS : States validation completed
+2026-08-05 00:41:26 | INFO     | Reading schema : States
+2026-08-05 00:41:26 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:41:26 | INFO     | Inserting States
+2026-08-05 00:41:26 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-05 00:41:26 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-05 00:41:26 | INFO     | SUCCESS : States committed.
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Loading Cities
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Validating Cities
+2026-08-05 00:41:26 | INFO     | SUCCESS : cities.csv found.
+2026-08-05 00:41:26 | INFO     | Reading schema : Cities
+2026-08-05 00:41:26 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : Cities
+2026-08-05 00:41:26 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : Cities
+2026-08-05 00:41:26 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : Cities
+2026-08-05 00:41:26 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:26 | INFO     | SUCCESS : Cities validation completed
+2026-08-05 00:41:26 | INFO     | Reading schema : Cities
+2026-08-05 00:41:26 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:41:26 | INFO     | Inserting Cities
+2026-08-05 00:41:26 | INFO     | SUCCESS : 47 rows inserted into Cities
+2026-08-05 00:41:26 | INFO     | SUCCESS : Cities Loaded Successfully
+2026-08-05 00:41:26 | INFO     | SUCCESS : Cities committed.
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Loading Categories
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Validating Categories
+2026-08-05 00:41:26 | INFO     | SUCCESS : categories.csv found.
+2026-08-05 00:41:26 | INFO     | Reading schema : Categories
+2026-08-05 00:41:26 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : Categories
+2026-08-05 00:41:26 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : Categories
+2026-08-05 00:41:26 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : Categories
+2026-08-05 00:41:26 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:26 | INFO     | SUCCESS : Categories validation completed
+2026-08-05 00:41:26 | INFO     | Reading schema : Categories
+2026-08-05 00:41:26 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:41:26 | INFO     | Inserting Categories
+2026-08-05 00:41:26 | INFO     | SUCCESS : 15 rows inserted into Categories
+2026-08-05 00:41:26 | INFO     | SUCCESS : Categories Loaded Successfully
+2026-08-05 00:41:26 | INFO     | SUCCESS : Categories committed.
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Loading SubCategories
+2026-08-05 00:41:26 | INFO     | ============================================================
+2026-08-05 00:41:26 | INFO     | Validating SubCategories
+2026-08-05 00:41:26 | INFO     | SUCCESS : subcategories.csv found.
+2026-08-05 00:41:26 | INFO     | Reading schema : SubCategories
+2026-08-05 00:41:26 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : SubCategories
+2026-08-05 00:41:26 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : SubCategories
+2026-08-05 00:41:26 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:41:26 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:26 | INFO     | Reading schema : SubCategories
+2026-08-05 00:41:27 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:27 | INFO     | SUCCESS : SubCategories validation completed
+2026-08-05 00:41:27 | INFO     | Reading schema : SubCategories
+2026-08-05 00:41:27 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:41:27 | INFO     | Inserting SubCategories
+2026-08-05 00:41:27 | INFO     | SUCCESS : 85 rows inserted into SubCategories
+2026-08-05 00:41:27 | INFO     | SUCCESS : SubCategories Loaded Successfully
+2026-08-05 00:41:27 | INFO     | SUCCESS : SubCategories committed.
+2026-08-05 00:41:27 | INFO     | ============================================================
+2026-08-05 00:41:27 | INFO     | Loading Brands
+2026-08-05 00:41:27 | INFO     | ============================================================
+2026-08-05 00:41:27 | INFO     | Validating Brands
+2026-08-05 00:41:27 | INFO     | SUCCESS : brands.csv found.
+2026-08-05 00:41:27 | INFO     | Reading schema : Brands
+2026-08-05 00:41:27 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:27 | INFO     | Reading schema : Brands
+2026-08-05 00:41:27 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:27 | INFO     | Reading schema : Brands
+2026-08-05 00:41:27 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:27 | INFO     | Reading schema : Brands
+2026-08-05 00:41:27 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:27 | INFO     | SUCCESS : Brands validation completed
+2026-08-05 00:41:27 | INFO     | Reading schema : Brands
+2026-08-05 00:41:27 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:41:27 | INFO     | Inserting Brands
+2026-08-05 00:41:27 | INFO     | SUCCESS : 268 rows inserted into Brands
+2026-08-05 00:41:27 | INFO     | SUCCESS : Brands Loaded Successfully
+2026-08-05 00:41:27 | INFO     | SUCCESS : Brands committed.
+2026-08-05 00:41:27 | INFO     | ============================================================
+2026-08-05 00:41:27 | INFO     | Loading Suppliers
+2026-08-05 00:41:27 | INFO     | ============================================================
+2026-08-05 00:41:27 | INFO     | Validating Suppliers
+2026-08-05 00:41:27 | INFO     | SUCCESS : suppliers.csv found.
+2026-08-05 00:41:27 | INFO     | Reading schema : Suppliers
+2026-08-05 00:41:27 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:27 | INFO     | Reading schema : Suppliers
+2026-08-05 00:41:27 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:27 | INFO     | Reading schema : Suppliers
+2026-08-05 00:41:27 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:27 | INFO     | Reading schema : Suppliers
+2026-08-05 00:41:27 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:27 | INFO     | SUCCESS : Suppliers validation completed
+2026-08-05 00:41:27 | INFO     | Reading schema : Suppliers
+2026-08-05 00:41:27 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:41:27 | INFO     | Inserting Suppliers
+2026-08-05 00:41:27 | INFO     | SUCCESS : 250 rows inserted into Suppliers
+2026-08-05 00:41:27 | INFO     | SUCCESS : Suppliers Loaded Successfully
+2026-08-05 00:41:27 | INFO     | SUCCESS : Suppliers committed.
+2026-08-05 00:41:27 | INFO     | ============================================================
+2026-08-05 00:41:27 | INFO     | Loading Warehouses
+2026-08-05 00:41:27 | INFO     | ============================================================
+2026-08-05 00:41:27 | INFO     | Validating Warehouses
+2026-08-05 00:41:27 | INFO     | SUCCESS : warehouses.csv found.
+2026-08-05 00:41:27 | INFO     | Reading schema : Warehouses
+2026-08-05 00:41:27 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:27 | INFO     | Reading schema : Warehouses
+2026-08-05 00:41:27 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:27 | INFO     | Reading schema : Warehouses
+2026-08-05 00:41:27 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:27 | INFO     | Reading schema : Warehouses
+2026-08-05 00:41:27 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:41:27 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:27 | INFO     | SUCCESS : Warehouses validation completed
+2026-08-05 00:41:27 | INFO     | Reading schema : Warehouses
+2026-08-05 00:41:27 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:41:27 | INFO     | Inserting Warehouses
+2026-08-05 00:41:27 | INFO     | SUCCESS : 40 rows inserted into Warehouses
+2026-08-05 00:41:27 | INFO     | SUCCESS : Warehouses Loaded Successfully
+2026-08-05 00:41:27 | INFO     | SUCCESS : Warehouses committed.
+2026-08-05 00:41:27 | INFO     | ============================================================
+2026-08-05 00:41:27 | INFO     | Loading PaymentMethods
+2026-08-05 00:41:27 | INFO     | ============================================================
+2026-08-05 00:41:27 | INFO     | Validating PaymentMethods
+2026-08-05 00:41:27 | INFO     | SUCCESS : payment_methods.csv found.
+2026-08-05 00:41:27 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:41:28 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:41:28 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:41:28 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:41:28 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:28 | INFO     | SUCCESS : PaymentMethods validation completed
+2026-08-05 00:41:28 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:41:28 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:41:28 | INFO     | Inserting PaymentMethods
+2026-08-05 00:41:28 | INFO     | SUCCESS : 8 rows inserted into PaymentMethods
+2026-08-05 00:41:28 | INFO     | SUCCESS : PaymentMethods Loaded Successfully
+2026-08-05 00:41:28 | INFO     | SUCCESS : PaymentMethods committed.
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Loading Couriers
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Validating Couriers
+2026-08-05 00:41:28 | INFO     | SUCCESS : couriers.csv found.
+2026-08-05 00:41:28 | INFO     | Reading schema : Couriers
+2026-08-05 00:41:28 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : Couriers
+2026-08-05 00:41:28 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : Couriers
+2026-08-05 00:41:28 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : Couriers
+2026-08-05 00:41:28 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:28 | INFO     | SUCCESS : Couriers validation completed
+2026-08-05 00:41:28 | INFO     | Reading schema : Couriers
+2026-08-05 00:41:28 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:41:28 | INFO     | Inserting Couriers
+2026-08-05 00:41:28 | INFO     | SUCCESS : 15 rows inserted into Couriers
+2026-08-05 00:41:28 | INFO     | SUCCESS : Couriers Loaded Successfully
+2026-08-05 00:41:28 | INFO     | SUCCESS : Couriers committed.
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Loading ReturnReasons
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Validating ReturnReasons
+2026-08-05 00:41:28 | INFO     | SUCCESS : return_reasons.csv found.
+2026-08-05 00:41:28 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:41:28 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:41:28 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:41:28 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:41:28 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:28 | INFO     | SUCCESS : ReturnReasons validation completed
+2026-08-05 00:41:28 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:41:28 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:41:28 | INFO     | Inserting ReturnReasons
+2026-08-05 00:41:28 | INFO     | SUCCESS : 12 rows inserted into ReturnReasons
+2026-08-05 00:41:28 | INFO     | SUCCESS : ReturnReasons Loaded Successfully
+2026-08-05 00:41:28 | INFO     | SUCCESS : ReturnReasons committed.
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Loading SupportIssues
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Validating SupportIssues
+2026-08-05 00:41:28 | INFO     | SUCCESS : support_issues.csv found.
+2026-08-05 00:41:28 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:41:28 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:41:28 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:41:28 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:41:28 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:28 | INFO     | SUCCESS : SupportIssues validation completed
+2026-08-05 00:41:28 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:41:28 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:41:28 | INFO     | Inserting SupportIssues
+2026-08-05 00:41:28 | INFO     | SUCCESS : 15 rows inserted into SupportIssues
+2026-08-05 00:41:28 | INFO     | SUCCESS : SupportIssues Loaded Successfully
+2026-08-05 00:41:28 | INFO     | SUCCESS : SupportIssues committed.
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Loading FestivalCalendar
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Validating FestivalCalendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : festival_calendar.csv found.
+2026-08-05 00:41:28 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:41:28 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:41:28 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:41:28 | INFO     | SUCCESS : FestivalCalendar validation completed
+2026-08-05 00:41:28 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:41:28 | INFO     | Inserting FestivalCalendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : 32 rows inserted into FestivalCalendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : FestivalCalendar Loaded Successfully
+2026-08-05 00:41:28 | INFO     | SUCCESS : FestivalCalendar committed.
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Loading Calendar
+2026-08-05 00:41:28 | INFO     | ============================================================
+2026-08-05 00:41:28 | INFO     | Validating Calendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : calendar.csv found.
+2026-08-05 00:41:28 | INFO     | Reading schema : Calendar
+2026-08-05 00:41:28 | INFO     | SUCCESS : Calendar schema loaded
+2026-08-05 00:41:28 | ERROR    | Unexpected Columns : ['CreatedAt']
+2026-08-05 00:41:28 | ERROR    | Calendar failed.
+2026-08-05 00:41:28 | ERROR    | Unexpected Columns : ['CreatedAt']
+2026-08-05 00:41:28 | INFO     | Database Connection Closed
+2026-08-05 00:44:59 | INFO     | ======================================================================
+2026-08-05 00:44:59 | INFO     | REFERENCE DATA ETL STARTED
+2026-08-05 00:44:59 | INFO     | ======================================================================
+2026-08-05 00:44:59 | INFO     | ============================================================
+2026-08-05 00:44:59 | INFO     | Clearing Reference Tables
+2026-08-05 00:44:59 | INFO     | ============================================================
+2026-08-05 00:44:59 | INFO     | Clearing Calendar
+2026-08-05 00:44:59 | INFO     | SUCCESS : Calendar cleared
+2026-08-05 00:44:59 | INFO     | Clearing FestivalCalendar
+2026-08-05 00:44:59 | INFO     | SUCCESS : FestivalCalendar cleared
+2026-08-05 00:44:59 | INFO     | Clearing SupportIssues
+2026-08-05 00:44:59 | INFO     | SUCCESS : SupportIssues cleared
+2026-08-05 00:44:59 | INFO     | Clearing ReturnReasons
+2026-08-05 00:44:59 | INFO     | SUCCESS : ReturnReasons cleared
+2026-08-05 00:44:59 | INFO     | Clearing Couriers
+2026-08-05 00:44:59 | INFO     | SUCCESS : Couriers cleared
+2026-08-05 00:44:59 | INFO     | Clearing PaymentMethods
+2026-08-05 00:44:59 | INFO     | SUCCESS : PaymentMethods cleared
+2026-08-05 00:44:59 | INFO     | Clearing Warehouses
+2026-08-05 00:44:59 | INFO     | SUCCESS : Warehouses cleared
+2026-08-05 00:44:59 | INFO     | Clearing Suppliers
+2026-08-05 00:44:59 | INFO     | SUCCESS : Suppliers cleared
+2026-08-05 00:44:59 | INFO     | Clearing Brands
+2026-08-05 00:44:59 | INFO     | SUCCESS : Brands cleared
+2026-08-05 00:44:59 | INFO     | Clearing SubCategories
+2026-08-05 00:44:59 | INFO     | SUCCESS : SubCategories cleared
+2026-08-05 00:44:59 | INFO     | Clearing Categories
+2026-08-05 00:44:59 | INFO     | SUCCESS : Categories cleared
+2026-08-05 00:44:59 | INFO     | Clearing Cities
+2026-08-05 00:44:59 | INFO     | SUCCESS : Cities cleared
+2026-08-05 00:44:59 | INFO     | Clearing States
+2026-08-05 00:44:59 | INFO     | SUCCESS : States cleared
+2026-08-05 00:44:59 | INFO     | SUCCESS : All Reference Tables Cleared
+2026-08-05 00:44:59 | INFO     | ============================================================
+2026-08-05 00:44:59 | INFO     | Loading States
+2026-08-05 00:44:59 | INFO     | ============================================================
+2026-08-05 00:44:59 | INFO     | Validating States
+2026-08-05 00:44:59 | INFO     | SUCCESS : states.csv found.
+2026-08-05 00:44:59 | INFO     | Reading schema : States
+2026-08-05 00:45:00 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:45:00 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:00 | INFO     | Reading schema : States
+2026-08-05 00:45:00 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:45:00 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:00 | INFO     | Reading schema : States
+2026-08-05 00:45:00 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:45:00 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:00 | INFO     | Reading schema : States
+2026-08-05 00:45:00 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:45:00 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:00 | INFO     | SUCCESS : States validation completed
+2026-08-05 00:45:00 | INFO     | Reading schema : States
+2026-08-05 00:45:00 | INFO     | SUCCESS : States schema loaded
+2026-08-05 00:45:00 | INFO     | Inserting States
+2026-08-05 00:45:01 | INFO     | SUCCESS : 36 rows inserted into States
+2026-08-05 00:45:01 | INFO     | SUCCESS : States Loaded Successfully
+2026-08-05 00:45:01 | INFO     | SUCCESS : States committed.
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Loading Cities
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Validating Cities
+2026-08-05 00:45:01 | INFO     | SUCCESS : cities.csv found.
+2026-08-05 00:45:01 | INFO     | Reading schema : Cities
+2026-08-05 00:45:01 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : Cities
+2026-08-05 00:45:01 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : Cities
+2026-08-05 00:45:01 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : Cities
+2026-08-05 00:45:01 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:01 | INFO     | SUCCESS : Cities validation completed
+2026-08-05 00:45:01 | INFO     | Reading schema : Cities
+2026-08-05 00:45:01 | INFO     | SUCCESS : Cities schema loaded
+2026-08-05 00:45:01 | INFO     | Inserting Cities
+2026-08-05 00:45:01 | INFO     | SUCCESS : 47 rows inserted into Cities
+2026-08-05 00:45:01 | INFO     | SUCCESS : Cities Loaded Successfully
+2026-08-05 00:45:01 | INFO     | SUCCESS : Cities committed.
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Loading Categories
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Validating Categories
+2026-08-05 00:45:01 | INFO     | SUCCESS : categories.csv found.
+2026-08-05 00:45:01 | INFO     | Reading schema : Categories
+2026-08-05 00:45:01 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : Categories
+2026-08-05 00:45:01 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : Categories
+2026-08-05 00:45:01 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : Categories
+2026-08-05 00:45:01 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:01 | INFO     | SUCCESS : Categories validation completed
+2026-08-05 00:45:01 | INFO     | Reading schema : Categories
+2026-08-05 00:45:01 | INFO     | SUCCESS : Categories schema loaded
+2026-08-05 00:45:01 | INFO     | Inserting Categories
+2026-08-05 00:45:01 | INFO     | SUCCESS : 15 rows inserted into Categories
+2026-08-05 00:45:01 | INFO     | SUCCESS : Categories Loaded Successfully
+2026-08-05 00:45:01 | INFO     | SUCCESS : Categories committed.
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Loading SubCategories
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Validating SubCategories
+2026-08-05 00:45:01 | INFO     | SUCCESS : subcategories.csv found.
+2026-08-05 00:45:01 | INFO     | Reading schema : SubCategories
+2026-08-05 00:45:01 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : SubCategories
+2026-08-05 00:45:01 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : SubCategories
+2026-08-05 00:45:01 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : SubCategories
+2026-08-05 00:45:01 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:01 | INFO     | SUCCESS : SubCategories validation completed
+2026-08-05 00:45:01 | INFO     | Reading schema : SubCategories
+2026-08-05 00:45:01 | INFO     | SUCCESS : SubCategories schema loaded
+2026-08-05 00:45:01 | INFO     | Inserting SubCategories
+2026-08-05 00:45:01 | INFO     | SUCCESS : 85 rows inserted into SubCategories
+2026-08-05 00:45:01 | INFO     | SUCCESS : SubCategories Loaded Successfully
+2026-08-05 00:45:01 | INFO     | SUCCESS : SubCategories committed.
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Loading Brands
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Validating Brands
+2026-08-05 00:45:01 | INFO     | SUCCESS : brands.csv found.
+2026-08-05 00:45:01 | INFO     | Reading schema : Brands
+2026-08-05 00:45:01 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : Brands
+2026-08-05 00:45:01 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : Brands
+2026-08-05 00:45:01 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:01 | INFO     | Reading schema : Brands
+2026-08-05 00:45:01 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:45:01 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:01 | INFO     | SUCCESS : Brands validation completed
+2026-08-05 00:45:01 | INFO     | Reading schema : Brands
+2026-08-05 00:45:01 | INFO     | SUCCESS : Brands schema loaded
+2026-08-05 00:45:01 | INFO     | Inserting Brands
+2026-08-05 00:45:01 | INFO     | SUCCESS : 268 rows inserted into Brands
+2026-08-05 00:45:01 | INFO     | SUCCESS : Brands Loaded Successfully
+2026-08-05 00:45:01 | INFO     | SUCCESS : Brands committed.
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Loading Suppliers
+2026-08-05 00:45:01 | INFO     | ============================================================
+2026-08-05 00:45:01 | INFO     | Validating Suppliers
+2026-08-05 00:45:01 | INFO     | SUCCESS : suppliers.csv found.
+2026-08-05 00:45:01 | INFO     | Reading schema : Suppliers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : Suppliers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : Suppliers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : Suppliers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:02 | INFO     | SUCCESS : Suppliers validation completed
+2026-08-05 00:45:02 | INFO     | Reading schema : Suppliers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Suppliers schema loaded
+2026-08-05 00:45:02 | INFO     | Inserting Suppliers
+2026-08-05 00:45:02 | INFO     | SUCCESS : 250 rows inserted into Suppliers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Suppliers Loaded Successfully
+2026-08-05 00:45:02 | INFO     | SUCCESS : Suppliers committed.
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Loading Warehouses
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Validating Warehouses
+2026-08-05 00:45:02 | INFO     | SUCCESS : warehouses.csv found.
+2026-08-05 00:45:02 | INFO     | Reading schema : Warehouses
+2026-08-05 00:45:02 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : Warehouses
+2026-08-05 00:45:02 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : Warehouses
+2026-08-05 00:45:02 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : Warehouses
+2026-08-05 00:45:02 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:02 | INFO     | SUCCESS : Warehouses validation completed
+2026-08-05 00:45:02 | INFO     | Reading schema : Warehouses
+2026-08-05 00:45:02 | INFO     | SUCCESS : Warehouses schema loaded
+2026-08-05 00:45:02 | INFO     | Inserting Warehouses
+2026-08-05 00:45:02 | INFO     | SUCCESS : 40 rows inserted into Warehouses
+2026-08-05 00:45:02 | INFO     | SUCCESS : Warehouses Loaded Successfully
+2026-08-05 00:45:02 | INFO     | SUCCESS : Warehouses committed.
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Loading PaymentMethods
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Validating PaymentMethods
+2026-08-05 00:45:02 | INFO     | SUCCESS : payment_methods.csv found.
+2026-08-05 00:45:02 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:45:02 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:45:02 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:45:02 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:45:02 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:02 | INFO     | SUCCESS : PaymentMethods validation completed
+2026-08-05 00:45:02 | INFO     | Reading schema : PaymentMethods
+2026-08-05 00:45:02 | INFO     | SUCCESS : PaymentMethods schema loaded
+2026-08-05 00:45:02 | INFO     | Inserting PaymentMethods
+2026-08-05 00:45:02 | INFO     | SUCCESS : 8 rows inserted into PaymentMethods
+2026-08-05 00:45:02 | INFO     | SUCCESS : PaymentMethods Loaded Successfully
+2026-08-05 00:45:02 | INFO     | SUCCESS : PaymentMethods committed.
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Loading Couriers
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Validating Couriers
+2026-08-05 00:45:02 | INFO     | SUCCESS : couriers.csv found.
+2026-08-05 00:45:02 | INFO     | Reading schema : Couriers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : Couriers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : Couriers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : Couriers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:02 | INFO     | SUCCESS : Couriers validation completed
+2026-08-05 00:45:02 | INFO     | Reading schema : Couriers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Couriers schema loaded
+2026-08-05 00:45:02 | INFO     | Inserting Couriers
+2026-08-05 00:45:02 | INFO     | SUCCESS : 15 rows inserted into Couriers
+2026-08-05 00:45:02 | INFO     | SUCCESS : Couriers Loaded Successfully
+2026-08-05 00:45:02 | INFO     | SUCCESS : Couriers committed.
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Loading ReturnReasons
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Validating ReturnReasons
+2026-08-05 00:45:02 | INFO     | SUCCESS : return_reasons.csv found.
+2026-08-05 00:45:02 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:45:02 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:45:02 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:45:02 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:45:02 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:02 | INFO     | SUCCESS : ReturnReasons validation completed
+2026-08-05 00:45:02 | INFO     | Reading schema : ReturnReasons
+2026-08-05 00:45:02 | INFO     | SUCCESS : ReturnReasons schema loaded
+2026-08-05 00:45:02 | INFO     | Inserting ReturnReasons
+2026-08-05 00:45:02 | INFO     | SUCCESS : 12 rows inserted into ReturnReasons
+2026-08-05 00:45:02 | INFO     | SUCCESS : ReturnReasons Loaded Successfully
+2026-08-05 00:45:02 | INFO     | SUCCESS : ReturnReasons committed.
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Loading SupportIssues
+2026-08-05 00:45:02 | INFO     | ============================================================
+2026-08-05 00:45:02 | INFO     | Validating SupportIssues
+2026-08-05 00:45:02 | INFO     | SUCCESS : support_issues.csv found.
+2026-08-05 00:45:02 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:45:02 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:45:02 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:45:02 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:02 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:45:02 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:45:02 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:02 | INFO     | SUCCESS : SupportIssues validation completed
+2026-08-05 00:45:02 | INFO     | Reading schema : SupportIssues
+2026-08-05 00:45:03 | INFO     | SUCCESS : SupportIssues schema loaded
+2026-08-05 00:45:03 | INFO     | Inserting SupportIssues
+2026-08-05 00:45:03 | INFO     | SUCCESS : 15 rows inserted into SupportIssues
+2026-08-05 00:45:03 | INFO     | SUCCESS : SupportIssues Loaded Successfully
+2026-08-05 00:45:03 | INFO     | SUCCESS : SupportIssues committed.
+2026-08-05 00:45:03 | INFO     | ============================================================
+2026-08-05 00:45:03 | INFO     | Loading FestivalCalendar
+2026-08-05 00:45:03 | INFO     | ============================================================
+2026-08-05 00:45:03 | INFO     | Validating FestivalCalendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : festival_calendar.csv found.
+2026-08-05 00:45:03 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:45:03 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:03 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:45:03 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:03 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:45:03 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:03 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:45:03 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:03 | INFO     | SUCCESS : FestivalCalendar validation completed
+2026-08-05 00:45:03 | INFO     | Reading schema : FestivalCalendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : FestivalCalendar schema loaded
+2026-08-05 00:45:03 | INFO     | Inserting FestivalCalendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : 32 rows inserted into FestivalCalendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : FestivalCalendar Loaded Successfully
+2026-08-05 00:45:03 | INFO     | SUCCESS : FestivalCalendar committed.
+2026-08-05 00:45:03 | INFO     | ============================================================
+2026-08-05 00:45:03 | INFO     | Loading Calendar
+2026-08-05 00:45:03 | INFO     | ============================================================
+2026-08-05 00:45:03 | INFO     | Validating Calendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : calendar.csv found.
+2026-08-05 00:45:03 | INFO     | Reading schema : Calendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : Calendar schema loaded
+2026-08-05 00:45:03 | INFO     | SUCCESS : Column Validation Passed
+2026-08-05 00:45:03 | INFO     | Reading schema : Calendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : Calendar schema loaded
+2026-08-05 00:45:03 | INFO     | SUCCESS : Primary Key Validation Passed
+2026-08-05 00:45:03 | INFO     | Reading schema : Calendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : Calendar schema loaded
+2026-08-05 00:45:03 | INFO     | SUCCESS : Null Validation Passed
+2026-08-05 00:45:03 | INFO     | Reading schema : Calendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : Calendar schema loaded
+2026-08-05 00:45:03 | INFO     | SUCCESS : Datatype Validation Passed
+2026-08-05 00:45:03 | INFO     | SUCCESS : Calendar validation completed
+2026-08-05 00:45:03 | INFO     | Reading schema : Calendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : Calendar schema loaded
+2026-08-05 00:45:03 | INFO     | Inserting Calendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : 1,096 rows inserted into Calendar
+2026-08-05 00:45:03 | INFO     | SUCCESS : Calendar Loaded Successfully
+2026-08-05 00:45:03 | INFO     | SUCCESS : Calendar committed.
+2026-08-05 00:45:03 | INFO     | SUCCESS : ======================================================================
+2026-08-05 00:45:03 | INFO     | SUCCESS : REFERENCE DATA IMPORT COMPLETED
+2026-08-05 00:45:03 | INFO     | SUCCESS : ======================================================================
+2026-08-05 00:45:03 | INFO     | Database Connection Closed

@@ -121,9 +121,7 @@ def generate_calendar():
 
             festival_id,
 
-            "CreatedAt":
-
-            pd.Timestamp.now()
+            
 
         })
 

@@ -152,15 +152,17 @@ def get_table_schema(table_name):
 
         if (
 
-            column not in AUDIT_COLUMNS
+    column not in AUDIT_COLUMNS
 
-            and
+    and
 
-            row.IsComputed != 1
+    row.IsComputed != 1
 
-        ):
 
-            load_columns.append(column)
+
+):
+
+         load_columns.append(column)
 
     schema = {
 

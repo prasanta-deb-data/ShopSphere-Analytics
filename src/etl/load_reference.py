@@ -10,7 +10,7 @@ Author : Prasanta Kumar Deb
 """
 
 from pathlib import Path
-
+import math
 import pandas as pd
 import pyodbc
 
@@ -58,10 +58,10 @@ def get_connection():
     return connection
 
 # ==========================================================
-# Reference Tables
+# Load Order (Parent → Child)
 # ==========================================================
 
-REFERENCE_TABLES = [
+LOAD_ORDER = [
 
     "States",
 
@@ -88,6 +88,40 @@ REFERENCE_TABLES = [
     "FestivalCalendar",
 
     "Calendar"
+
+]
+
+# ==========================================================
+# Delete Order (Child → Parent)
+# ==========================================================
+
+DELETE_ORDER = [
+
+    "Calendar",
+
+    "FestivalCalendar",
+
+    "SupportIssues",
+
+    "ReturnReasons",
+
+    "Couriers",
+
+    "PaymentMethods",
+
+    "Warehouses",
+
+    "Suppliers",
+
+    "Brands",
+
+    "SubCategories",
+
+    "Categories",
+
+    "Cities",
+
+    "States"
 
 ]
 
@@ -167,70 +201,106 @@ def build_insert_query(table_name, columns):
 
 def prepare_records(df):
 
-    records = [
+    df = df.astype(object)
 
-        tuple(row)
+    df = df.where(pd.notnull(df), None)
 
-        for row in df.itertuples(
-
+    return list(
+        df.itertuples(
             index=False,
-
             name=None
-
         )
-
-    ]
-
-    return records
+    )
 
 # ==========================================================
 # Insert Data
 # ==========================================================
 
 def insert_data(
-
     cursor,
-
     table_name,
-
     df,
-
-    columns
-
+    columns,
+    schema,
 ):
 
-    log_info(
-
-        f"Inserting {table_name}"
-
-    )
+    log_info(f"Inserting {table_name}")
 
     query = build_insert_query(
-
         table_name,
-
         columns
-
     )
 
     records = prepare_records(df)
 
-    cursor.fast_executemany = True
+    cursor.fast_executemany = False
 
-    cursor.executemany(
+    # --------------------------------------------
+    # Enable IDENTITY_INSERT if required
+    # --------------------------------------------
 
-        query,
+    has_identity = len(schema["identity_columns"]) > 0
 
-        records
+    if has_identity:
 
-    )
+        cursor.execute(
+            f"SET IDENTITY_INSERT {table_name} ON"
+        )
+
+    for i, record in enumerate(records, start=1):
+
+        try:
+
+            cursor.execute(
+                query,
+                record
+            )
+
+        except Exception as ex:
+
+            print("\n" + "=" * 70)
+            print(f"FAILED TABLE : {table_name}")
+            print(f"FAILED ROW   : {i}")
+            print(record)
+            print("=" * 70)
+
+            raise
+
+    if has_identity:
+
+        cursor.execute(
+            f"SET IDENTITY_INSERT {table_name} OFF"
+        )
 
     log_success(
-
         f"{len(records):,} rows inserted into {table_name}"
-
     )
     
+# ==========================================================
+# Clear Reference Tables
+# ==========================================================
+
+def clear_reference_tables(connection):
+
+    log_info("=" * 60)
+    log_info("Clearing Reference Tables")
+    log_info("=" * 60)
+
+    cursor = connection.cursor()
+
+    for table in DELETE_ORDER:
+
+        log_info(f"Clearing {table}")
+
+        cursor.execute(
+
+            f"DELETE FROM {table}"
+
+        )
+
+        log_success(f"{table} cleared")
+
+    cursor.close()
 # ==========================================================
 # Load Single Table
 # ==========================================================
@@ -269,25 +339,19 @@ def load_table(connection, table_name):
 
     cursor = connection.cursor()
 
-    clear_table(
-
-        cursor,
-
-        table_name
-
-    )
-
     insert_data(
 
-        cursor,
+    cursor,
 
-        table_name,
+    table_name,
 
-        df,
+    df,
 
-        columns
+    columns,
 
-    )
+    schema
+
+)
 
     cursor.close()
 
@@ -312,31 +376,61 @@ def load_reference_data():
 
         connection = get_connection()
 
-        for table in REFERENCE_TABLES:
+        # --------------------------------------------------
+        # Clear all reference tables (Child → Parent)
+        # --------------------------------------------------
 
-            load_table(
-
-                connection,
-
-                table
-
-            )
+        clear_reference_tables(connection)
 
         connection.commit()
+
+        log_success("All Reference Tables Cleared")
+
+        # --------------------------------------------------
+        # Load all reference tables (Parent → Child)
+        # --------------------------------------------------
+
+        for table in LOAD_ORDER:
+
+            try:
+
+                load_table(
+
+                    connection,
+
+                    table
+
+                )
+
+                connection.commit()
+
+                log_success(
+
+                    f"{table} committed."
+
+                )
+
+            except Exception as ex:
+
+                connection.rollback()
+
+                log_error(
+
+                    f"{table} failed."
+
+                )
+
+                log_error(
+
+                    str(ex)
+
+                )
+
+                raise
 
         log_success("=" * 70)
         log_success("REFERENCE DATA IMPORT COMPLETED")
         log_success("=" * 70)
-
-    except Exception as ex:
-
-        if connection:
-
-            connection.rollback()
-
-        log_error(str(ex))
-
-        raise
 
     finally:
 
@@ -349,7 +443,6 @@ def load_reference_data():
                 "Database Connection Closed"
 
             )
-            
 # ==========================================================
 # Main
 # ==========================================================

@@ -1,9 +1,10 @@
 """
 =========================================================
 ShopSphere Analytics
+
 lookup_generator.py
 
-Generates:
+Generates
 
     payment_methods.csv
     couriers.csv
@@ -13,6 +14,8 @@ Generates:
 Author : Prasanta Kumar Deb
 =========================================================
 """
+
+from pathlib import Path
 
 import pandas as pd
 
@@ -24,14 +27,45 @@ from config.config import REFERENCE_DATA
 
 PAYMENT_METHODS = [
 
-    "Credit Card",
-    "Debit Card",
-    "UPI",
-    "Net Banking",
-    "Wallet",
-    "Cash on Delivery",
-    "EMI",
-    "Gift Card"
+    {
+        "PaymentMethodName": "Credit Card",
+        "Description": "Visa, MasterCard, RuPay and other credit cards"
+    },
+
+    {
+        "PaymentMethodName": "Debit Card",
+        "Description": "Visa, MasterCard and RuPay debit cards"
+    },
+
+    {
+        "PaymentMethodName": "UPI",
+        "Description": "Unified Payments Interface"
+    },
+
+    {
+        "PaymentMethodName": "Net Banking",
+        "Description": "Internet banking payment"
+    },
+
+    {
+        "PaymentMethodName": "Wallet",
+        "Description": "Digital wallet payment"
+    },
+
+    {
+        "PaymentMethodName": "Cash on Delivery",
+        "Description": "Payment collected during delivery"
+    },
+
+    {
+        "PaymentMethodName": "EMI",
+        "Description": "Equated Monthly Installment"
+    },
+
+    {
+        "PaymentMethodName": "Gift Card",
+        "Description": "Gift voucher or prepaid balance"
+    }
 
 ]
 
@@ -41,21 +75,95 @@ PAYMENT_METHODS = [
 
 COURIERS = [
 
-    "Blue Dart",
-    "Delhivery",
-    "DTDC",
-    "Ecom Express",
-    "Ekart",
-    "India Post",
-    "Shadowfax",
-    "XpressBees",
-    "FedEx",
-    "DHL",
-    "Aramex",
-    "Amazon Transportation",
-    "Borzo",
-    "Gati",
-    "Trackon"
+    {
+        "CourierName": "Blue Dart",
+        "ContactNumber": "1860-233-1234",
+        "Website": "https://www.bluedart.com"
+    },
+
+    {
+        "CourierName": "Delhivery",
+        "ContactNumber": "1800-103-6354",
+        "Website": "https://www.delhivery.com"
+    },
+
+    {
+        "CourierName": "DTDC",
+        "ContactNumber": "7305770577",
+        "Website": "https://www.dtdc.in"
+    },
+
+    {
+        "CourierName": "Ecom Express",
+        "ContactNumber": "",
+        "Website": "https://www.ecomexpress.in"
+    },
+
+    {
+        "CourierName": "Ekart",
+        "ContactNumber": "",
+        "Website": "https://www.ekartlogistics.com"
+    },
+
+    {
+        "CourierName": "India Post",
+        "ContactNumber": "1800-266-6868",
+        "Website": "https://www.indiapost.gov.in"
+    },
+
+    {
+        "CourierName": "Shadowfax",
+        "ContactNumber": "",
+        "Website": "https://www.shadowfax.in"
+    },
+
+    {
+        "CourierName": "XpressBees",
+        "ContactNumber": "",
+        "Website": "https://www.xpressbees.com"
+    },
+
+    {
+        "CourierName": "FedEx",
+        "ContactNumber": "1800-209-6161",
+        "Website": "https://www.fedex.com"
+    },
+
+    {
+        "CourierName": "DHL",
+        "ContactNumber": "1800-111-345",
+        "Website": "https://www.dhl.com"
+    },
+
+    {
+        "CourierName": "Aramex",
+        "ContactNumber": "",
+        "Website": "https://www.aramex.com"
+    },
+
+    {
+        "CourierName": "Amazon Transportation",
+        "ContactNumber": "",
+        "Website": "https://www.amazon.in"
+    },
+
+    {
+        "CourierName": "Borzo",
+        "ContactNumber": "",
+        "Website": "https://borzodelivery.com"
+    },
+
+    {
+        "CourierName": "Gati",
+        "ContactNumber": "1860-123-4284",
+        "Website": "https://www.gati.com"
+    },
+
+    {
+        "CourierName": "Trackon",
+        "ContactNumber": "",
+        "Website": "https://www.trackon.in"
+    }
 
 ]
 
@@ -65,29 +173,65 @@ COURIERS = [
 
 RETURN_REASONS = [
 
-    "Wrong Product",
+    {
+        "ReturnReasonName": "Wrong Product",
+        "Description": "Customer received a different product."
+    },
 
-    "Damaged Product",
+    {
+        "ReturnReasonName": "Damaged Product",
+        "Description": "Product arrived damaged."
+    },
 
-    "Defective Product",
+    {
+        "ReturnReasonName": "Defective Product",
+        "Description": "Product is not functioning properly."
+    },
 
-    "Size Too Small",
+    {
+        "ReturnReasonName": "Size Too Small",
+        "Description": "Ordered size is smaller than expected."
+    },
 
-    "Size Too Large",
+    {
+        "ReturnReasonName": "Size Too Large",
+        "Description": "Ordered size is larger than expected."
+    },
 
-    "Quality Not As Expected",
+    {
+        "ReturnReasonName": "Quality Not As Expected",
+        "Description": "Customer not satisfied with product quality."
+    },
 
-    "Changed Mind",
+    {
+        "ReturnReasonName": "Changed Mind",
+        "Description": "Customer no longer wants the product."
+    },
 
-    "Duplicate Order",
+    {
+        "ReturnReasonName": "Duplicate Order",
+        "Description": "Multiple orders placed accidentally."
+    },
 
-    "Item Missing",
+    {
+        "ReturnReasonName": "Item Missing",
+        "Description": "Some items were missing from the shipment."
+    },
 
-    "Late Delivery",
+    {
+        "ReturnReasonName": "Late Delivery",
+        "Description": "Order delivered later than expected."
+    },
 
-    "Wrong Color",
+    {
+        "ReturnReasonName": "Wrong Color",
+        "Description": "Received a different color."
+    },
 
-    "Better Price Available"
+    {
+        "ReturnReasonName": "Better Price Available",
+        "Description": "Customer found a better price elsewhere."
+    }
 
 ]
 
@@ -97,55 +241,106 @@ RETURN_REASONS = [
 
 SUPPORT_ISSUES = [
 
-    "Payment Failed",
+    {
+        "SupportIssueName": "Payment Failed",
+        "Description": "Customer unable to complete payment."
+    },
 
-    "Refund Request",
+    {
+        "SupportIssueName": "Refund Request",
+        "Description": "Customer requested a refund."
+    },
 
-    "Order Cancellation",
+    {
+        "SupportIssueName": "Order Cancellation",
+        "Description": "Customer wants to cancel an order."
+    },
 
-    "Delivery Delay",
+    {
+        "SupportIssueName": "Delivery Delay",
+        "Description": "Shipment delayed beyond expected date."
+    },
 
-    "Order Not Received",
+    {
+        "SupportIssueName": "Order Not Received",
+        "Description": "Customer has not received the order."
+    },
 
-    "Damaged Product",
+    {
+        "SupportIssueName": "Damaged Product",
+        "Description": "Product damaged during delivery."
+    },
 
-    "Account Issue",
+    {
+        "SupportIssueName": "Account Issue",
+        "Description": "Customer account access problem."
+    },
 
-    "Coupon Issue",
+    {
+        "SupportIssueName": "Coupon Issue",
+        "Description": "Coupon not applied correctly."
+    },
 
-    "Product Inquiry",
+    {
+        "SupportIssueName": "Product Inquiry",
+        "Description": "Customer requested product information."
+    },
 
-    "Return Request",
+    {
+        "SupportIssueName": "Return Request",
+        "Description": "Customer initiated a return."
+    },
 
-    "Replacement Request",
+    {
+        "SupportIssueName": "Replacement Request",
+        "Description": "Customer requested a replacement."
+    },
 
-    "Invoice Request",
+    {
+        "SupportIssueName": "Invoice Request",
+        "Description": "Customer requested a copy of the invoice."
+    },
 
-    "Warranty Claim",
+    {
+        "SupportIssueName": "Warranty Claim",
+        "Description": "Customer raised a warranty claim."
+    },
 
-    "App Issue",
+    {
+        "SupportIssueName": "App Issue",
+        "Description": "Problem using the mobile application."
+    },
 
-    "Website Issue"
+    {
+        "SupportIssueName": "Website Issue",
+        "Description": "Problem using the website."
+    }
 
 ]
 
 # =========================================================
-# Generic CSV Writer
+# Generate Payment Methods
 # =========================================================
 
-def save_lookup(data, filename, id_column, name_column):
+def generate_payment_methods():
 
     rows = []
 
-    for idx, value in enumerate(data, start=1):
+    for idx, payment in enumerate(
+
+        PAYMENT_METHODS,
+
+        start=1
+
+    ):
 
         rows.append({
 
-            id_column: idx,
+            "PaymentMethodID": idx,
 
-            name_column: value,
+            "PaymentMethodName": payment["PaymentMethodName"],
 
-            "Description": value,
+            "Description": payment["Description"],
 
             "IsActive": 1
 
@@ -153,18 +348,202 @@ def save_lookup(data, filename, id_column, name_column):
 
     df = pd.DataFrame(rows)
 
-    output = REFERENCE_DATA / filename
+    output = REFERENCE_DATA / "payment_methods.csv"
 
-    output.parent.mkdir(parents=True, exist_ok=True)
+    output.parent.mkdir(
 
-    df.to_csv(output, index=False)
+        parents=True,
 
-    print(f"✔ {filename:<25} {len(df)} rows")
+        exist_ok=True
+
+    )
+
+    df.to_csv(
+
+        output,
+
+        index=False
+
+    )
+
+    print("=" * 60)
+    print("Payment Methods Generated")
+    print("=" * 60)
+    print(f"Rows   : {len(df)}")
+    print(f"Output : {output}")
+
+    return df
+# =========================================================
+# Generate Couriers
+# =========================================================
+
+def generate_couriers():
+
+    rows = []
+
+    for idx, courier in enumerate(
+
+        COURIERS,
+
+        start=1
+
+    ):
+
+        rows.append({
+
+            "CourierID": idx,
+
+            "CourierName": courier["CourierName"],
+
+            "ContactNumber": courier["ContactNumber"],
+
+            "Website": courier["Website"],
+
+            "IsActive": 1
+
+        })
+
+    df = pd.DataFrame(rows)
+
+    output = REFERENCE_DATA / "couriers.csv"
+
+    output.parent.mkdir(
+
+        parents=True,
+
+        exist_ok=True
+
+    )
+
+    df.to_csv(
+
+        output,
+
+        index=False
+
+    )
+
+    print("=" * 60)
+    print("Couriers Generated")
+    print("=" * 60)
+    print(f"Rows   : {len(df)}")
+    print(f"Output : {output}")
+
+    return df
+# =========================================================
+# Generate Return Reasons
+# =========================================================
+
+def generate_return_reasons():
+
+    rows = []
+
+    for idx, reason in enumerate(
+
+        RETURN_REASONS,
+
+        start=1
+
+    ):
+
+        rows.append({
+
+            "ReturnReasonID": idx,
+
+            "ReturnReasonName": reason["ReturnReasonName"],
+
+            "Description": reason["Description"],
+
+            "IsActive": 1
+
+        })
+
+    df = pd.DataFrame(rows)
+
+    output = REFERENCE_DATA / "return_reasons.csv"
+
+    output.parent.mkdir(
+
+        parents=True,
+
+        exist_ok=True
+
+    )
+
+    df.to_csv(
+
+        output,
+
+        index=False
+
+    )
+
+    print("=" * 60)
+    print("Return Reasons Generated")
+    print("=" * 60)
+    print(f"Rows   : {len(df)}")
+    print(f"Output : {output}")
 
     return df
 
+
 # =========================================================
-# Generate All Lookups
+# Generate Support Issues
+# =========================================================
+
+def generate_support_issues():
+
+    rows = []
+
+    for idx, issue in enumerate(
+
+        SUPPORT_ISSUES,
+
+        start=1
+
+    ):
+
+        rows.append({
+
+            "SupportIssueID": idx,
+
+            "SupportIssueName": issue["SupportIssueName"],
+
+            "Description": issue["Description"],
+
+            "IsActive": 1
+
+        })
+
+    df = pd.DataFrame(rows)
+
+    output = REFERENCE_DATA / "support_issues.csv"
+
+    output.parent.mkdir(
+
+        parents=True,
+
+        exist_ok=True
+
+    )
+
+    df.to_csv(
+
+        output,
+
+        index=False
+
+    )
+
+    print("=" * 60)
+    print("Support Issues Generated")
+    print("=" * 60)
+    print(f"Rows   : {len(df)}")
+    print(f"Output : {output}")
+
+    return df
+# =========================================================
+# Generate All Lookup Tables
 # =========================================================
 
 def generate_lookup_tables():
@@ -173,62 +552,28 @@ def generate_lookup_tables():
     print("Generating Lookup Tables")
     print("=" * 60)
 
-    save_lookup(
+    generate_payment_methods()
 
-        PAYMENT_METHODS,
+    generate_couriers()
 
-        "payment_methods.csv",
+    generate_return_reasons()
 
-        "PaymentMethodID",
-
-        "PaymentMethodName"
-
-    )
-
-    save_lookup(
-
-        COURIERS,
-
-        "couriers.csv",
-
-        "CourierID",
-
-        "CourierName"
-
-    )
-
-    save_lookup(
-
-        RETURN_REASONS,
-
-        "return_reasons.csv",
-
-        "ReturnReasonID",
-
-        "ReturnReasonName"
-
-    )
-
-    save_lookup(
-
-        SUPPORT_ISSUES,
-
-        "support_issues.csv",
-
-        "SupportIssueID",
-
-        "SupportIssueName"
-
-    )
+    generate_support_issues()
 
     print("=" * 60)
     print("Lookup Tables Generated Successfully")
     print("=" * 60)
 
+
 # =========================================================
 # Main
 # =========================================================
 
-if __name__ == "__main__":
+def main():
 
     generate_lookup_tables()
+
+
+if __name__ == "__main__":
+
+    main()

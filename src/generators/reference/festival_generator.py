@@ -299,13 +299,43 @@ def generate_festivals():
 
     df = pd.DataFrame(FESTIVALS)
 
-    df.insert(0, "FestivalID", range(1, len(df) + 1))
+    # Add Description column if missing
+    if "Description" not in df.columns:
+
+        df["Description"] = (
+            df["FestivalName"]
+            + " - "
+            + df["FestivalType"]
+            + " Festival"
+        )
+
+    df.insert(
+
+        0,
+
+        "FestivalID",
+
+        range(1, len(df) + 1)
+
+    )
 
     output = REFERENCE_DATA / "festival_calendar.csv"
 
-    output.parent.mkdir(parents=True, exist_ok=True)
+    output.parent.mkdir(
 
-    df.to_csv(output, index=False)
+        parents=True,
+
+        exist_ok=True
+
+    )
+
+    df.to_csv(
+
+        output,
+
+        index=False
+
+    )
 
     print("=" * 60)
     print("Festival Calendar Generated Successfully")

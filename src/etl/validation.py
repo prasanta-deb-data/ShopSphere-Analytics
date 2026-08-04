@@ -60,7 +60,15 @@ def validate_columns(df, table_name):
 
     schema = get_table_schema(table_name)
 
-    expected = schema["load_columns"]
+    # ------------------------------------------------------
+    # Allow identity columns in CSV
+    # but don't require audit/computed columns
+    # ------------------------------------------------------
+
+    expected = (
+        schema["load_columns"] +
+        schema["identity_columns"]
+    )
 
     csv_columns = list(df.columns)
 
@@ -86,18 +94,18 @@ def validate_columns(df, table_name):
 
     if missing:
 
+        log_error(f"Missing Columns : {missing}")
+
         raise ValueError(
-
             f"Missing Columns : {missing}"
-
         )
 
     if extra:
 
+        log_error(f"Unexpected Columns : {extra}")
+
         raise ValueError(
-
             f"Unexpected Columns : {extra}"
-
         )
 
     log_success("Column Validation Passed")
