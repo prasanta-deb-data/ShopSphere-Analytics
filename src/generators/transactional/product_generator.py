@@ -1,16 +1,23 @@
 """
 =========================================================
 ShopSphere Analytics
+
 product_generator.py
 
 Generates:
     output/csv/products.csv
+
+Author : Prasanta Kumar Deb
 =========================================================
 """
 
+# ==========================================================
+# Imports
+# ==========================================================
+
 import random
-import string
-from datetime import datetime, timedelta
+
+from datetime import datetime
 
 import pandas as pd
 
@@ -20,296 +27,988 @@ from config.config import (
     RANDOM_SEED
 )
 
+# ==========================================================
+# Random Seed
+# ==========================================================
+
 random.seed(RANDOM_SEED)
 
 # ==========================================================
-# Load Reference Files
+# Generator Configuration
+# ==========================================================
+
+NUM_PRODUCTS = 300000
+
+START_DATE = datetime(2022, 1, 1)
+
+END_DATE = datetime(2025, 12, 31)
+
+# ==========================================================
+# Load Reference Tables
 # ==========================================================
 
 def load_reference_data():
 
-    categories = pd.read_csv(
-        REFERENCE_DATA / "categories.csv"
-    )
+    references = {
 
-    subcategories = pd.read_csv(
-        REFERENCE_DATA / "subcategories.csv"
-    )
+        "Categories": pd.read_csv(
+            REFERENCE_DATA / "categories.csv"
+        ),
 
-    brands = pd.read_csv(
-        REFERENCE_DATA / "brands.csv"
-    )
+        "SubCategories": pd.read_csv(
+            REFERENCE_DATA / "subcategories.csv"
+        ),
 
-    suppliers = pd.read_csv(
-        REFERENCE_DATA / "suppliers.csv"
-    )
+        "Brands": pd.read_csv(
+            REFERENCE_DATA / "brands.csv"
+        ),
 
-    return (
-        categories,
-        subcategories,
-        brands,
-        suppliers
-    )
-# ==========================================================
-# Product Count
-# ==========================================================
-NUM_PRODUCTS = 15000
+        "Suppliers": pd.read_csv(
+            REFERENCE_DATA / "suppliers.csv"
+        )
+
+    }
+
+    return references
+
 
 # ==========================================================
-# Product Attributes
+# Load Once
 # ==========================================================
-COLORS = [
 
-    "Black",
-    "White",
-    "Blue",
-    "Red",
-    "Green",
-    "Silver",
-    "Gold",
-    "Grey",
-    "Pink",
-    "Brown"
+REFERENCE = load_reference_data()
 
-]
+CATEGORIES = REFERENCE["Categories"]
 
-SIZES = [
+SUBCATEGORIES = REFERENCE["SubCategories"]
 
-    "XS",
-    "S",
-    "M",
-    "L",
-    "XL",
-    "XXL"
+BRANDS = REFERENCE["Brands"]
 
-]
+SUPPLIERS = REFERENCE["Suppliers"]
 
-STORAGE = [
-
-    "64GB",
-    "128GB",
-    "256GB",
-    "512GB"
-
-]
-
-RAM = [
-
-    "4GB",
-    "6GB",
-    "8GB",
-    "12GB",
-    "16GB"
-
-]
 
 # ==========================================================
-# Category Pricing Rules
+# Category Price Rules
+# (MRP Range)
 # ==========================================================
+
 CATEGORY_PRICE = {
 
-    "Electronics": (500,120000),
+    "Electronics": (5000, 150000),
 
-    "Fashion": (300,8000),
+    "Fashion": (300, 15000),
 
-    "Home & Kitchen": (200,35000),
+    "Home & Kitchen": (200, 50000),
 
-    "Beauty & Personal Care": (100,3000),
+    "Beauty & Personal Care": (100, 5000),
 
-    "Grocery": (20,2500),
+    "Grocery": (20, 3000),
 
-    "Books": (150,2500),
+    "Books": (100, 3000),
 
-    "Sports & Fitness": (300,50000),
+    "Sports & Fitness": (300, 75000),
 
-    "Toys & Games": (100,10000),
+    "Toys & Games": (100, 15000),
 
-    "Automotive": (500,75000),
+    "Automotive": (500, 100000),
 
-    "Baby Products": (150,15000),
+    "Baby Products": (100, 20000),
 
-    "Health": (100,5000),
+    "Health": (100, 10000),
 
-    "Jewellery": (1000,250000),
+    "Jewellery": (1000, 500000),
 
-    "Pet Supplies": (100,8000),
+    "Pet Supplies": (100, 10000),
 
-    "Office Supplies": (50,20000),
+    "Office Supplies": (100, 25000),
 
-    "Garden & Outdoor": (100,30000)
+    "Garden & Outdoor": (100, 50000)
 
 }
 
 # ==========================================================
-# GST Rules
+# Validate Reference Data
 # ==========================================================
 
-GST = {
+def validate_reference_data():
 
-    "Electronics":18,
+    print("=" * 60)
+    print("Validating Reference Data")
+    print("=" * 60)
 
-    "Fashion":12,
+    if CATEGORIES.empty:
+        raise ValueError("Categories reference is empty.")
 
-    "Home & Kitchen":18,
+    if SUBCATEGORIES.empty:
+        raise ValueError("SubCategories reference is empty.")
 
-    "Beauty & Personal Care":18,
+    if BRANDS.empty:
+        raise ValueError("Brands reference is empty.")
 
-    "Grocery":5,
+    if SUPPLIERS.empty:
+        raise ValueError("Suppliers reference is empty.")
 
-    "Books":0,
+    print(f"Categories     : {len(CATEGORIES)}")
 
-    "Sports & Fitness":18,
+    print(f"SubCategories  : {len(SUBCATEGORIES)}")
 
-    "Toys & Games":12,
+    print(f"Brands         : {len(BRANDS)}")
 
-    "Automotive":28,
+    print(f"Suppliers      : {len(SUPPLIERS)}")
 
-    "Baby Products":12,
+    print("=" * 60)
+# ==========================================================
+# Category → Brand Mapping
+# ==========================================================
 
-    "Health":12,
+CATEGORY_BRANDS = {
 
-    "Jewellery":3,
+    "Electronics": [
+        "Samsung", "Apple", "Sony", "LG", "OnePlus",
+        "Xiaomi", "Dell", "HP", "Lenovo", "ASUS",
+        "Acer", "Boat", "JBL", "Realme", "Nothing"
+    ],
 
-    "Pet Supplies":18,
+    "Fashion": [
+        "Nike", "Adidas", "Puma", "Levi's",
+        "Allen Solly", "Van Heusen", "US Polo",
+        "Peter England", "H&M", "Zara"
+    ],
 
-    "Office Supplies":18,
+    "Home & Kitchen": [
+        "Prestige", "Pigeon", "Butterfly",
+        "Milton", "Cello", "Philips",
+        "Borosil", "Hawkins"
+    ],
 
-    "Garden & Outdoor":18
+    "Beauty & Personal Care": [
+        "Lakme", "L'Oreal", "Nivea",
+        "Mamaearth", "Dove", "Ponds",
+        "Himalaya", "Cetaphil"
+    ],
+
+    "Grocery": [
+        "Aashirvaad", "Fortune", "Tata",
+        "Nestle", "Amul", "Britannia",
+        "Parle", "Sunfeast"
+    ],
+
+    "Books": [
+        "Penguin",
+        "McGraw Hill",
+        "Pearson",
+        "O'Reilly",
+        "BPB"
+    ],
+
+    "Sports & Fitness": [
+        "Nike", "Adidas", "Puma",
+        "Cosco", "Yonex", "Nivia"
+    ],
+
+    "Toys & Games": [
+        "Lego",
+        "Funskool",
+        "Mattel",
+        "Hasbro"
+    ],
+
+    "Automotive": [
+        "Bosch",
+        "Castrol",
+        "3M",
+        "Shell"
+    ],
+
+    "Baby Products": [
+        "Pampers",
+        "Johnson's",
+        "Huggies",
+        "Mee Mee"
+    ],
+
+    "Health": [
+        "Dr. Morepen",
+        "Accu-Chek",
+        "Omron",
+        "Dettol"
+    ],
+
+    "Jewellery": [
+        "Tanishq",
+        "Kalyan",
+        "Malabar"
+    ],
+
+    "Pet Supplies": [
+        "Pedigree",
+        "Drools",
+        "Whiskas"
+    ],
+
+    "Office Supplies": [
+        "Classmate",
+        "Faber-Castell",
+        "Camel",
+        "Kangaro"
+    ],
+
+    "Garden & Outdoor": [
+        "Ugaoo",
+        "Bosch",
+        "Falcon"
+    ]
 
 }
+
+# ==========================================================
+# Category Colors
+# ==========================================================
+
+CATEGORY_COLORS = {
+
+    "Electronics": [
+        "Black",
+        "White",
+        "Blue",
+        "Silver",
+        "Grey",
+        "Gold"
+    ],
+
+    "Fashion": [
+        "Black",
+        "White",
+        "Blue",
+        "Red",
+        "Green",
+        "Pink",
+        "Brown"
+    ],
+
+    "Home & Kitchen": [
+        "Silver",
+        "Black",
+        "White",
+        "Blue"
+    ],
+
+    "Beauty & Personal Care": [
+        None
+    ],
+
+    "Grocery": [
+        None
+    ],
+
+    "Books": [
+        None
+    ],
+
+    "Sports & Fitness": [
+        "Black",
+        "Blue",
+        "Red",
+        "White"
+    ],
+
+    "Toys & Games": [
+        "Red",
+        "Blue",
+        "Yellow",
+        "Green"
+    ],
+
+    "Automotive": [
+        "Black",
+        "Grey",
+        "Silver"
+    ],
+
+    "Baby Products": [
+        "Pink",
+        "Blue",
+        "White"
+    ],
+
+    "Health": [
+        None
+    ],
+
+    "Jewellery": [
+        "Gold",
+        "Silver",
+        "Rose Gold"
+    ],
+
+    "Pet Supplies": [
+        None
+    ],
+
+    "Office Supplies": [
+        "Black",
+        "Blue"
+    ],
+
+    "Garden & Outdoor": [
+        "Green",
+        "Black"
+    ]
+
+}
+
+# ==========================================================
+# Category Sizes
+# ==========================================================
+
+CATEGORY_SIZES = {
+
+    "Fashion": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+    ],
+
+    "Electronics": [
+        None
+    ],
+
+    "Books": [
+        None
+    ],
+
+    "Beauty & Personal Care": [
+        None
+    ],
+
+    "Grocery": [
+        None
+    ],
+
+    "Sports & Fitness": [
+        "S",
+        "M",
+        "L",
+        "XL"
+    ],
+
+    "Jewellery": [
+        "6",
+        "7",
+        "8",
+        "9"
+    ],
+
+    "Home & Kitchen": [
+        None
+    ],
+
+    "Automotive": [
+        None
+    ],
+
+    "Baby Products": [
+        "Small",
+        "Medium",
+        "Large"
+    ],
+
+    "Health": [
+        None
+    ],
+
+    "Pet Supplies": [
+        None
+    ],
+
+    "Office Supplies": [
+        None
+    ],
+
+    "Garden & Outdoor": [
+        None
+    ],
+
+    "Toys & Games": [
+        None
+    ]
+
+}
+
+# ==========================================================
+# Category Weight (Kg)
+# ==========================================================
+
+CATEGORY_WEIGHT = {
+
+    "Electronics": (0.20, 8.00),
+
+    "Fashion": (0.10, 2.00),
+
+    "Home & Kitchen": (0.20, 25.00),
+
+    "Beauty & Personal Care": (0.05, 1.00),
+
+    "Grocery": (0.10, 10.00),
+
+    "Books": (0.20, 2.00),
+
+    "Sports & Fitness": (0.20, 40.00),
+
+    "Toys & Games": (0.10, 8.00),
+
+    "Automotive": (0.50, 40.00),
+
+    "Baby Products": (0.10, 8.00),
+
+    "Health": (0.05, 5.00),
+
+    "Jewellery": (0.01, 0.50),
+
+    "Pet Supplies": (0.10, 15.00),
+
+    "Office Supplies": (0.05, 8.00),
+
+    "Garden & Outdoor": (0.50, 35.00)
+
+}
+# ==========================================================
+# Random Brand
+# ==========================================================
+
+def get_random_brand(category_name):
+
+    allowed_brands = CATEGORY_BRANDS.get(
+
+        category_name,
+
+        []
+
+    )
+
+    brand_df = BRANDS[
+
+        BRANDS["BrandName"].isin(
+
+            allowed_brands
+
+        )
+
+    ]
+
+    # Fallback if no matching brands exist
+    if brand_df.empty:
+
+        brand_df = BRANDS
+
+    return brand_df.sample(
+
+        1
+
+    ).iloc[0]
+
+
+# ==========================================================
+# Random Supplier
+# ==========================================================
+
+def get_random_supplier():
+
+    return SUPPLIERS.sample(
+
+        1
+
+    ).iloc[0]
+
+
 # ==========================================================
 # SKU Generator
+# Example:
+# ELE-000001
+# FAS-000250
 # ==========================================================
 
-def generate_sku(category, product_id):
+def generate_sku(
+
+    category_name,
+
+    product_id
+
+):
 
     prefix = "".join(
 
         word[0]
 
-        for word in category.split()
+        for word in category_name.split()
 
     ).upper()
 
     return f"{prefix}-{product_id:06d}"
+
+
 # ==========================================================
-# Launch Date
+# Random Launch Date
 # ==========================================================
 
 def random_launch_date():
 
-    start = datetime(2022,1,1)
+    days = (
 
-    end = datetime(2025,12,31)
+        END_DATE -
 
-    days = (end-start).days
+        START_DATE
 
-    return start + timedelta(
+    ).days
 
-        days=random.randint(0,days)
+    return (
+
+        START_DATE +
+
+        pd.Timedelta(
+
+            days=random.randint(
+
+                0,
+
+                days
+
+            )
+
+        )
+
+    ).date()
+
+
+# ==========================================================
+# Pricing Engine
+# ==========================================================
+
+def generate_prices(
+
+    category_name
+
+):
+
+    min_price, max_price = CATEGORY_PRICE[
+
+        category_name
+
+    ]
+
+    selling_price = random.randint(
+
+        min_price,
+
+        max_price
 
     )
+
+    cost_price = round(
+
+        selling_price *
+
+        random.uniform(
+
+            0.55,
+
+            0.85
+
+        ),
+
+        2
+
+    )
+
+    mrp = round(
+
+        selling_price *
+
+        random.uniform(
+
+            1.05,
+
+            1.20
+
+        ),
+
+        2
+
+    )
+
+    return (
+
+        mrp,
+
+        selling_price,
+
+        cost_price
+
+    )
+
+
+# ==========================================================
+# Product Attributes
+# ==========================================================
+
+def get_product_attributes(
+
+    category_name
+
+):
+
+    colors = CATEGORY_COLORS.get(
+
+        category_name,
+
+        [None]
+
+    )
+
+    sizes = CATEGORY_SIZES.get(
+
+        category_name,
+
+        [None]
+
+    )
+
+    min_weight, max_weight = CATEGORY_WEIGHT.get(
+
+        category_name,
+
+        (0.10, 5.00)
+
+    )
+
+    return {
+
+        "Color":
+
+        random.choice(colors),
+
+        "Size":
+
+        random.choice(sizes),
+
+        "Weight":
+
+        round(
+
+            random.uniform(
+
+                min_weight,
+
+                max_weight
+
+            ),
+
+            2
+
+        )
+
+    }
+
+
+# ==========================================================
+# Product Description
+# ==========================================================
+
+def generate_description(
+
+    brand,
+
+    subcategory
+
+):
+
+    return (
+
+        f"{brand} {subcategory} manufactured "
+
+        f"using high-quality materials "
+
+        f"and designed for everyday use."
+
+    )
+# ==========================================================
+# Product Models
+# ==========================================================
+
+PRODUCT_MODELS = {
+
+    "Mobiles": [
+        "Galaxy S25",
+        "Galaxy A56",
+        "Galaxy M35",
+        "Galaxy F16",
+        "iPhone 16",
+        "iPhone 16 Pro",
+        "Nord 5",
+        "Nord CE 5",
+        "Redmi Note 14",
+        "Nothing Phone 3"
+    ],
+
+    "Laptops": [
+        "Inspiron 15",
+        "Pavilion 14",
+        "IdeaPad Slim 5",
+        "Vivobook 15",
+        "MacBook Air M4",
+        "ThinkPad E16",
+        "Aspire 7"
+    ],
+
+    "Headphones": [
+        "Buds Pro",
+        "AirPods",
+        "Neckband Pro",
+        "Wireless Headset",
+        "Noise Cancelling Headphones"
+    ],
+
+    "Televisions": [
+        "Smart TV",
+        "QLED TV",
+        "OLED TV",
+        "Android TV"
+    ],
+
+    "Shoes": [
+        "Air Max",
+        "Ultraboost",
+        "Running Shoes",
+        "Casual Sneakers",
+        "Sports Shoes"
+    ],
+
+    "Shirts": [
+        "Slim Fit Shirt",
+        "Regular Fit Shirt",
+        "Formal Shirt",
+        "Casual Shirt"
+    ],
+
+    "Jeans": [
+        "Slim Fit Jeans",
+        "Regular Fit Jeans",
+        "Stretch Jeans"
+    ],
+
+    "Books": [
+        "Complete SQL Guide",
+        "Python Programming",
+        "Power BI Masterclass",
+        "Excel for Business",
+        "Machine Learning Basics",
+        "Statistics for Data Analysis"
+    ]
+
+}
+
 # ==========================================================
 # Product Name Generator
 # ==========================================================
 
-def generate_product_name(brand, category, subcategory):
+def generate_product_name(
 
-    if category == "Electronics":
+    brand_name,
 
-        if subcategory == "Mobiles":
-            return f"{brand} Galaxy M{random.randint(10,60)} 5G {random.choice(RAM)} {random.choice(STORAGE)}"
+    category_name,
 
-        elif subcategory == "Laptops":
-            return f"{brand} Pavilion {random.randint(13,17)} Ryzen {random.choice([5,7,9])}"
+    subcategory_name
 
-        elif subcategory == "Headphones":
-            return f"{brand} Rockerz {random.randint(100,999)} Pro"
+):
 
-        elif subcategory == "Televisions":
-            return f'{brand} Smart TV {random.choice([32,43,50,55,65])}"'
+    # ------------------------------------------------------
+    # Electronics
+    # ------------------------------------------------------
+
+    if category_name == "Electronics":
+
+        if subcategory_name == "Mobiles":
+
+            return (
+
+                f"{brand_name} "
+
+                f"{random.choice(PRODUCT_MODELS['Mobiles'])} "
+
+                f"{random.choice(['128GB','256GB','512GB'])}"
+
+            )
+
+        elif subcategory_name == "Laptops":
+
+            return (
+
+                f"{brand_name} "
+
+                f"{random.choice(PRODUCT_MODELS['Laptops'])}"
+
+            )
+
+        elif subcategory_name == "Headphones":
+
+            return (
+
+                f"{brand_name} "
+
+                f"{random.choice(PRODUCT_MODELS['Headphones'])}"
+
+            )
+
+        elif subcategory_name == "Televisions":
+
+            return (
+
+                f"{brand_name} "
+
+                f"{random.choice([32,43,50,55,65])}"
+
+                f" Inch "
+
+                f"{random.choice(PRODUCT_MODELS['Televisions'])}"
+
+            )
 
         else:
-            return f"{brand} {subcategory}"
 
-    elif category == "Fashion":
+            return f"{brand_name} {subcategory_name}"
 
-        return f"{brand} {subcategory} {random.choice(COLORS)}"
+    # ------------------------------------------------------
+    # Fashion
+    # ------------------------------------------------------
 
-    elif category == "Books":
+    elif category_name == "Fashion":
 
-        titles = [
+        if subcategory_name == "Shoes":
 
-            "Complete SQL Guide",
+            return (
 
-            "Python Programming",
+                f"{brand_name} "
 
-            "Data Analytics Handbook",
+                f"{random.choice(PRODUCT_MODELS['Shoes'])}"
 
-            "Power BI Mastery",
+            )
 
-            "Machine Learning Basics",
+        elif subcategory_name == "Shirts":
 
-            "Excel for Business",
+            return (
 
-            "Statistics Simplified"
+                f"{brand_name} "
 
-        ]
+                f"{random.choice(PRODUCT_MODELS['Shirts'])}"
 
-        return random.choice(titles)
+            )
 
-    elif category == "Grocery":
+        elif subcategory_name == "Jeans":
 
-        return f"{brand} Premium {subcategory}"
+            return (
 
-    elif category == "Beauty & Personal Care":
+                f"{brand_name} "
 
-        return f"{brand} {subcategory} Pack"
+                f"{random.choice(PRODUCT_MODELS['Jeans'])}"
 
-    elif category == "Sports & Fitness":
+            )
 
-        return f"{brand} {subcategory}"
+        else:
 
-    elif category == "Home & Kitchen":
+            return f"{brand_name} {subcategory_name}"
 
-        return f"{brand} {subcategory}"
+    # ------------------------------------------------------
+    # Books
+    # ------------------------------------------------------
+
+    elif category_name == "Books":
+
+        return random.choice(
+
+            PRODUCT_MODELS["Books"]
+
+        )
+
+    # ------------------------------------------------------
+    # Grocery
+    # ------------------------------------------------------
+
+    elif category_name == "Grocery":
+
+        return (
+
+            f"{brand_name} Premium "
+
+            f"{subcategory_name}"
+
+        )
+
+    # ------------------------------------------------------
+    # Beauty
+    # ------------------------------------------------------
+
+    elif category_name == "Beauty & Personal Care":
+
+        return (
+
+            f"{brand_name} "
+
+            f"{subcategory_name}"
+
+        )
+
+    # ------------------------------------------------------
+    # Default
+    # ------------------------------------------------------
 
     else:
 
-        return f"{brand} {subcategory}"
-    
-# ==========================================================
+        return (
+
+            f"{brand_name} "
+
+            f"{subcategory_name}"
+
+        )
+  # ==========================================================
 # Generate Products
 # ==========================================================
 
 def generate_products():
 
-    (
-        categories,
-        subcategories,
-        brands,
-        suppliers
-    ) = load_reference_data()
-
-    products = []
-
     print("=" * 60)
-    print("Generating Products...")
+    print("Generating Products")
     print("=" * 60)
+
+    validate_reference_data()
+
+    rows = []
 
     for product_id in range(1, NUM_PRODUCTS + 1):
 
-        category = categories.sample(1).iloc[0]
+        # ------------------------------------------
+        # Category
+        # ------------------------------------------
+
+        category = CATEGORIES.sample(1).iloc[0]
 
         category_id = category["CategoryID"]
 
         category_name = category["CategoryName"]
 
-        sub_df = subcategories[
+        # ------------------------------------------
+        # SubCategory
+        # ------------------------------------------
 
-            subcategories["CategoryID"] == category_id
-
+        sub_df = SUBCATEGORIES[
+            SUBCATEGORIES["CategoryID"] == category_id
         ]
+
+        if sub_df.empty:
+            continue
 
         subcategory = sub_df.sample(1).iloc[0]
 
@@ -317,17 +1016,29 @@ def generate_products():
 
         subcategory_name = subcategory["SubCategoryName"]
 
-        brand = brands.sample(1).iloc[0]
+        # ------------------------------------------
+        # Brand
+        # ------------------------------------------
 
-        supplier = suppliers.sample(1).iloc[0]
+        brand = get_random_brand(
+            category_name
+        )
 
         brand_id = brand["BrandID"]
 
-        supplier_id = supplier["SupplierID"]
-
         brand_name = brand["BrandName"]
 
-        # ------------------------------------------------
+        # ------------------------------------------
+        # Supplier
+        # ------------------------------------------
+
+        supplier = get_random_supplier()
+
+        supplier_id = supplier["SupplierID"]
+
+        # ------------------------------------------
+        # Product Name
+        # ------------------------------------------
 
         product_name = generate_product_name(
 
@@ -339,109 +1050,81 @@ def generate_products():
 
         )
 
-        # ------------------------------------------------
+        # ------------------------------------------
+        # SKU
+        # ------------------------------------------
 
-        min_price, max_price = CATEGORY_PRICE[
+        sku = generate_sku(
+
+            category_name,
+
+            product_id
+
+        )
+
+        # ------------------------------------------
+        # Prices
+        # ------------------------------------------
+
+        mrp, selling_price, cost_price = generate_prices(
 
             category_name
 
-        ]
+        )
 
-        selling_price = random.randint(
+        # ------------------------------------------
+        # Attributes
+        # ------------------------------------------
 
-            min_price,
+        attributes = get_product_attributes(
 
-            max_price
+            category_name
 
         )
 
-        cost_price = round(
+        # ------------------------------------------
+        # Description
+        # ------------------------------------------
 
-            selling_price * random.uniform(
+        description = generate_description(
 
-                0.55,
+            brand_name,
 
-                0.85
-
-            ),
-
-            2
+            subcategory_name
 
         )
 
-        mrp = round(
-
-            selling_price * random.uniform(
-
-                1.05,
-
-                1.20
-
-            ),
-
-            2
-
-        )
-
-        rating = round(
-
-            random.uniform(
-
-                3.5,
-
-                5.0
-
-            ),
-
-            1
-
-        )
-
-        review_count = random.randint(
-
-            0,
-
-            5000
-
-        )
+        # ------------------------------------------
+        # Launch Date
+        # ------------------------------------------
 
         launch_date = random_launch_date()
 
-        warranty = random.choice(
+        # ------------------------------------------
+        # Active
+        # ------------------------------------------
 
-            [0,6,12,24]
+        is_active = random.choices(
 
-        )
+            [1, 0],
 
-        weight = round(
+            weights=[98, 2]
 
-            random.uniform(
+        )[0]
 
-                0.10,
+        # ------------------------------------------
+        # Append
+        # ------------------------------------------
 
-                20.00
-
-            ),
-
-            2
-
-        )
-
-        products.append({
+        rows.append({
 
             "ProductID": product_id,
 
-            "SKU": generate_sku(
-
-                category_name,
-
-                product_id
-
-            ),
+            "SKU": sku,
 
             "ProductName": product_name,
-            "ProductDescription":
-               f"High quality {subcategory_name} from {brand_name}",
+
+            "ProductDescription": description,
 
             "CategoryID": category_id,
 
@@ -451,114 +1134,284 @@ def generate_products():
 
             "SupplierID": supplier_id,
 
-            "CostPrice": cost_price,
+            "MRP": mrp,
 
             "SellingPrice": selling_price,
 
-            "MRP": mrp,
+            "CostPrice": cost_price,
 
-           
+            "Weight": attributes["Weight"],
 
-            "Weight": weight,
+            "Color": attributes["Color"],
 
-            "Color": random.choice(
-
-                COLORS
-
-            ),
-            "Size": random.choice(SIZES),
-
-          
-
-            
-
-            
+            "Size": attributes["Size"],
 
             "LaunchDate": launch_date,
 
-            "IsActive": 1,
-
-            "CreatedAt": launch_date,
-
-            "UpdatedAt": launch_date
+            "IsActive": is_active
 
         })
 
-        if product_id % 1000 == 0:
+        # ------------------------------------------
+        # Progress
+        # ------------------------------------------
+
+        if product_id % 10000 == 0:
 
             print(
 
-                f"{product_id:,} products generated..."
+                f"{product_id:,} Products Generated..."
 
             )
 
+    products = pd.DataFrame(rows)
+
+    print("=" * 60)
+    print("Generation Completed")
     print("=" * 60)
 
-    return pd.DataFrame(products)
+    print(f"Rows : {len(products):,}")
+
+    return products
+
 # ==========================================================
-# Validate Product Data
+# Validate Products
 # ==========================================================
 
-def validate_products(df):
+def validate_products(products):
 
-    print("\n" + "=" * 60)
-    print("Validating Product Data")
     print("=" * 60)
-
-    assert df["ProductID"].is_unique, \
-        "Duplicate ProductID found."
-
-    assert df["SKU"].is_unique, \
-        "Duplicate SKU found."
-
-    if df.isnull().sum().sum() > 0:
-        raise ValueError("Null values detected.")
+    print("Validating Products")
+    print("=" * 60)
 
     # ------------------------------------------------------
+    # Empty Dataset
+    # ------------------------------------------------------
 
-    invalid = df[df["CostPrice"] > df["SellingPrice"]]
-
-    if len(invalid) > 0:
+    if products.empty:
 
         raise ValueError(
-
-            "Cost Price cannot exceed Selling Price."
-
+            "Generated products dataset is empty."
         )
 
     # ------------------------------------------------------
+    # Duplicate ProductID
+    # ------------------------------------------------------
 
-    invalid = df[df["SellingPrice"] > df["MRP"]]
+    duplicate_ids = products["ProductID"].duplicated().sum()
 
-    if len(invalid) > 0:
+    if duplicate_ids > 0:
+
+        raise ValueError(
+            f"Duplicate ProductID found : {duplicate_ids}"
+        )
+
+    print("✓ ProductID Validation Passed")
+
+    # ------------------------------------------------------
+    # Duplicate SKU
+    # ------------------------------------------------------
+
+    duplicate_sku = products["SKU"].duplicated().sum()
+
+    if duplicate_sku > 0:
+
+        raise ValueError(
+            f"Duplicate SKU found : {duplicate_sku}"
+        )
+
+    print("✓ SKU Validation Passed")
+
+    # ------------------------------------------------------
+    # Product Name
+    # ------------------------------------------------------
+
+    if products["ProductName"].isnull().any():
+
+        raise ValueError(
+            "Null ProductName found."
+        )
+
+    print("✓ Product Name Validation Passed")
+
+    # ------------------------------------------------------
+    # Foreign Keys
+    # ------------------------------------------------------
+
+    fk_columns = [
+
+        "CategoryID",
+        "SubCategoryID",
+        "BrandID",
+        "SupplierID"
+
+    ]
+
+    for column in fk_columns:
+
+        if products[column].isnull().any():
+
+            raise ValueError(
+                f"Null values found in {column}"
+            )
+
+    print("✓ Foreign Key Validation Passed")
+
+    # ------------------------------------------------------
+    # Price Validation
+    # ------------------------------------------------------
+
+    invalid_price = products[
+
+        (products["CostPrice"] > products["SellingPrice"]) |
+
+        (products["SellingPrice"] > products["MRP"])
+
+    ]
+
+    if len(invalid_price) > 0:
 
         raise ValueError(
 
-            "Selling Price cannot exceed MRP."
+            f"{len(invalid_price)} invalid price records found."
 
         )
 
+    print("✓ Price Validation Passed")
+
+    # ------------------------------------------------------
+    # Weight
     # ------------------------------------------------------
 
-   
+    invalid_weight = products[
 
-    print("✔ ProductID Unique")
-    print("✔ SKU Unique")
-    print("✔ No Null Values")
-    print("✔ Pricing Validation Passed")
- 
+        products["Weight"] <= 0
+
+    ]
+
+    if len(invalid_weight) > 0:
+
+        raise ValueError(
+
+            f"{len(invalid_weight)} invalid weights found."
+
+        )
+
+    print("✓ Weight Validation Passed")
+
+    # ------------------------------------------------------
+    # Launch Date
+    # ------------------------------------------------------
+
+    invalid_date = products[
+
+        products["LaunchDate"] >
+
+        pd.Timestamp.today().date()
+
+    ]
+
+    if len(invalid_date) > 0:
+
+        raise ValueError(
+
+            f"{len(invalid_date)} future launch dates found."
+
+        )
+
+    print("✓ Launch Date Validation Passed")
+
+    # ------------------------------------------------------
+    # IsActive
+    # ------------------------------------------------------
+
+    invalid_active = products[
+
+        ~products["IsActive"].isin([0, 1])
+
+    ]
+
+    if len(invalid_active) > 0:
+
+        raise ValueError(
+
+            f"{len(invalid_active)} invalid IsActive values."
+
+        )
+
+    print("✓ IsActive Validation Passed")
+
+    # ------------------------------------------------------
+    # Required Columns
+    # ------------------------------------------------------
+
+    required_columns = [
+
+        "ProductID",
+        "SKU",
+        "ProductName",
+        "CategoryID",
+        "SubCategoryID",
+        "BrandID",
+        "SupplierID",
+        "MRP",
+        "SellingPrice",
+        "CostPrice"
+
+    ]
+
+    for column in required_columns:
+
+        if products[column].isnull().any():
+
+            raise ValueError(
+
+                f"Null values found in {column}"
+
+            )
+
+    print("✓ Required Column Validation Passed")
+
+    # ------------------------------------------------------
+    # Summary
+    # ------------------------------------------------------
 
     print("=" * 60)
-    
+    print("ALL PRODUCT VALIDATIONS PASSED")
+    print("=" * 60)
+
+    print(f"Products : {len(products):,}")
+
+    print(
+        f"Categories : {products['CategoryID'].nunique()}"
+    )
+
+    print(
+        f"SubCategories : {products['SubCategoryID'].nunique()}"
+    )
+
+    print(
+        f"Brands : {products['BrandID'].nunique()}"
+    )
+
+    print(
+        f"Suppliers : {products['SupplierID'].nunique()}"
+    )
+
+    print("=" * 60)
+
+    return True
 # ==========================================================
-# Export CSV
+# Export Products
 # ==========================================================
 
-def export_products(df):
+def export_products(products):
 
-    output = CSV_OUTPUT / "products.csv"
+    print("=" * 60)
+    print("Exporting Products")
+    print("=" * 60)
 
-    output.parent.mkdir(
+    CSV_OUTPUT.mkdir(
 
         parents=True,
 
@@ -566,34 +1419,62 @@ def export_products(df):
 
     )
 
-    df.to_csv(
+    output_file = (
 
-        output,
+        CSV_OUTPUT /
 
-        index=False,
-
-        encoding="utf-8"
+        "products.csv"
 
     )
 
-    print("\n" + "=" * 60)
-    print("Products Exported Successfully")
-    print("=" * 60)
-    print(f"Rows   : {len(df):,}")
-    print(f"Output : {output}")
-    print("=" * 60)
-    
+    products.to_csv(
+
+        output_file,
+
+        index=False
+
+    )
+
+    print(f"SUCCESS : {len(products):,} products exported.")
+
+    print(f"Location : {output_file}")
+
+    return output_file
+
+
 # ==========================================================
-# Summary
+# Product Summary
 # ==========================================================
 
-def print_summary(df):
+def print_summary(products):
 
     print("\n" + "=" * 60)
-    print("Product Summary")
+    print("PRODUCT GENERATION SUMMARY")
     print("=" * 60)
 
-    print(f"Products : {len(df):,}")
+    print(f"Total Products      : {len(products):,}")
+
+    print(f"Categories          : {products['CategoryID'].nunique()}")
+
+    print(f"SubCategories       : {products['SubCategoryID'].nunique()}")
+
+    print(f"Brands              : {products['BrandID'].nunique()}")
+
+    print(f"Suppliers           : {products['SupplierID'].nunique()}")
+
+    print()
+
+    print(f"Average MRP         : ₹{products['MRP'].mean():,.2f}")
+
+    print(f"Average Selling     : ₹{products['SellingPrice'].mean():,.2f}")
+
+    print(f"Average Cost        : ₹{products['CostPrice'].mean():,.2f}")
+
+    print()
+
+    print(f"Minimum Selling     : ₹{products['SellingPrice'].min():,.2f}")
+
+    print(f"Maximum Selling     : ₹{products['SellingPrice'].max():,.2f}")
 
     print()
 
@@ -601,40 +1482,17 @@ def print_summary(df):
 
     print(
 
-        df["CategoryID"]
+        products["CategoryID"]
 
         .value_counts()
 
-        .sort_index()
+        .head(10)
 
     )
-
-    print()
-
-    print("Average Selling Price")
-
-    print(
-
-        round(
-
-            df["SellingPrice"]
-
-            .mean(),
-
-            2
-
-        )
-
-    )
-
-    print()
-
-    print("Average Rating")
-
-   
 
     print("=" * 60)
-    
+
+
 # ==========================================================
 # Main
 # ==========================================================
@@ -642,10 +1500,9 @@ def print_summary(df):
 def main():
 
     print("\n")
-    print("=" * 70)
-    print("ShopSphere Analytics")
-    print("Product Generator")
-    print("=" * 70)
+    print("=" * 60)
+    print("SHOPSPHERE PRODUCT GENERATOR")
+    print("=" * 60)
 
     products = generate_products()
 
@@ -655,14 +1512,16 @@ def main():
 
     print_summary(products)
 
-    print("\nCompleted Successfully.")
+    print("\nSUCCESS : Product generation completed successfully.")
+
+    print("=" * 60)
 
 
 # ==========================================================
-# Entry Point
+# Run
 # ==========================================================
 
 if __name__ == "__main__":
 
     main()
-    
+  

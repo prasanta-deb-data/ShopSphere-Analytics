@@ -1,0 +1,25 @@
+## ✅ Completed
+
+- SQL Server Database Schema
+- ETL Framework
+- Logging
+- Configuration Management
+- Schema Validation
+- Data Type Validation
+- Null Validation
+- Primary Key Validation
+- Identity Insert Support
+- Reference Data Generators
+- States
+- Cities
+- Categories
+- SubCategories
+- Brands
+- Suppliers
+- Warehouses
+- Payment Methods
+- Couriers
+- Return Reasons
+- Support Issues
+- Festival Calendar
+- Calendar
