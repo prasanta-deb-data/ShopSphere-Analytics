@@ -1,6 +1,7 @@
 """
 =========================================================
 ShopSphere Analytics
+
 customer_generator.py
 
 Generates:
@@ -10,374 +11,762 @@ Author : Prasanta Kumar Deb
 =========================================================
 """
 
+# ==========================================================
+# Imports
+# ==========================================================
+
 import random
-from pathlib import Path
-from datetime import datetime, timedelta
+
+from datetime import datetime
 
 import pandas as pd
 
 from config.config import (
-    REFERENCE_DATA,
+
     CSV_OUTPUT,
-    NUM_CUSTOMERS,
+
     RANDOM_SEED
+
 )
 
-random.seed(RANDOM_SEED)
+# ==========================================================
+# Random Seed
+# ==========================================================
+
+random.seed(
+
+    RANDOM_SEED
+
+)
 
 # ==========================================================
-# Business Constants
+# Generator Configuration
+# ==========================================================
+
+NUM_CUSTOMERS = 100000
+
+REGISTRATION_START = datetime(
+
+    2022,
+
+    1,
+
+    1
+
+)
+
+REGISTRATION_END = datetime(
+
+    2025,
+
+    12,
+
+    31
+
+)
+
+MIN_AGE = 18
+
+MAX_AGE = 70
+
+# ==========================================================
+# Customer Configuration
+# ==========================================================
+
+REGISTRATION_SOURCES = [
+
+    "Website",
+
+    "Android App",
+
+    "iOS App",
+
+    "Referral",
+
+    "Campaign"
+
+]
+
+CUSTOMER_SEGMENTS = [
+
+    "New",
+
+    "Regular",
+
+    "Premium",
+
+    "VIP"
+
+]
+
+EMAIL_DOMAINS = [
+
+    "gmail.com",
+
+    "outlook.com",
+
+    "yahoo.com",
+
+    "hotmail.com",
+
+    "icloud.com"
+
+]
+
+# ==========================================================
+# Gender Distribution
 # ==========================================================
 
 GENDER_DISTRIBUTION = {
 
-    "Male": 0.52,
-    "Female": 0.48
+    "Male": 52,
+
+    "Female": 47,
+
+    "Other": 1
 
 }
 
-REGISTRATION_SOURCE = {
+# ==========================================================
+# Progress Configuration
+# ==========================================================
 
-    "Android App": 0.45,
-    "Website": 0.30,
-    "iOS App": 0.15,
-    "Referral": 0.05,
-    "Customer Support": 0.05
+PROGRESS_INTERVAL = 10000
+
+# ==========================================================
+# Validation
+# ==========================================================
+
+def validate_configuration():
+
+    print("=" * 60)
+
+    print("Customer Generator Configuration")
+
+    print("=" * 60)
+
+    print(f"Customers            : {NUM_CUSTOMERS:,}")
+
+    print(f"Registration Start   : {REGISTRATION_START.date()}")
+
+    print(f"Registration End     : {REGISTRATION_END.date()}")
+
+    print(f"Minimum Age          : {MIN_AGE}")
+
+    print(f"Maximum Age          : {MAX_AGE}")
+
+    print(f"Email Domains        : {len(EMAIL_DOMAINS)}")
+
+    print(f"Customer Segments    : {len(CUSTOMER_SEGMENTS)}")
+
+    print(f"Registration Sources : {len(REGISTRATION_SOURCES)}")
+
+    print("=" * 60)
+# ==========================================================
+# Indian First Names
+# ==========================================================
+
+MALE_FIRST_NAMES = [
+
+    "Aarav","Vivaan","Aditya","Arjun","Krishna",
+    "Rahul","Rohit","Amit","Akash","Sourav",
+    "Abhishek","Ankit","Ayush","Deepak","Karan",
+    "Manish","Nikhil","Pankaj","Rajesh","Rakesh",
+    "Sandeep","Shubham","Vikas","Vivek","Yash",
+    "Prasanta","Rohan","Harsh","Mohit","Varun",
+    "Nitin","Ashish","Sumit","Tarun","Anurag",
+    "Gaurav","Sachin","Lokesh","Naveen","Ritesh"
+
+]
+
+FEMALE_FIRST_NAMES = [
+
+    "Aadhya","Ananya","Diya","Ishita","Kiara",
+    "Priya","Neha","Pooja","Sneha","Riya",
+    "Anjali","Aarti","Kavya","Nisha","Payal",
+    "Swati","Megha","Shreya","Komal","Nandini",
+    "Rashmi","Ritika","Sakshi","Simran","Tanvi",
+    "Vaishnavi","Muskan","Divya","Ankita","Preeti",
+    "Jyoti","Shruti","Khushi","Rupal","Sonali",
+    "Monika","Pallavi","Renu","Seema","Ayesha"
+
+]
+
+# ==========================================================
+# Indian Last Names
+# ==========================================================
+
+LAST_NAMES = [
+
+    "Sharma","Verma","Singh","Das","Deb",
+    "Patel","Gupta","Yadav","Kumar","Roy",
+    "Saha","Paul","Dutta","Choudhury","Ghosh",
+    "Banerjee","Mukherjee","Chakraborty","Reddy",
+    "Nair","Pillai","Joshi","Kulkarni","Bose",
+    "Bhattacharya","Sarkar","Mishra","Tripathi",
+    "Pandey","Agarwal","Jain","Malhotra",
+    "Kapoor","Mehta","Thakur","Barman",
+    "Saikia","Baruah","Hazarika","Bora"
+
+]
+
+# ==========================================================
+# Registration Source Distribution
+# ==========================================================
+
+REGISTRATION_SOURCE_WEIGHTS = {
+
+    "Website": 25,
+
+    "Android App": 45,
+
+    "iOS App": 15,
+
+    "Referral": 10,
+
+    "Campaign": 5
 
 }
 
-CUSTOMER_SEGMENT = {
+# ==========================================================
+# Customer Segment Distribution
+# ==========================================================
 
-    "Regular": 0.60,
-    "Silver": 0.20,
-    "Gold": 0.15,
-    "Platinum": 0.05
+CUSTOMER_SEGMENT_WEIGHTS = {
+
+    "New": 35,
+
+    "Regular": 40,
+
+    "Premium": 20,
+
+    "VIP": 5
 
 }
 
-ACTIVE_RATE = 0.97
-
-START_DATE = datetime(2023,1,1)
-
-END_DATE = datetime(2025,12,31)
-
 # ==========================================================
-# Load Reference CSVs
+# Loyalty Points
 # ==========================================================
 
-def load_reference_data():
+LOYALTY_POINTS = {
 
-    male_names = pd.read_csv(
-        REFERENCE_DATA / "first_names_male.csv"
-    )
+    "New": (0, 500),
 
-    female_names = pd.read_csv(
-        REFERENCE_DATA / "first_names_female.csv"
-    )
+    "Regular": (500, 3000),
 
-    last_names = pd.read_csv(
-        REFERENCE_DATA / "last_names.csv"
-    )
+    "Premium": (3000, 15000),
 
-    email_domains = pd.read_csv(
-        REFERENCE_DATA / "email_domains.csv"
-    )
+    "VIP": (15000, 100000)
 
-    cities = pd.read_csv(
-        REFERENCE_DATA / "cities.csv"
-    )
+}
 
-    states = pd.read_csv(
-        REFERENCE_DATA / "states.csv"
-    )
-
-    return (
-        male_names,
-        female_names,
-        last_names,
-        email_domains,
-        cities,
-        states
-    )
-    
-    # ==========================================================
-# Weighted Choice
+# ==========================================================
+# Indian Mobile Prefixes
 # ==========================================================
 
-def weighted_choice(mapping):
+PHONE_PREFIXES = [
 
-    values = list(mapping.keys())
+    "98","99","97","96","95",
 
-    weights = list(mapping.values())
+    "94","93","92","91","90",
+
+    "89","88","87","86","85",
+
+    "84","83","82","81","80",
+
+    "79","78","77","76","75",
+
+    "74","73","72","71","70"
+
+]
+
+# ==========================================================
+# Email Username Patterns
+# ==========================================================
+
+EMAIL_PATTERNS = [
+
+    "{first}.{last}",
+
+    "{first}{last}",
+
+    "{first}_{last}",
+
+    "{first}{number}",
+
+    "{first}.{number}",
+
+    "{first}{last}{number}"
+
+]
+
+# ==========================================================
+# Active Customer Distribution
+# ==========================================================
+
+ACTIVE_WEIGHTS = {
+
+    1: 96,
+
+    0: 4
+
+}
+# ==========================================================
+# Generate Gender
+# ==========================================================
+
+def generate_gender():
 
     return random.choices(
 
-        values,
+        population=list(GENDER_DISTRIBUTION.keys()),
 
-        weights=weights,
+        weights=list(GENDER_DISTRIBUTION.values()),
 
         k=1
 
     )[0]
-    
+
+
 # ==========================================================
-# Random Date
+# Generate Name
 # ==========================================================
 
-def random_registration_date():
+def generate_name(gender):
 
-    days = (END_DATE - START_DATE).days
+    if gender == "Male":
 
-    return START_DATE + timedelta(
+        first_name = random.choice(
 
-        days=random.randint(0, days)
+            MALE_FIRST_NAMES
+
+        )
+
+    elif gender == "Female":
+
+        first_name = random.choice(
+
+            FEMALE_FIRST_NAMES
+
+        )
+
+    else:
+
+        first_name = random.choice(
+
+            MALE_FIRST_NAMES + FEMALE_FIRST_NAMES
+
+        )
+
+    last_name = random.choice(
+
+        LAST_NAMES
 
     )
 
+    return first_name, last_name
 
-def random_last_login(registration_date):
 
-    days = (END_DATE - registration_date).days
+# ==========================================================
+# Generate Date of Birth
+# ==========================================================
 
-    if days <= 0:
+def generate_dob():
 
-        return registration_date
+    today = pd.Timestamp.today().normalize()
 
-    return registration_date + timedelta(
+    youngest = today - pd.DateOffset(years=MIN_AGE)
 
-        days=random.randint(0, days)
+    oldest = today - pd.DateOffset(years=MAX_AGE)
+
+    days = (youngest - oldest).days
+
+    dob = oldest + pd.Timedelta(
+
+        days=random.randint(
+
+            0,
+
+            days
+
+        )
 
     )
 
+    return dob.date()
 
-def random_dob():
-
-    today = datetime.today()
-
-    age = random.randint(18,70)
-
-    return today - timedelta(days=age*365)
 
 # ==========================================================
-# Email Generator
+# Generate Email
 # ==========================================================
-
-used_emails = set()
 
 def generate_email(
 
-    first,
+    first_name,
 
-    last,
-
-    domains,
+    last_name,
 
     customer_id
 
 ):
 
-    while True:
+    pattern = random.choice(
 
-        email = (
+        EMAIL_PATTERNS
 
-            f"{first.lower()}."
+    )
 
-            f"{last.lower()}"
+    username = pattern.format(
 
-            f"{customer_id}"
+        first=first_name.lower(),
 
-            "@"
+        last=last_name.lower(),
 
-            f"{random.choice(domains)}"
+        number=customer_id
 
-        )
+    )
 
-        if email not in used_emails:
+    domain = random.choice(
 
-            used_emails.add(email)
+        EMAIL_DOMAINS
 
-            return email
-        
+    )
+
+    return f"{username}@{domain}"
+
+
 # ==========================================================
-# Phone Generator
+# Generate Phone Number
 # ==========================================================
-
-used_phones = set()
 
 def generate_phone():
 
-    while True:
+    prefix = random.choice(
 
-        phone = "9" + "".join(
+        PHONE_PREFIXES
 
-            random.choices(
+    )
 
-                "0123456789",
+    number = "".join(
 
-                k=9
+        random.choices(
+
+            "0123456789",
+
+            k=8
+
+        )
+
+    )
+
+    return prefix + number
+
+
+# ==========================================================
+# Registration Date
+# ==========================================================
+
+def generate_registration_date():
+
+    days = (
+
+        REGISTRATION_END -
+
+        REGISTRATION_START
+
+    ).days
+
+    return (
+
+        REGISTRATION_START +
+
+        pd.Timedelta(
+
+            days=random.randint(
+
+                0,
+
+                days
 
             )
 
         )
 
-        if phone not in used_phones:
+    ).date()
 
-            used_phones.add(phone)
 
-            return phone
+# ==========================================================
+# Registration Source
+# ==========================================================
+
+def generate_registration_source():
+
+    return random.choices(
+
+        population=list(
+
+            REGISTRATION_SOURCE_WEIGHTS.keys()
+
+        ),
+
+        weights=list(
+
+            REGISTRATION_SOURCE_WEIGHTS.values()
+
+        ),
+
+        k=1
+
+    )[0]
+
+
+# ==========================================================
+# Customer Segment
+# ==========================================================
+
+def generate_customer_segment():
+
+    return random.choices(
+
+        population=list(
+
+            CUSTOMER_SEGMENT_WEIGHTS.keys()
+
+        ),
+
+        weights=list(
+
+            CUSTOMER_SEGMENT_WEIGHTS.values()
+
+        ),
+
+        k=1
+
+    )[0]
+
+
 # ==========================================================
 # Loyalty Points
 # ==========================================================
 
-def loyalty_points(segment):
+def generate_loyalty_points(
 
-    if segment=="Regular":
+    segment
 
-        return random.randint(0,1000)
+):
 
-    if segment=="Silver":
+    minimum, maximum = LOYALTY_POINTS[
 
-        return random.randint(1001,5000)
+        segment
 
-    if segment=="Gold":
+    ]
 
-        return random.randint(5001,12000)
+    return random.randint(
 
-    return random.randint(12001,50000)
+        minimum,
 
+        maximum
+
+    )
+
+
+# ==========================================================
+# Last Login Date
+# ==========================================================
+
+def generate_last_login(
+
+    registration_date
+
+):
+
+    today = datetime.today().date()
+
+    days = (
+
+        today -
+
+        registration_date
+
+    ).days
+
+    if days <= 0:
+
+        return registration_date
+
+    return (
+
+        registration_date +
+
+        pd.Timedelta(
+
+            days=random.randint(
+
+                0,
+
+                days
+
+            )
+
+        )
+
+    )
+
+
+# ==========================================================
+# Active Status
+# ==========================================================
+
+def generate_is_active():
+
+    return random.choices(
+
+        population=list(
+
+            ACTIVE_WEIGHTS.keys()
+
+        ),
+
+        weights=list(
+
+            ACTIVE_WEIGHTS.values()
+
+        ),
+
+        k=1
+
+    )[0]
 # ==========================================================
 # Generate Customers
 # ==========================================================
 
 def generate_customers():
 
-    (
-        male_names,
-        female_names,
-        last_names,
-        email_domains,
-        cities,
-        states
-    ) = load_reference_data()
-
-    male_list = male_names.iloc[:, 0].tolist()
-    female_list = female_names.iloc[:, 0].tolist()
-    last_list = last_names.iloc[:, 0].tolist()
-    domain_list = email_domains.iloc[:, 0].tolist()
-
-    customers = []
-
     print("=" * 60)
-    print("Generating Customers...")
+    print("Generating Customers")
     print("=" * 60)
+
+    validate_configuration()
+
+    rows = []
+
+    # ------------------------------------------------------
+    # Track Unique Values
+    # ------------------------------------------------------
+
+    used_emails = set()
+
+    used_phones = set()
+
+    # ------------------------------------------------------
+    # Generate Records
+    # ------------------------------------------------------
 
     for customer_id in range(1, NUM_CUSTOMERS + 1):
 
-        # -----------------------------
+        # ----------------------------------------------
         # Gender
-        # -----------------------------
+        # ----------------------------------------------
 
-        gender = weighted_choice(
-            GENDER_DISTRIBUTION
+        gender = generate_gender()
+
+        # ----------------------------------------------
+        # Name
+        # ----------------------------------------------
+
+        first_name, last_name = generate_name(
+
+            gender
+
         )
 
-        if gender == "Male":
+        # ----------------------------------------------
+        # DOB
+        # ----------------------------------------------
 
-            first_name = random.choice(
-                male_list
+        dob = generate_dob()
+
+        # ----------------------------------------------
+        # Email (Guaranteed Unique)
+        # ----------------------------------------------
+
+        while True:
+
+            email = generate_email(
+
+                first_name,
+
+                last_name,
+
+                customer_id
+
             )
 
-        else:
+            if email not in used_emails:
 
-            first_name = random.choice(
-                female_list
-            )
+                used_emails.add(email)
 
-        last_name = random.choice(
-            last_list
-        )
+                break
 
-        # -----------------------------
-        # Dates
-        # -----------------------------
+        # ----------------------------------------------
+        # Phone (Guaranteed Unique)
+        # ----------------------------------------------
 
-        dob = random_dob()
+        while True:
 
-        registration_date = random_registration_date()
+            phone = generate_phone()
 
-        last_login = random_last_login(
-            registration_date
-        )
+            if phone not in used_phones:
 
-        # -----------------------------
-        # Segment
-        # -----------------------------
+                used_phones.add(phone)
 
-        segment = weighted_choice(
-            CUSTOMER_SEGMENT
-        )
+                break
 
-        # -----------------------------
-        # Source
-        # -----------------------------
+        # ----------------------------------------------
+        # Registration
+        # ----------------------------------------------
 
-        registration_source = weighted_choice(
-            REGISTRATION_SOURCE
-        )
+        registration_date = generate_registration_date()
 
-        # -----------------------------
-        # Email
-        # -----------------------------
+        registration_source = generate_registration_source()
 
-        email = generate_email(
+        # ----------------------------------------------
+        # Customer Segment
+        # ----------------------------------------------
 
-            first_name,
+        segment = generate_customer_segment()
 
-            last_name,
+        # ----------------------------------------------
+        # Loyalty Points
+        # ----------------------------------------------
 
-            domain_list,
+        loyalty_points = generate_loyalty_points(
 
-            customer_id
-
-        )
-
-        # -----------------------------
-        # Phone
-        # -----------------------------
-
-        phone = generate_phone()
-
-        # -----------------------------
-        # Active
-        # -----------------------------
-
-        is_active = int(
-
-            random.random() <= ACTIVE_RATE
-
-        )
-
-        # -----------------------------
-        # Loyalty
-        # -----------------------------
-
-        points = loyalty_points(
             segment
+
         )
 
-        # -----------------------------
-        # Created
-        # -----------------------------
+        # ----------------------------------------------
+        # Last Login
+        # ----------------------------------------------
 
-        created_at = registration_date
+        last_login = generate_last_login(
 
-        updated_at = last_login
+            registration_date
 
-        # -----------------------------
-        # Record
-        # -----------------------------
+        )
 
-        customers.append({
+        # ----------------------------------------------
+        # Active Status
+        # ----------------------------------------------
+
+        is_active = generate_is_active()
+
+        # ----------------------------------------------
+        # Store Row
+        # ----------------------------------------------
+
+        rows.append({
 
             "CustomerID": customer_id,
 
@@ -387,127 +776,294 @@ def generate_customers():
 
             "Gender": gender,
 
-            "DateOfBirth": dob.date(),
+            "DateOfBirth": dob,
 
             "Email": email,
 
             "Phone": phone,
 
-            "RegistrationDate": registration_date.date(),
+            "RegistrationDate": registration_date,
 
             "RegistrationSource": registration_source,
 
             "CustomerSegment": segment,
 
-            "LoyaltyPoints": points,
+            "LoyaltyPoints": loyalty_points,
 
             "LastLoginDate": last_login,
 
-            "IsActive": is_active,
-
-            "CreatedAt": created_at,
-
-            "UpdatedAt": updated_at
+            "IsActive": is_active
 
         })
 
-        # -----------------------------
+        # ----------------------------------------------
         # Progress
-        # -----------------------------
+        # ----------------------------------------------
 
-        if customer_id % 10000 == 0:
+        if customer_id % PROGRESS_INTERVAL == 0:
 
             print(
 
-                f"{customer_id:,} customers generated..."
+                f"{customer_id:,} Customers Generated..."
 
             )
 
+    customers = pd.DataFrame(rows)
+
+    print("=" * 60)
+    print("Customer Generation Completed")
     print("=" * 60)
 
-    df = pd.DataFrame(customers)
+    print(f"Rows : {len(customers):,}")
 
-    return df
+    return customers
 # ==========================================================
-# Validate Customer Data
+# Validate Customers
 # ==========================================================
 
-def validate_customers(df):
+def validate_customers(customers):
 
-    print("\n" + "=" * 60)
-    print("Validating Customer Data")
+    print("=" * 60)
+    print("Validating Customers")
     print("=" * 60)
 
     # ------------------------------------------------------
-    # Duplicate CustomerID
+    # Empty Dataset
     # ------------------------------------------------------
 
-    assert df["CustomerID"].is_unique, \
-        "Duplicate CustomerID found."
+    if customers.empty:
+        raise ValueError("Customer dataset is empty.")
+
+    print("✓ Dataset Validation Passed")
 
     # ------------------------------------------------------
-    # Duplicate Email
+    # Convert Date Columns Once
     # ------------------------------------------------------
 
-    assert df["Email"].is_unique, \
-        "Duplicate Email found."
+    customers = customers.copy()
+
+    customers["DateOfBirth"] = pd.to_datetime(
+        customers["DateOfBirth"]
+    )
+
+    customers["RegistrationDate"] = pd.to_datetime(
+        customers["RegistrationDate"]
+    )
+
+    customers["LastLoginDate"] = pd.to_datetime(
+        customers["LastLoginDate"]
+    )
+
+    today = pd.Timestamp.today().normalize()
 
     # ------------------------------------------------------
-    # Duplicate Phone
+    # CustomerID
     # ------------------------------------------------------
 
-    assert df["Phone"].is_unique, \
-        "Duplicate Phone found."
+    if customers["CustomerID"].duplicated().any():
+        raise ValueError("Duplicate CustomerID found.")
+
+    print("✓ CustomerID Validation Passed")
 
     # ------------------------------------------------------
-    # Null Values
+    # Email
     # ------------------------------------------------------
 
-    if df.isnull().sum().sum() > 0:
+    if customers["Email"].duplicated().any():
+        raise ValueError("Duplicate Email found.")
+
+    print("✓ Email Validation Passed")
+
+    # ------------------------------------------------------
+    # Phone
+    # ------------------------------------------------------
+
+    if customers["Phone"].duplicated().any():
+        raise ValueError("Duplicate Phone found.")
+
+    print("✓ Phone Validation Passed")
+
+    # ------------------------------------------------------
+    # Required Columns
+    # ------------------------------------------------------
+
+    required_columns = [
+
+        "FirstName",
+        "LastName",
+        "Email",
+        "Phone",
+        "RegistrationDate",
+        "CustomerSegment"
+
+    ]
+
+    for column in required_columns:
+
+        if customers[column].isnull().any():
+
+            raise ValueError(
+
+                f"Null values found in {column}"
+
+            )
+
+    print("✓ Required Column Validation Passed")
+
+    # ------------------------------------------------------
+    # Age Validation
+    # ------------------------------------------------------
+
+    age = (
+
+        (today - customers["DateOfBirth"])
+
+        .dt.days // 365
+
+    )
+
+    if (age < MIN_AGE).any():
 
         raise ValueError(
-            "Null values detected."
+
+            "Customers below minimum age found."
+
         )
 
-    # ------------------------------------------------------
-    # Last Login >= Registration
-    # ------------------------------------------------------
-
-    invalid_dates = (
-
-        df["LastLoginDate"]
-
-        <
-
-        df["RegistrationDate"]
-
-    ).sum()
-
-    if invalid_dates > 0:
+    if (age > MAX_AGE).any():
 
         raise ValueError(
 
-            "Last Login before Registration Date."
+            "Customers above maximum age found."
 
         )
 
-    print("✔ CustomerID Unique")
-    print("✔ Email Unique")
-    print("✔ Phone Unique")
-    print("✔ No Null Values")
-    print("✔ Date Validation Passed")
+    print("✓ Date Of Birth Validation Passed")
+
+    # ------------------------------------------------------
+    # Registration Date
+    # ------------------------------------------------------
+
+    if (customers["RegistrationDate"] > today).any():
+
+        raise ValueError(
+
+            "Future RegistrationDate found."
+
+        )
+
+    print("✓ Registration Date Validation Passed")
+
+    # ------------------------------------------------------
+    # Last Login
+    # ------------------------------------------------------
+
+    if (
+
+        customers["LastLoginDate"] <
+
+        customers["RegistrationDate"]
+
+    ).any():
+
+        raise ValueError(
+
+            "LastLoginDate cannot be earlier than RegistrationDate."
+
+        )
+
+    if (
+
+        customers["LastLoginDate"] > today
+
+    ).any():
+
+        raise ValueError(
+
+            "Future LastLoginDate found."
+
+        )
+
+    print("✓ Last Login Validation Passed")
+
+    # ------------------------------------------------------
+    # Loyalty Points
+    # ------------------------------------------------------
+
+    if (
+
+        customers["LoyaltyPoints"] < 0
+
+    ).any():
+
+        raise ValueError(
+
+            "Negative LoyaltyPoints found."
+
+        )
+
+    print("✓ Loyalty Points Validation Passed")
+
+    # ------------------------------------------------------
+    # IsActive
+    # ------------------------------------------------------
+
+    if (
+
+        ~customers["IsActive"].isin([0, 1])
+
+    ).any():
+
+        raise ValueError(
+
+            "Invalid IsActive values."
+
+        )
+
+    print("✓ IsActive Validation Passed")
+
+    # ------------------------------------------------------
+    # Summary
+    # ------------------------------------------------------
 
     print("=" * 60)
-    
+    print("ALL CUSTOMER VALIDATIONS PASSED")
+    print("=" * 60)
+
+    print(f"Customers          : {len(customers):,}")
+
+    print(f"Male               : {(customers['Gender'] == 'Male').sum():,}")
+
+    print(f"Female             : {(customers['Gender'] == 'Female').sum():,}")
+
+    print(f"Other              : {(customers['Gender'] == 'Other').sum():,}")
+
+    print()
+
+    print("Customer Segments")
+
+    print(customers["CustomerSegment"].value_counts())
+
+    print()
+
+    print(f"Active Customers   : {(customers['IsActive'] == 1).sum():,}")
+
+    print(f"Inactive Customers : {(customers['IsActive'] == 0).sum():,}")
+
+    print("=" * 60)
+
+    return True
 # ==========================================================
-# Export CSV
+# Export Customers
 # ==========================================================
 
-def export_customers(df):
+def export_customers(customers):
 
-    output_file = CSV_OUTPUT / "customers.csv"
+    print("=" * 60)
+    print("Exporting Customers")
+    print("=" * 60)
 
-    output_file.parent.mkdir(
+    CSV_OUTPUT.mkdir(
 
         parents=True,
 
@@ -515,61 +1071,88 @@ def export_customers(df):
 
     )
 
-    df.to_csv(
+    output_file = (
 
-        output_file,
+        CSV_OUTPUT /
 
-        index=False,
-
-        encoding="utf-8"
+        "customers.csv"
 
     )
 
-    print("\n" + "=" * 60)
-    print("Customer CSV Exported Successfully")
-    print("=" * 60)
-    print(f"Rows   : {len(df):,}")
-    print(f"Output : {output_file}")
-    print("=" * 60)
-    
+    customers.to_csv(
+
+        output_file,
+
+        index=False
+
+    )
+
+    print(f"SUCCESS : {len(customers):,} customers exported.")
+
+    print(f"Location : {output_file}")
+
+    return output_file
+
+
 # ==========================================================
-# Summary
+# Customer Summary
 # ==========================================================
 
-def print_summary(df):
+def print_summary(customers):
 
     print("\n" + "=" * 60)
-    print("Customer Summary")
+    print("CUSTOMER GENERATION SUMMARY")
     print("=" * 60)
 
-    print(f"Customers : {len(df):,}")
+    print(f"Total Customers      : {len(customers):,}")
+
+    print(f"Male Customers       : {(customers['Gender'] == 'Male').sum():,}")
+
+    print(f"Female Customers     : {(customers['Gender'] == 'Female').sum():,}")
+
+    print(f"Other Customers      : {(customers['Gender'] == 'Other').sum():,}")
 
     print()
 
-    print("Gender")
+    print("Customer Segments")
 
-    print(df["Gender"].value_counts())
+    print(
 
-    print()
+        customers["CustomerSegment"]
 
-    print("Customer Segment")
+        .value_counts()
 
-    print(df["CustomerSegment"].value_counts())
-
-    print()
-
-    print("Registration Source")
-
-    print(df["RegistrationSource"].value_counts())
+    )
 
     print()
 
-    print("Active Customers")
+    print("Registration Sources")
 
-    print(df["IsActive"].value_counts())
+    print(
+
+        customers["RegistrationSource"]
+
+        .value_counts()
+
+    )
+
+    print()
+
+    print(f"Average Loyalty Points : {customers['LoyaltyPoints'].mean():,.0f}")
+
+    print(f"Maximum Loyalty Points : {customers['LoyaltyPoints'].max():,}")
+
+    print(f"Minimum Loyalty Points : {customers['LoyaltyPoints'].min():,}")
+
+    print()
+
+    print(f"Active Customers       : {(customers['IsActive'] == 1).sum():,}")
+
+    print(f"Inactive Customers     : {(customers['IsActive'] == 0).sum():,}")
 
     print("=" * 60)
-    
+
+
 # ==========================================================
 # Main
 # ==========================================================
@@ -577,10 +1160,9 @@ def print_summary(df):
 def main():
 
     print("\n")
-    print("=" * 70)
-    print("ShopSphere Analytics")
-    print("Customer Generator")
-    print("=" * 70)
+    print("=" * 60)
+    print("SHOPSPHERE CUSTOMER GENERATOR")
+    print("=" * 60)
 
     customers = generate_customers()
 
@@ -590,13 +1172,15 @@ def main():
 
     print_summary(customers)
 
-    print("\nCompleted Successfully.")
+    print("\nSUCCESS : Customer generation completed successfully.")
+
+    print("=" * 60)
+
 
 # ==========================================================
-# Entry Point
+# Run
 # ==========================================================
 
 if __name__ == "__main__":
 
     main()
-    
